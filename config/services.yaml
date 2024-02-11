@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $altchaHmacKey: '%markocupic_contao_altcha_antispam.hmac_key%'
+            $altchaAlgorithm: '%markocupic_contao_altcha_antispam.algorithm%'
+            $altchaRangeMin: '%markocupic_contao_altcha_antispam.range_min%'
+            $altchaRangeMax: '%markocupic_contao_altcha_antispam.range_max%'
+
+    Markocupic\ContaoAltchaAntispam\:
+        resource: ../src/
+        exclude: ../src/{DependencyInjection,Config,Widget}
+
+    Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator:
+        public: true
+        arguments:
+            - '@Markocupic\ContaoAltchaAntispam\Altcha'
