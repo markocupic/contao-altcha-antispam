@@ -21,7 +21,7 @@ use Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator;
 
 class AltchaHidden extends Widget
 {
-    protected $blnSubmitInput = true;
+    protected $blnSubmitInput = false;
     protected $blnForAttribute = true;
     protected $strTemplate = 'form_altcha_hidden';
     protected $strPrefix = 'widget widget-altcha-hidden';
