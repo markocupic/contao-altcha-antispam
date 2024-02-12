@@ -1,4 +1,4 @@
 # config/routes.yaml
-markocupic_contao_altcha_antispam.controller:
+markocupic_mathbuch_learning_objectives.controller:
     resource: ../src/Controller
     type: annotation

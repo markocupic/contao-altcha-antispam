@@ -6,8 +6,8 @@ cd..
 cd..
 cd..
 cd..
-php vendor\bin\ecs check vendor/markocupic/contao-altcha-antispam/src --fix --config vendor/markocupic/contao-altcha-antispam/tools/ecs/config.php
-php vendor\bin\ecs check vendor/markocupic/contao-altcha-antispam/contao --fix --config vendor/markocupic/contao-altcha-antispam/tools/ecs/config.php
-php vendor\bin\ecs check vendor/markocupic/contao-altcha-antispam/config --fix --config vendor/markocupic/contao-altcha-antispam/tools/ecs/config.php
-php vendor\bin\ecs check vendor/markocupic/contao-altcha-antispam/templates --fix --config vendor/markocupic/contao-altcha-antispam/tools/ecs/config.php
-php vendor\bin\ecs check vendor/markocupic/contao-altcha-antispam/tests --fix --config vendor/markocupic/contao-altcha-antispam/tools/ecs/config.php
+php vendor\bin\ecs check vendor/markocupic/mathbuch-learning-objectives/src --fix --config vendor/markocupic/mathbuch-learning-objectives/tools/ecs/config.php
+php vendor\bin\ecs check vendor/markocupic/mathbuch-learning-objectives/contao --fix --config vendor/markocupic/mathbuch-learning-objectives/tools/ecs/config.php
+php vendor\bin\ecs check vendor/markocupic/mathbuch-learning-objectives/config --fix --config vendor/markocupic/mathbuch-learning-objectives/tools/ecs/config.php
+php vendor\bin\ecs check vendor/markocupic/mathbuch-learning-objectives/templates --fix --config vendor/markocupic/mathbuch-learning-objectives/tools/ecs/config.php
+php vendor\bin\ecs check vendor/markocupic/mathbuch-learning-objectives/tests --fix --config vendor/markocupic/mathbuch-learning-objectives/tools/ecs/config.php

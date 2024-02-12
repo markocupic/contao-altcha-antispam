@@ -1,0 +1,691 @@
+id;tstamp;volume;level_basic;level_plus;objective_text;extended_objective_plus;extended_objective_basic;belongs_to_chapter
+1;1707522961;1;1;1;"proportionale Zuordnung in Situationen erkennen.";;;1
+2;1707522961;1;1;1;"Werte in proportionalen Zuordnungen berechnen.";;;1
+3;1707522961;1;1;1;"Preisvergleiche mithilfe von Wertetabellen und Berechnungen anstellen.";;;1
+4;1707522961;1;1;1;"Die vier Grundoperationen im Hunderterraum sicher im Kopf durchführen.";;;2
+5;1707522961;1;1;1;"Zahlen und Grössen auf den nächsten Stellenwert ergänzen.";;;2
+6;1707522961;1;1;1;"Zahlen und Grössen nach den Rundungsregeln sicher im Kopf runden.";;;2
+7;1707522961;1;1;1;"Längen, Gewichte, Hohlmasse und Zeiten in benachbarte Grösseneinheiten umrechnen.";;;2
+8;1707523209;1;1;1;"Den Wert von Zahlentermen berechnen und dabei die Klammerregeln und die Regel «Punkt vor Strich» berücksichtigen.";;;2
+9;1707522961;1;1;1;"Mithilfe von verwandten, einfachen Rechnungen Ergebnisse im Kopf abschätzen.";;;3
+10;1707523294;1;1;1;"Mindestens eine der beiden Methoden «mindestens - höchstens» oder «gerundet» bei Überschlagsrechnungen anwenden.";;;3
+11;1707522961;1;1;1;"Zu Fermi-Fragen Annahmen treffen und mit Schätzen und Berechnen sinnvolle Antworten finden.";;;3
+12;1707522961;1;1;1;"mir zu Grössen konkrete Beispiele vorstellen.";;;4
+13;1707522961;1;1;1;"mit Grössen rechnen.";;;4
+14;1707522961;1;1;1;"Winkel mit Geodreieck messen und zeichnen.";;;5
+15;1707522961;1;1;1;"Parallelen und Senkrechte zu einer Geraden mit Geodreieck und Lineal zeichnen.";;;5
+16;1707522961;1;1;1;"Spitze, rechte und stumpfe Winkel voneinander unterscheiden.";;;5
+17;1707523722;1;1;1;"die Begriffe Koordinatensystem, x-Koordinate, y-Koordinate und Ursprung erklären.";;;6
+18;1707522961;1;1;1;"die Bedeutung der Vorzeichen von Koordinaten erklären.";;;6
+19;1707522961;1;1;1;"bei gegebenen Koordinaten die Punkte in ein Koordinatensystem einzeichnen.";;;6
+20;1707522961;1;1;1;"Koordinaten von Punkte aus einem Koordinatensystem herauslesen.";;;6
+21;1707522961;1;1;1;"die Stellenwertschreibweise von Zahlen verstehen und erklären.";;;7
+22;1707522961;1;1;1;"die Lage von Zahlen auf dem Zahlenstrahl angeben.";;;7
+23;1707522961;1;1;1;"die vier Grundoperationen mit Dezimalbrüchen im Kopf ausführen.";;;7
+24;1707522961;1;1;1;"Dezimalbrüche am Zahlenstrahl und in der Stellentafel darstellen und ordnen.";;;8
+25;1707522961;1;1;1;"Brüche in unterschiedlichen Modellen (Kreismodell, Flächenmodell, Streckenmodell) darstellen.";;;8
+26;1707522962;1;1;1;"Brüche mithilfe des Rechteckmodells addieren und subtrahieren.";;;8
+27;1707522962;1;1;1;"Brüche erweitern und kürzen.";;;8
+28;1707522962;1;1;1;"Beispiele zu Flächen von 1 mm², 1 cm², 1 dm² und 1 m² nennen.";;;9
+29;1707522962;1;1;1;"die Grösse verschiedener Flächen schätzen.";;;9
+30;1707522962;1;1;1;"Beispiele zu Volumen von 1 cm³ = 1 ml, 1 dm³ = 1 l und 1 m³ = 1000 l nennen.";;;9
+31;1707522962;1;1;1;"Flächen und Volumen von einfachen rechtwinkligen Figuren und Körpern berechnen.";;;9
+32;1707522962;1;1;;"eine Figurenfolge weiterführen und die Wertetabelle erstellen.";;;10
+33;1707522962;1;1;;"anhand einer Beschreibung oder Wertetabelle eine Figurenfolge finden.";;;10
+34;1707522962;1;1;;"zu einem Term eine Wertetabelle erstellen.";;;10
+35;1707522962;1;1;;"zu einer Wertetabelle den Term finden.";;;10
+36;1707522962;1;;1;"die Begriffe Variable und Term erklären.";;;10
+37;1707522962;1;;1;"zu einem Term die Wertetabelle und eine Figurenfolge finden und umgekehrt.";;;10
+38;1707522962;1;;1;"zu einer Figurenfolge eine Beschreibung und einen Term finden und umgekehrt.";;;10
+39;1707522962;1;;;"in Figurenfolgen Zusammenhänge erkennen, eine Wertetabelle erstellen und den Term finden.";;1;10
+40;1707522962;1;;;"Unterschiedliche Terme als gleichwertig erkennen.";;1;10
+41;1707522962;1;;;"zu einem Term eine Figurenfolge und eine Beschreibung finden.";;1;10
+42;1707522962;1;;;"zu einer Figurenfolge verschiedene Beschreibungen und gleichwertige Terme finden.";1;;10
+43;1707522962;1;;;"Zusammenhänge in Wertetabellen zu Figurenfolgen erkennen.";1;;10
+44;1707522962;1;;;"einen Term zu anspruchsvollen Folgen finden.";1;;10
+45;1707522962;1;1;;"eine Boxenanordnung in eine Gleichung übersetzen und umgekehrt.";;;11
+46;1707522962;1;1;;"bei Boxenanordnungen entscheiden, in welcher Box mehr Hölzchen drin sind.";;;11
+47;1707522962;1;1;;"zu einer Gleichung mit einer Variablen die Lösung finden.";;;11
+48;1707522962;1;;1;"Boxenanordnungen in Gleichungen übersetzen und umgekehrt.";;;11
+49;1707522962;1;;1;"Lösungen von Boxenanordnungen in eine Wertetabelle eintragen und umgekehrt, Wertetabellen in eine Gleichung übersetzen.";;;11
+50;1707522962;1;;1;"Boxenanordnungen und Wertetabellen Texten zuordnen und Schlüsselwörter verwenden.";;;11
+51;1707522963;1;;;"Schlüsselwörter verwenden, um Texte in Wertetabellen zu übersetzen und umgekehrt.";;1;11
+52;1707522963;1;;;"Boxanordnungen - Gleichungen - Tabellen - Texte von einer Darstellung in eine andere übertragen.";;1;11
+53;1707522963;1;;;"eigene Texte zu Boxanordnungen schreiben.";;1;11
+54;1707522963;1;;;"Texte, Tabellen, Gleichungen und Boxenanordnungen jeweils in die anderen Darstellungsformen übersetzen.";1;;11
+55;1707522963;1;;;"eigene Texte zu Boxenanordnungen und Wertetabellen schreiben.";1;;11
+56;1707522963;1;;;"Lösungen zu zwei verschiedenen mit «und» verbundenen Boxenanordnungen finden.";1;;11
+57;1707522963;1;;;"Boxenanordnungen erfinden mit einer Lösung, mit einem Lösungspaar, mit unendlich vielen Lösungspaaren oder keinen Lösungen.";1;;11
+58;1707522963;1;1;;"Flächeninhalt und Umfang von Parallelogrammen und Dreiecken bestimmen.";;;12
+59;1707522963;1;1;;"Parallelogramme und Dreiecke massstabsgetreu zeichnen und beschriften.";;;12
+60;1707522963;1;1;;"Mindestens eine Höhe in Parallelogrammen oder in Dreiecken einzeichnen.";;;12
+61;1707523496;1;1;;"zeigen, dass jedes Dreieck zu einem doppelt so grossen Rechteck oder Parallelogramm ergänzt werden kann.";;;12
+62;1707522963;1;;1;"Umfang und Flächeninhalt von Parallelogrammen und Dreiecken bestimmen sowie die Flächenformeln erklären.";;;12
+63;1707522963;1;;1;"Parallelogramme und Dreiecke massstabsgetreu zeichnen und beschriften.";;;12
+64;1707522963;1;;1;"die Höhen in Parallelogrammen und Dreiecken einzeichnen.";;;12
+65;1707522963;1;;1;"verschiedene Typen von Parallelogrammen und Dreiecken benennen.";;;12
+66;1707522963;1;;;"Umkehraufgaben zur Flächen- und Umfangberechnung lösen.";;1;12
+67;1707522963;1;;;"die Flächengleichheit bei gleicher Seite und Höhe im Parallelogramm und Dreieck erkennen und begründen.";;1;12
+68;1707522963;1;;;"alle Höhen in Dreiecken und Parallelogrammen einzeichnen.";;1;12
+69;1707522963;1;;;"Vielecke berechnen.";;1;12
+70;1707522963;1;;;"Flächenumwandlungen (Dreieck – Rechteck – Parallelogramm) aufzeigen sowie Umkehraufgaben zur Flächen- und Umfangberechnung lösen.";1;;12
+71;1707522963;1;;;"die Flächengleichheit bei gleicher Seitenlänge und Höhe in Parallelogramm und Dreieck erkennen und begründen.";1;;12
+72;1707522963;1;;;"Vielecke durch Zerlegung in Dreiecke berechnen.";1;;12
+73;1707522963;1;1;1;"Raummasse anwenden sowie anschauliche Beispiele zu den Grundeinheiten (1mm³, 1cm³, 1dm³, 1m³) nennen.";;;13
+74;1707522963;1;1;1;"Kantenlängen, Volumen und Oberflächen von Quadern bestimmen und berechnen.";;;13
+75;1707522963;1;1;1;"Körper in Schrägbilddarstellung erkennen und einfache Körper skizzieren.";;;13
+76;1707522964;1;1;1;"mich auf Aufgaben zur Kopfgeometrie einlassen und dabei skizzieren, notieren und Lösungen finden.";;;13
+77;1707522964;1;;;"mir Zerlegungen von Quadern vorstellen und Aufgaben zur Kopfgeometrie lösen.";1;1;13
+78;1707522964;1;;;"Beziehungen zwischen Kantenlängen, Oberflächen und Volumen erkennen und beschreiben.";;1;13
+79;1707522964;1;;;"Seitenlängen von Quadern aufgrund von Oberflächen, Volumen oder Raumbildern bestimmen und umgekehrt.";;1;13
+80;1707523366;1;;;"die Systematik der Längenmasse (10 cm = 1 dm), der Flächenmasse (100 cm² = 1 dm²) und der Raummasse (1000 cm³ = 1 dm³) erläutern.";1;;13
+81;1707522964;1;;;"Beziehungen zwischen Kantenlängen, Oberflächen und Volumen erkennen und beschreiben.";1;;13
+82;1707522964;1;1;1;"zu einem Gefäss einen entsprechenden Füllgraphen zeichnen.";;;14
+83;1707522964;1;1;1;"zu einem Füllgraphen ein passendes Gefäss zeichnen.";;;14
+84;1707522964;1;;;"die Situation mit Abhängigkeiten zweier Grössen (z. B. Geschwindigkeit - zurückgelegte Distanz) mithilfe von Graphen darstellen.";1;1;14
+85;1707522964;1;;;"Darstellungen (z. B. Weg-Zeit-Graphen) interpretieren.";1;1;14
+86;1707522964;1;;;"Situationen erfinden und mit Graphen beschreiben.";1;1;14
+87;1707522964;1;1;1;"zu proportionalen Zuordnungen weitere Wertepaare finden.";;;15
+88;1707522964;1;1;1;"proportionale und lineare grafische Darstellungen verstehen und Situationen zuordnen.";;;15
+89;1707522964;1;1;1;"einfache proportionale Berechnungen halbschriftlich und mit dem TR durchführen.";;;15
+90;1707522964;1;1;1;"Tabellen zu Kostenberechnungen verstehen und mit eigenen Einträgen versehen.";;;15
+91;1707522964;1;;;"proportionale Zuordnungen algebraisch verstehen und definieren.";1;1;15
+92;1707522964;1;;;"komplexe grafische Darstellungen verstehen und eigenständig Graphen zeichnen.";1;1;15
+93;1707522964;1;;;"Berechnungen zu Wechselkursen durchführen, Wechselkurse grafisch darstellen und algebraisch beschreiben.";;1;15
+94;1707522964;1;;;"komplexe Berechnungen durchführen und grafisch umsetzen.";1;;15
+95;1707522964;1;;;"Berechnungen zu Wechselkursen durchführen, Wechselkurse grafisch darstellen und algebraisch beschreiben.";1;;15
+96;1707522964;1;1;1;"grosse Zahlen in Ziffernschreibweise und mit Zehnerpotenzen schreiben und benennen.";;;16
+97;1707523526;1;1;1;"grosse Zahlen auf dem Zahlenstrahl in Bezug zu anderen Zahlen setzen.";;;16
+98;1707522964;1;1;1;"einfache Berechnungen zu grossen Zahlen und Zehnerpotenzen durchführen.";;;16
+99;1707522964;1;1;1;"die Potenzschreibweise als verkürzte Schreibweise der Multiplikation verstehen und einfache Potenzen berechnen.";;;16
+100;1707522964;1;;;"mit sehr grossen Zahlen Zehnerpotenzen in verschiedenen Zusammenhängen rechnen.";1;1;16
+101;1707522964;1;;;"die Bedeutung von Potenzen in verschiedenen Zusammenhängen sehen und entsprechende Rechnungen durchführen.";1;1;16
+102;1707522964;1;;;"grosse Zahlen in der Darstellung des Taschenrechners lesen und schreiben.";;1;16
+103;1707522964;1;;;"Muster in Potenztafeln erforschen und Potenzen mit einfachen natürlichen Zahlen vergleichen, umformen und berechnen.";1;;16
+104;1707522964;1;;;"grosse Zahlen in wissenschaftlicher Schreibweise und in der Darstellung des Taschenrechners lesen und schreiben.";1;;16
+105;1707522964;1;1;1;"die vier Grundoperationen mit Brüchen an Modellen verstehen und nachvollziehen.";;;17
+106;1707522964;1;1;1;"gebrochene Zahlen multiplizieren.";;;17
+107;1707522964;1;;1;"gebrochene Zahlen addieren und subtrahieren.";;;17
+108;1707522964;1;;;"gebrochene Zahlen dividieren.";1;1;17
+109;1707522964;1;;;"Kopfrechnungen zu allen vier Grundoperationen mit gebrochenen Zahlen durchführen.";1;1;17
+110;1707522964;1;;;"gebrochene Zahlen addieren und subtrahieren.";;1;17
+111;1707522964;1;1;1;"gebräuchliche Zahlen in den drei Schreibweisen Prozent, Bruch, Dezimalbruch lesen und schreiben.";;;18
+112;1707522964;1;1;1;"Zahlen in Prozent-, Dezimal- und Bruchschreibweise der Grösse nach ordnen.";;;18
+113;1707522964;1;1;1;"zu Anzahlen (absoluten Häufigkeiten) die entsprechenden relativen Häufigkeiten in Prozenten berechnen.";;;18
+114;1707522964;1;1;1;"Prozentzahlen verwenden, um Anteile von Grössen (Flächen, Längen, Gewichte, Geldbeträge) auszudrücken.";;;18
+115;1707522964;1;1;1;"bei Kreissektoren den Anteil am gesamten Kreis in Prozenten ausdrücken.";;;18
+116;1707522964;1;;;"Prozentangaben auch in komplexen Zusammenhängen vergleichen und kommentieren sowie Kommentare überprüfen.";1;1;18
+117;1707522964;1;;;"ungebräuchliche und periodische Brüche in Dezimalbrüche und Prozentzahlen verwandeln.";1;1;18
+118;1707522964;1;;;"zu Prozentangaben durch Überlegen und Probieren Beispiele finden.";1;1;18
+119;1707522964;1;;;"Zusammenhänge formulieren sowie sprachlich formulierte Zusammenhänge verstehen.";1;1;18
+120;1707522964;1;;;"Prozentangaben in Bezug auf verschiedene Grundwerte verstehen und berechnen.";;1;18
+121;1707522964;1;;;"Prozentangaben in Bezug auf verschiedene «Ganze» verstehen und berechnen.";1;;18
+122;1707522964;1;1;1;"Variablen in Termen durch Zahlen ersetzen und den Wert der Terme bestimmen.";;;19
+123;1707522964;1;1;1;"einfache Terme mit Buchstaben addieren, subtrahieren und multiplizieren.";;;19
+124;1707522964;1;1;;"Rechenregeln zur Vereinfachung von Rechnungen anwenden.";;;19
+125;1707522964;1;;1;"Rechenregeln zur Umformung von Rechnungen anwenden.";;;19
+126;1707522965;1;;;"Rechenregeln zur Umformung von komplexeren Termen anwenden.";1;1;19
+127;1707522965;1;;;"selbständig die Umformung von Termen durch Ersetzen von Variablen durch Zahlen überprüfen.";1;1;19
+128;1707522965;1;;;"einfache Terme in Produkte zerlegen.";1;1;19
+129;1707522965;1;1;1;"Achsensymmetrie und Punktsymmetrie erkennen und ihre Eigenschaften beschreiben.";;;20
+130;1707522965;1;1;1;"eine Figur an einer Achse oder einem Punkt spiegeln.";;;20
+131;1707522965;1;1;1;"an Parallelen, die von Geraden geschnitten werden, gleiche Winkel erkennen.";;;20
+132;1707522965;1;1;;"die Winkelsumme von Drei- und Vierecken angeben und Winkel in Drei- und Vierecken berechnen.";;;20
+133;1707522965;1;;1;"Winkelsumme von Drei- und Vierecken kennen und Winkel in Drei- und Vierecken berechnen.";;;20
+134;1707522965;1;;;"achsen- und punktsymmetrische Bilder konstruieren.";1;1;20
+135;1707522965;1;;;"Vielecke in Dreiecke zerlegen und Winkel in Vielecken berechnen.";1;1;20
+136;1707522965;1;;;"Eigenschaften von Scheitel-, Neben- und Stufenwinkeln kennen und für die Bestimmung von Winkeln nutzen.";1;;20
+137;1707522965;1;;;"Eigenschaften spezieller Vierecke herleiten, nennen und nutzen.";1;;20
+138;1707522965;1;1;1;"die Mittelsenkrechte zwischen zwei Punkten bzw. auf einer Strecke konstruieren.";;;21
+139;1707522965;1;1;1;"die Winkelhalbierende zwischen zwei sich schneidenden Geraden konstruieren.";;;21
+140;1707522965;1;1;1;"das Lot von einem Punkt auf eine Gerade fällen.";;;21
+141;1707522965;1;;;"den Schnittpunkt der Mittelsenkrechten von drei Dreiecksseiten als Umkreismittelpunkt des Dreiecks erkennen.";1;1;21
+142;1707522965;1;;;"den Schnittpunkt der Winkelhalbierenden in einem Dreieck als Inkreismittelpunkt des Dreiecks erkennen.";1;1;21
+143;1707522965;1;;;"den Mittelpunkt eines Kreises bei gegebenen drei Punkten der Kreislinie konstruieren.";1;;21
+144;1707522965;1;;;"den Höhenschnittpunkt in einem Dreieck konstruieren.";1;;21
+145;1707522965;1;1;1;"aus einem Balkendiagramm die Zahlen und Prozentangaben herauslesen.";;;22
+146;1707522965;1;1;1;"statistische Zahlenangaben in einem Balkendiagramm darstellen.";;;22
+147;1707522965;1;1;1;"Anteile in Prozentangaben umrechnen.";;;22
+148;1707522965;1;1;1;"Prozentangaben in Anzahlen umrechnen.";;;22
+149;1707522965;1;;;"aus Diagrammen (Balken-, Linien-, Kreisdiagramme) Zahlen- und Prozentangaben entnehmen.";1;1;22
+150;1707523322;1;;;"den Begriff «Stichprobe» erklären.";1;1;22
+151;1707522965;1;;;"Statistiken interpretieren.";1;1;22
+152;1707522965;1;;;"eine Umfrage ausarbeiten, durchführen und (z. B. mit einer Tabellenkalkulation) auswerten.";1;1;22
+153;1707522965;1;;;"Kongruenzen zweier Figuren erkennen: Achsensymmetrie, Punktsymmetrie, Verschiebung, Drehsymmetrie.";1;1;23
+154;1707522965;1;;;"eine einfache Figur um eine vorgegebene Strecke mit Zirkel und Geodreick verschieben.";1;1;23
+155;1707522965;1;;;"eine einfache Figur um einen Drehpunkt und einen vorgegebenen Winkel drehen.";1;1;23
+156;1707522965;1;;;"bei nicht kongruenten Figuren Zusammenhänge erkennen und beschreiben.";1;1;23
+157;1707522965;1;;;"die Innenwinkel eines regelmässigen n-Ecks berechnen.";1;1;24
+158;1707522965;1;;;"regelmässige Vielecke konstruieren.";1;1;24
+159;1707522965;1;;;"Vielecke und Sternfiguren mit gegebenem Innenwinkel konstruieren.";1;1;24
+160;1707522965;1;;;"unterschiedliche Preisangebote vergleichen.";1;1;25
+161;1707522965;1;;;"zu Situationen mit linearem Verhalten Wertetabellen erstellen und entsprechende Graphen einzeichnen.";1;1;25
+162;1707522966;1;;;"das günstigste Angebot für verschiedene Mengen aus Wertetabellen oder Grafiken herauslesen.";1;1;25
+163;1707522966;1;;;"Grafiken mit linearem Verhalten interpretieren.";1;1;25
+164;1707522966;1;;;"mehrstellige Zahlen algebraisch beschreiben.";1;1;26
+165;1707522966;1;;;"Buchstabenterme gezielt so auswerten, dass sie bestimmten Kriterien genügen.";1;1;26
+166;1707522966;1;;;"systematische Beispiele variieren und Feststellungen notieren.";1;1;26
+167;1707522966;1;;;"Strukturen und Gesetzmässigkeiten algebraisch begründen.";1;1;26
+168;1707522966;1;;;"erklären, bei welchen Beispielen das Rechnen mit Variablen Vorteile bringt.";1;1;26
+169;1707522966;1;;;"Netze von verschiedenen Körpern zeichnen.";1;1;27
+170;1707522966;1;;;"Flächenvergleiche anstellen sowie Flächeninhalte überschlagen.";1;1;27
+171;1707522966;1;;;"Flächen schätzen und Flächenmasse umwandeln, auch Aren, Hektaren und Quadratkilometer.";1;1;27
+172;1707522966;1;;;"Oberflächen von verschiedenen Körpern berechnen.";1;1;27
+173;1707522966;1;;;"Zutaten für Rezepte berechnen und den Verbrauch abschätzen.";1;1;28
+174;1707522966;1;;;"Zusammenhänge von Volumen, Fläche und Teigdicke (Höhe) beschreiben.";1;1;28
+175;1707522966;1;;;"aus einem Text Informationen entnehmen und verarbeiten.";1;1;28
+176;1707522966;1;;;"Funktionsgraphen interpretieren und vergleichen.";1;1;28
+177;1707522966;1;;;"Zuordnungen in Tabellen darstellen und Werte berechnen.";1;1;29
+178;1707522966;1;;;"Zuordnungen grafisch darstellen.";1;1;29
+179;1707522966;1;;;"proportionale und umgekehrt proportionale Zuordnungen unterscheiden und erklären.";1;1;29
+180;1707522966;1;;;"einfache Konstruktionen nach bildlicher und sprachlicher Anleitung durchführen.";1;1;30
+181;1707522966;1;;;"ausgehend von gegebenen Strecken und Winkeln einfache Dreiecks- und Viereckskonstruktionen durchführen.";1;1;30
+182;1707522966;1;;;"Konstruktionsanleitungen schreiben.";1;1;30
+183;1707522966;1;;;"einfache Abzählprobleme systematisch lösen.";1;1;31
+184;1707522966;1;;;"Strategien zum Lösen einfacher kombinatorischer Probleme auf gleichartige aber schwierigere Probleme übertragen.";1;1;31
+185;1707522966;1;;;"komplexere Abzählprobleme lösen.";;1;31
+186;1707554050;2;1;1;"Koordinaten von Punkten in einem Koordinatensystem bestimmen und Punkte in ein Koordinatensystem eintragen.";;;33
+187;1707554059;2;1;1;"im Koordinatensystem Figuren an einer Achse oder an einem Punkt spiegeln.";;;33
+188;1707522966;2;1;;"im Koordinatensystem Figuren um einen Punkt um 180° drehen.";;;33
+189;1707522966;2;1;;"Figuren mit Zirkel und Massstab an einer Achse oder an einem Punkt spiegeln.";;;33
+190;1707522966;2;1;;"den Flächeninhalt und den Umfang eines Rechtecks mit einem Term beschreiben.";;;34
+191;1707522966;2;1;;"Variablen in Termen durch Zahlen ersetzen und den Wert der Terme bestimmen.";;;34
+192;1707522966;2;1;;"Terme ausmultiplizieren und gleichwertige Terme erkennen.";;;34
+193;1707554420;2;1;1;"bei einem Vergleich erkennen, welche Anzahl grösser ist.";;;35
+194;1707554429;2;1;1;"zu einem Text eine Wertetabelle erstellen und einen passenden Term angeben.";;;35
+195;1707554437;2;1;;"zu einer Wertetabelle einen passenden Text erstellen.";;;35
+196;1707522966;2;1;;"Terme einer Wertetabelle zuordnen.";;;35
+197;1707522966;2;1;;"Addition, Subtraktion und Multiplikation mit Brüchen an Modellen verstehen und nachvollziehen.";;;36
+198;1707522966;2;1;;"gebrochene Zahlen multiplizieren.";;;36
+199;1707522966;2;1;;"einfache Grössen (Längen, Hohlmasse, Gewichte) von einer Einheit in eine benachbarte umrechnen.";;;37
+200;1707522966;2;1;;"mir unter den Flächenmassen Are, Hektare, Quadratkilometer geeignete Objekte des Alltags vorstellen.";;;37
+201;1707522967;2;1;;"mir unter den Raummassen Liter und Kubikmeter Objekte des Alltags vorstellen.";;;37
+202;1707522967;2;1;;"beispielhaft mit einigen fremden Masseinheiten Berechnungen durchführen.";;;37
+203;1707554737;2;1;1;"relative und absolute Zahlenangaben lesen und schreiben.";;;38
+204;1707554737;2;1;1;"mit relativen Zahlenangaben rechnen.";;;38
+205;1707554737;2;1;1;"den Grundwert (100 %) bestimmen.";;;38
+206;1707554737;2;1;1;"Prozentangaben in Sachsituationen richtig interpretieren und beurteilen.";;;38
+207;1707554787;2;1;1;"die x- und y-Achsen eines Koordinatensystems ausgehend von einer Situation sinnvoll beschriften.";;;39
+208;1707554787;2;1;1;"Graphen qualitativ deuten sowie funktionale Zusammenhänge mit Graphen darstellen.";;;39
+209;1707554787;2;1;1;"Wertetabellen in Graphen übertragen.";;;39
+210;1707554874;2;1;1;"meine Gedanken festhalten.";;;40
+211;1707554874;2;1;1;"mich auf ein Problem einlassen, auch wenn ich noch nicht weiss, wie es gelöst wird.";;;40
+212;1707554874;2;1;1;"mit Kolleginnen und Kollegen meine Erkenntnisse und meine Fragen austauschen.";;;40
+213;1707522967;2;1;1;"die Bedeutung von «+» und «–» als Vorzeichen und als Operationszeichen erklären.";;;41
+214;1707522967;2;1;;"positive und negative Zahlen am Zahlenstrahl einordnen.";;;41
+215;1707522967;2;1;;"positive und negative Zahlen von positiven und negativen Zahlen addieren und subtrahieren.";;;41
+216;1707522967;2;1;;"positive und negative Zahlen am Malkreuz multiplizieren.";;;41
+217;1707522967;2;;1;"positive und negative Zahlen addieren und subtrahieren.";;;41
+218;1707522967;2;;1;"positive und negative Zahlen multiplizieren und dividieren.";;;41
+219;1707522967;2;;1;"Terme mit positiven und negativen Zahlen auswerten.";;;41
+220;1707522967;2;;;"positive und negative Zahlen multiplizieren.";;1;41
+221;1707522967;2;;;"positive und negative Zahlen dividieren.";;1;41
+222;1707522967;2;;;"Terme mit positiven und negativen Zahlen auswerten.";;1;41
+223;1707522967;2;;;"Terme mit allen vier Grundoperationen auswerten.";1;;41
+224;1707522967;2;;;"Äquivalenz von Klammertermen erkennen.";1;;41
+225;1707522967;2;;;"Gleichungen mit negativen Zahlen lösen.";1;;41
+226;1707522967;2;1;1;"anhand einer Boxenanordnung erklären, warum die Äquivalenzumformungen gelten.";;;42
+227;1707522967;2;1;;"zu Gleichungen weitere Gleichungen mit denselben Lösungen angeben.";;;42
+228;1707522967;2;1;;"durch Umformen einfache Gleichungen in die Form × = … bringen.";;;42
+229;1707522967;2;1;;"zu einer Situation passende Zahlenbeispiele nennen.";;;42
+230;1707522967;2;;1;"zu einer Gleichung weitere äquivalente Gleichungen nennen.";;;42
+231;1707522967;2;;1;"Gleichungen schrittweise umformen.";;;42
+232;1707522967;2;;1;"Terme und Wertetabellen einem Text zuordnen und umgekehrt.";;;42
+233;1707522967;2;;;"durch Umformen Gleichungen mit Klammern in die Form × = … bringen.";;1;42
+234;1707522967;2;;;"Terme und Wertetabellen einem Text zuordnen und umgekehrt.";;1;42
+235;1707522967;2;;;"unterschiedliche Terme zur gleichen Situation finden.";;1;42
+236;1707522967;2;;;"anspruchsvollere lineare Gleichungen lösen.";1;;42
+237;1707522967;2;;;"unterschiedliche Terme zur gleichen Situation finden.";1;;42
+238;1707522967;2;;;"Situationen mithilfe von Termen, Wertetabellen und Gleichungen beschreiben.";1;;42
+239;1707522967;2;;;"unlösbare und allgemeingültige Gleichungen angeben.";1;;42
+240;1707522967;2;1;;"den Umkreis eines Dreiecks konstruieren.";;;43
+241;1707522967;2;1;;"den Inkreis eines Dreiecks konstruieren.";;;43
+242;1707522967;2;1;;"den Schwerpunkt eines Dreiecks konstruieren und kenne seine Bedeutung.";;;43
+243;1707522967;2;1;;"Winkel in ebenen Figuren messen und berechnen.";;;43
+244;1707522967;2;;1;"Mittelsenkrechten, Winkelhalbierende, Seitenhalbierende und Höhen in einem Dreieck konstruieren.";;;43
+245;1707522967;2;;1;"den Umkreis, den Inkreis und den Schwerpunkt eines Dreiecks konstruieren.";;;43
+246;1707522967;2;;1;"ein Dreieck mit drei gegebenen Seiten, mit zwei gegebenen Seiten und dem eingeschlossenen Winkel oder einer gegebenen Seite und zwei Winkeln konstruieren.";;;43
+247;1707522967;2;;1;"Berechnungen am Trapez durchführen";;;43
+248;1707522967;2;;;"ein Dreieck mit drei gegebenen Seiten, mit zwei gegebenen Seiten und dem eingeschlossenen Winkel oder einer gegebenen Seite und zwei Winkeln konstruieren.";;1;43
+249;1707522967;2;;;"Berechnungen am Trapez durchführen.";;1;43
+250;1707522967;2;;;"Trapeze bei Angabe der nötigen Winkel und Seitenlängen konstruieren.";;1;43
+251;1707522968;2;;;"begründen, warum sich die Mittelsenkrechten, die Winkelhalbierenden, Seitenhalbierenden und Höhen in einem Dreieck jeweils in einem Punkt schneiden.";1;;43
+252;1707522968;2;;;"ein Dreieck mit zwei gegebenen Seiten und dem der grösseren Seite gegenüberliegenden Winkel konstruieren.";1;;43
+253;1707522968;2;;;"Trapeze bei Angabe der nötigen Winkel und Seitenlängen konstruieren.";1;;43
+254;1707522968;2;1;1;"die Flächengleichheit der Summe von kleinen Quadraten und grossen Quadraten an einem «Pythagoras-Parkett» begründen.";;;44
+255;1707522968;2;1;1;"den Satz des Pythagoras in rechtwinkligen Dreiecken erkennen.";;;44
+256;1707522968;2;1;;"den Satz des Pythagoras zur Berechnung von Seitenlängen in rechtwinkligen Dreiecken anwenden.";;;44
+257;1707522968;2;1;;"die Grösse einer Zahl x auf eine natürliche Zahl genau bestimmen, wenn x² bekannt ist.";;;44
+258;1707522968;2;;1;"rechtwinklige Dreiecke in anderen Figuren erkennen und mithilfe des Satzes des Pythagoras fehlende Seiten mit ganzzahliger Genauigkeit berechnen.";;;44
+259;1707522968;2;;1;"die Grösse einer Zahl x auf eine natürliche Zahl genau bestimmen, wenn x² bekannt ist.";;;44
+260;1707522968;2;;;"anhand der Seitenlängen eines Dreiecks entscheiden, ob das Dreieck spitzwinklig, rechtwinklig oder stumpfwinklig ist.";1;1;44
+261;1707522968;2;;;"rechtwinklige Dreiecke in anderen ebenen Figuren erkennen und mithilfe des Satzes des Pythagoras fehlende Seiten mit ganzzahliger Genauigkeit berechnen.";;1;44
+262;1707522968;2;;;"einen Beweis des Satzes des Pythagoras durch Zerlegung von entsprechenden Quadraten nachvollziehen.";;1;44
+263;1707522968;2;;;"den Satz des Pythagoras zur Berechnung von Strecklängen in einem Koordinatensystem verwenden.";1;;44
+264;1707522968;2;;;"jemandem einen Beweis des Satzes des Pythagoras erklären.";1;;44
+265;1707522968;2;1;1;"die Bedeutung der Quadratwurzel an Beispielen erklären.";;;45
+266;1707522968;2;1;;"die Quadratwurzel von Quadratzahlen im Kopf berechnen.";;;45
+267;1707522968;2;1;;"die Quadratwurzel von Zahlen näherungsweise bestimmen.";;;45
+268;1707522968;2;1;;"in einem rechtwinkligen Dreieck die Länge der dritten Seite bei zwei gegebenen Seiten bestimmen.";;;45
+269;1707522968;2;;1;"die Quadratwurzel von Zahlen im Kopf oder näherungsweise berechnen.";;;45
+270;1707522968;2;;1;"in einem rechtwinkligen Dreieck die Länge der dritten Seite bei zwei gegebenen Seiten bestimmen.";;;45
+271;1707522968;2;;1;"die Längen der Seiten und Raumdiagonalen in einem Quader bei gegebenen Seitenlängen bestimmen.";;;45
+272;1707522968;2;;;"die Quadratwurzel von Zahlen mit einem Näherungsverfahren ungefähr bestimmen.";1;1;45
+273;1707522968;2;;;"Rechenregeln mit Quadratwurzeln an Zahlenbeispielen nachweisen.";1;1;45
+274;1707522968;2;;;"die Quadratwurzel von kleinen natürlichen Zahlen zeichnerisch bestimmen.";1;1;45
+275;1707522968;2;;;"in einem Quader die Längen der Seiten und Raumdiagonalen bei gegebenen Seitenlängen bestimmen.";;1;45
+276;1707522968;2;;;"das Quadrat und die Quadratwurzel einer Zahl aus dem Graphen einer quadratischen Funktion bestimmen.";1;;45
+277;1707522968;2;1;1;"die Steigung als Bruch oder in Prozenten angeben.";;;46
+278;1707522968;2;1;1;"die Steigung anhand von Keilen, Plänen oder Grössenangaben bestimmen.";;;46
+279;1707522968;2;1;;"zu einer Steigung verschiedene Keile erstellen.";;;46
+280;1707522968;2;1;;"den Unterschied zwischen durchschnittlicher und maximaler Steigung an einem Beispiel erklären.";;;46
+281;1707522968;2;;1;"den Unterschied zwischen durchschnittlicher und maximaler Steigung an einem Beispiel erklären.";;;46
+282;1707522968;2;;1;"bei einem Keil die fehlende Seitenlänge berechnen, wenn die Steigung und eine Seitenlänge bekannt sind.";;;46
+283;1707522968;2;;;"bei einem Keil die fehlende Seitenlänge berechnen, wenn die Steigung und eine Seitenlänge bekannt sind.";;1;46
+284;1707522968;2;;;"Steigungen bei Treppen, Leitern und anderen Geraten bestimmen.";;1;46
+285;1707522968;2;;;"die Steigungen von Geraden in einem Koordinatensystem bestimmen.";;1;46
+286;1707522968;2;;;"den Unterschied zwischen positiver und negativer Steigung erklären.";1;;46
+287;1707522968;2;;;"die Steigungen und Gleichungen von Geraden in einem Koordinatensystem bestimmen.";1;;46
+288;1707522969;2;;;"Geradengleichungen und Graph anhand von Wertetabellen erstellen.";1;;46
+289;1707522969;2;1;1;"die mittlere Geschwindigkeit von Fahrzeugen experimentell und rechnerisch bestimmen.";;;47
+290;1707522969;2;1;1;"mit zusammengesetzten Grössen rechnen.";;;47
+291;1707522969;2;1;1;"Informationen zu Bewegungen aus der Wirklichkeit, Texten und Grafiken entnehmen und von einer Darstellungsform in die andere übertragen.";;;47
+292;1707522969;2;1;;"die Dichte von verschiedenen Materialien experimentell und rechnerisch bestimmen.";;;47
+293;1707522969;2;;1;"die Dichte von verschiedenen Materialien experimentell, rechnerisch und aus der Steigung einer Geraden bestimmen.";;;47
+294;1707522969;2;;;"Aussagen beurteilen, die Zusammenhänge zwischen Grössen beschreiben.";1;1;47
+295;1707522969;2;;;"aus der Steigung einer Geraden, die das Verhältnis zwischen Gewicht (Masse) und Volumen eines Materials darstellt, auf die Dichte dieses Materials schliessen.";;1;47
+296;1707522969;2;;;"Anhalteweg und Benzinverbrauch mittels Grafiken und Formeln bestimmen und berechnen.";1;;47
+297;1707522969;2;1;1;"Terme mit Zehnerpotenzen vergleichen und einfache Zahlenterme mit Zehnerpotenzen auswerten.";;;48
+298;1707522969;2;1;;"die verschiedenen Schreibweisen von Zehnerpotenzen mit positiven und negativen Exponenten verstehen und die Zahlen im Zahlenraum einordnen.";;;48
+299;1707522969;2;;1;"Zahlen in Ziffern- und Potenz- sowie in wissenschaftlicher Schreibweise schreiben, lesen und ordnen.";;;48
+300;1707522969;2;;1;"Zehnerpotenzen in verschiedenen Zusammenhängen verwenden und mit ihnen rechnen.";;;48
+301;1707522969;2;;1;"Produkte, Quotienten und Potenzen von Zehnerpotenzen berechnen.";;;48
+302;1707522969;2;;;"die Bedeutung grosser und ganz kleiner Zahlen in Sachkontexten sehen und entsprechende Berechnungen durchführen.";1;1;48
+303;1707522969;2;;;"mit Zahlen in wissenschaftlicher Schreibweise rechnen.";;1;48
+304;1707522969;2;;;"Zehnerpotenzen in verschiedenen Zusammenhängen verwenden und mit ihnen rechnen.";;1;48
+305;1707522969;2;;;"einfache Grundoperationen mit grossen und kleinen Zahlen sowie Zahlen in wissenschaftlicher Schreibweise durchführen.";;1;48
+306;1707522969;2;;;"Zahlen in wissenschaftlicher Schreibweise schreiben und lesen.";;1;48
+307;1707522969;2;;;"Buchstaben- und Zahlenterme (Produkte, Quotienten und Potenzen) mit Zehnerpotenzen umformen und vereinfachen.";1;;48
+308;1707522969;2;1;1;"die Oberfläche und das Volumen eines Zylinders berechnen.";;;49
+309;1707522969;2;1;;"jemandem die Zahl p als Verhältniszahl erklären.";;;49
+310;1707522969;2;1;;"den Wert der Zahl p auf zwei Stellen nach dem Komma angeben.";;;49
+311;1707522969;2;1;;"den Umfang und die Fläche eines Kreises bei gegebenem Radius oder Durchmesser berechnen.";;;49
+312;1707522969;2;;1;"jemandem die Zahl p als Verhältniszahl erklären und auf zwei Stellen nach dem Komma angeben.";;;49
+313;1707522969;2;;1;"den Umfang und die Fläche eines Kreises bei gegebenem Radius oder Durchmesser berechnen und umgekehrt.";;;49
+314;1707522969;2;;1;"Flächen von Kreissektoren als Bruchteil oder in Prozenten eines ganzen Kreises abschätzen.";;;49
+315;1707522969;2;;;"Längen von Linien, die aus Kreisteilen zusammengesetzt sind, berechnen.";1;1;49
+316;1707522969;2;;;"Teilflächen eines Kreises als Bruchteil oder in Prozenten eines ganzen Kreises abschätzen.";;1;49
+317;1707522969;2;;;"die Fläche eines Kreissektors bei gegebenem Radius und Zentriwinkel berechnen.";;1;49
+318;1707522969;2;;;"Flächen von Kreisteilen und Kreisringen berechnen.";1;;49
+319;1707522969;2;;;"Umfang- und Flächenformel von Kreisen begründen.";1;;49
+320;1707522969;2;1;;"zweistellige Faktoren mithilfe des Malkreuzes ausmultiplizieren.";;;50
+321;1707522969;2;1;;"zusammengesetzte rechtwinklige Flächen mit Zahlen und mit Variablen beschreiben.";;;50
+322;1707522969;2;;1;"Produktterme ausmultiplizieren und wo möglich Summenterme ausklammern (faktorisieren).";;;50
+323;1707522969;2;;1;"das Ausklammern an geometrischen Objekten anwenden.";;;50
+324;1707522969;2;;1;"die binomischen Formeln in Form des Summenterms und in Form des Produktterms erkennen.";;;50
+325;1707522969;2;;;"die binomischen Formeln anhand einer Skizze verdeutlichen.";;1;50
+326;1707522970;2;;;"Rechenvorteile durch Zahlenzerlegungen nutzen.";;1;50
+327;1707522970;2;;;"entscheiden, ob sich ein Term faktorisieren lässt.";1;;50
+328;1707522970;2;;;"die drei Formen des Faktorisierens nennen und sie anwenden.";1;;50
+329;1707522970;2;;;"Terme wo möglich als Summen und als Produkte nennen.";1;;50
+330;1707522970;2;;;"Terme durch Ausprobieren und Überlegen faktorisieren.";1;;50
+331;1707522970;2;;;"Summenterme durch Ausklammern oder mithilfe der binomischen Formeln faktorisieren.";1;;50
+332;1707522970;2;1;1;"bestimmen, ob sich das Volumen eines Körpers mit der Formel «Grundfläche · Höhe» berechnen lässt.";;;51
+333;1707522970;2;1;1;"einfache gerade Prismen und Zylinder herstellen und als Schrägbild skizzieren.";;;51
+334;1707522970;2;1;1;"das Volumen und die Oberfläche von (geraden) Prismen und Zylindern berechnen.";;;51
+335;1707522970;2;;1;"in einigen Fällen Buchstabenterme zu Volumen und Oberfläche von geraden Köpern finden.";;;51
+336;1707522970;2;;;"das Volumen mit der Formel V = G · h und die Oberfläche von geraden und schiefen Körpern berechnen.";1;1;51
+337;1707522970;2;;;"Buchstabenterme zu Volumen und Oberfläche von geraden Körpern finden.";;1;51
+338;1707522970;2;;;"Netze und Schnittflächen von Körpern zeichnen.";;1;51
+339;1707522970;2;;;"Buchstabenterme zu Volumen und Oberfläche von beliebigen geraden Körpern finden.";1;;51
+340;1707522970;2;;;"aufgrund eines Buchstabenterms zum Volumen entsprechende Körper skizzieren.";1;;51
+341;1707522970;2;;;"Schnittflächen von Körpern zeichnen.";1;;51
+342;1707522970;2;1;1;"die dritte der drei Grössen «Kapital – Zinssatz – Jahreszins» berechnen, wenn zwei davon gegeben sind.";;;52
+343;1707522970;2;1;1;"Preise bei gegebenen Rabatten und umgekehrt berechnen.";;;52
+344;1707522970;2;1;;"absolute und relative Zu- oder Abnahmen berechnen.";;;52
+345;1707522970;2;1;;"absolute und relative Gewinne oder Verluste berechnen.";;;52
+346;1707522970;2;;1;"absolute und relative Zu- oder Abnahmen berechnen und allgemein beschreiben.";;;52
+347;1707522970;2;;1;"absolute und relative Gewinne oder Verluste berechnen und allgemein beschreiben.";;;52
+348;1707523815;2;;;"neues Kapital bei gegebenem Anfangskapital und Zinssatz berechnen.";;1;52
+349;1707522970;2;;;"Formeln für die Berechnung des Zinses, Zinsfusses und Anfangskapitals finden und gebrauchen.";;1;52
+350;1707522970;2;;;"Beziehungen zwischen Kapital und Zins bei gegebenem Zinsfuss grafisch darstellen.";;1;52
+351;1707522970;2;;;"die dritte der drei Grössen «altes Kapital – Zinssatz – neues Kapital» berechnen, wenn zwei davon gegeben sind.";1;;52
+352;1707522970;2;;;"Formeln für die Berechnung des Zinses, Zinssatzes, Anfangs- und Endkapitals finden und gebrauchen.";1;;52
+353;1707522970;2;;;"Beziehungen zwischen Kapital und Zins sowie altem und neuem Kapital bei gegebenem Zinssatz grafisch darstellen.";1;;52
+354;1707522970;2;1;1;"die Anzahl Möglichkeiten bei kombinatorischen Problemen bestimmen.";;;53
+355;1707522970;2;1;1;"die Wahrscheinlichkeit als Verhältnis ausdrücken.";;;53
+356;1707522970;2;1;1;"Wahrscheinlichkeiten in einfachen Fällen bestimmen.";;;53
+357;1707522970;2;;1;"Wahrscheinlichkeiten bei zweistufigen Versuchen bestimmen.";;;53
+358;1707522970;2;;;"kombinatorische Erkenntnisse bei kleinen Anzahlen auf grössere Anzahlen übertragen.";1;1;53
+359;1707522970;2;;;"Wahrscheinlichkeiten in einfachen, mehrstufigen Fällen bestimmen.";;1;53
+360;1707522970;2;;;"die Anzahl Permutationen von bis zu vier Elementen bestimmen.";;1;53
+361;1707522970;2;;;"den Zusammenhang zwischen Peripheriewinkel und Zentriwinkel erklären.";1;1;54
+362;1707522970;2;;;"die Eigenschaft des Thaleskreises erklären.";;1;54
+363;1707522970;2;;;"die Tangenten an einen Kreis konstruieren.";;1;54
+364;1707522970;2;;;"Wahrscheinlichkeiten bei einfachen Glücksspielen schätzen.";1;;54
+365;1707522970;2;;;"die Anzahl Permutationen von n Elementen (n = 6) bestimmen.";1;;54
+366;1707522970;2;;;"die Eigenschaft des Thaleskreises begründen.";1;;54
+367;1707522970;2;;;"die Tangenten an einen oder zwei Kreisen konstruieren.";1;;54
+368;1707522970;2;;;"Sehnen- und Tangentenvierecke unter den Vierecksarten erkennen.";1;;54
+369;1707522970;2;;;"Lösungswege verstehen, nachvollziehen und vergleichen.";1;1;55
+370;1707522970;2;;;"geometrische Probleme durch Probieren und durch Umkehrüberlegungen rechnerisch lösen.";1;1;55
+371;1707522970;2;;;"geometrische Probleme algebraisch formulieren und mithilfe von Gleichungen lösen.";1;1;55
+372;1707522970;2;;;"Anzahlen strukturiert auszählen.";1;1;56
+373;1707522970;2;;;"Auszählmethoden visuell darstellen und in Terme übersetzen.";1;1;56
+374;1707522970;2;;;"die Gleichwertigkeit verschiedener Terme durch Umformen aufzeigen.";1;1;56
+375;1707522970;2;;;"Algorithmen zur Bildung von magischen Quadraten nachvollziehen und beschreiben.";1;1;57
+376;1707522971;2;;;"magische Quadrate systematisch verändern und Veränderungen algebraisch beschreiben.";1;1;57
+377;1707522971;2;;;"Strukturen untersuchen, beschreiben und begründen.";1;1;57
+378;1707522971;2;;;"aus Texten und Grafiken Informationen entnehmen, diese interpretieren und damit Berechnungen durchführen.";1;1;58
+379;1707522971;2;;;"durchschnittliche Geschwindigkeiten berechnen.";1;1;58
+380;1707522971;2;;;"Geschwindigkeiten in geeigneten Masseinheiten angeben.";1;1;58
+381;1707522971;2;;;"Marchzinsen berechnen.";1;1;59
+382;1707522971;2;;;"Jahreszinsen berechnen bei wechselnden Zinssätzen.";1;1;59
+383;1707522971;2;;;"ein einfaches Konto (Jugendsparkonto) führen.";1;1;59
+384;1707522971;2;;;"Zahlen und Ergebnisse in einer sinnvollen Genauigkeit angeben.";1;1;60
+385;1707522971;2;;;"Zahlenangaben beurteilen (Vertrauenswürdigkeit, Genauigkeit, Herkunft, mögliche Schlussfolgerungen).";1;1;60
+386;1707522971;2;;;"zu Informationen mittels Überschlagsrechnung Zahlen/Werte gewinnen.";1;1;60
+387;1707522971;2;;;"Koordinaten zu Punkten im Raum angeben.";1;1;61
+388;1707522971;2;;;"mir Koordinaten im Raum vorstellen und Positionen im Raum mit Koordinaten beschreiben.";1;1;61
+389;1707522971;2;;;"den Abstand zwischen zwei Koordinaten berechnen.";1;1;61
+390;1707522971;2;;;"den Wochentag meines Geburtstags in jedem Jahr meines bisherigen Lebens bestimmen.";1;1;62
+391;1707522971;2;;;"entscheiden, ob eine Zahl durch 2, 3, 4, 5 oder 6 teilbar ist.";;1;62
+392;1707522971;2;;;"bestimmen, welchen Rest eine natürliche Zahl bei einer Division durch 3, 4, 5, 6, 8 und 9 hat.";;1;62
+393;1707522971;2;;;"entscheiden, ob eine Zahl durch 2, 3, 4, 5, 6, 8, 9 oder 11 teilbar ist.";1;;62
+394;1707522971;2;;;"bestimmen, welchen Rest eine natürliche Zahl bei einer Division durch 3, 4, 5, 6, 8, 9 und 11 hat.";1;;62
+395;1707522971;2;;;"entscheiden, ob eine Zahl durch 12, 15, 18 oder 25 teilbar ist.";1;;62
+396;1707522971;2;;;"Wahrscheinlichkeiten schätzen.";1;1;63
+397;1707522971;2;;;"Wahrscheinlichkeiten mit Hilfe von relativen Häufigkeiten bei einer grossen Anzahl von Versuchen bestimmen.";1;1;63
+398;1707522971;2;;;"Wahrscheinlichkeiten von mehrstufigen Experimenten mit Hilfe von Baumdiagramm und Pfadregeln bestimmen.";1;1;63
+399;1707522971;2;;;"Bruchterme veranschaulichen, z. B. als Anteile einer Fläche.";1;1;64
+400;1707522971;2;;;"Bruchterme auswerten.";1;1;64
+401;1707522971;2;;;"Bruchterme addieren und subtrahieren.";1;1;64
+402;1707522971;2;;;"Bruchterme multiplizieren und dividieren.";1;1;64
+403;1707522971;3;1;;"Informationen aus Texten, Tabellen und grafischen Darstellungen entnehmen und damit Berechnungen und Vergleiche durchführen.";;;65
+404;1707522971;3;1;;"Graphen interpretieren und die Abhängigkeit zweier Grössen beschreiben.";;;65
+405;1707522971;3;1;;"Graphen zeichnen und anhand dieser Graphen Aussagen beurteilen.";;;65
+406;1707522971;3;1;;"die vier Grundoperationen auch mit Dezimalbrüchen und Grössen sicher und geläufig durchführen.";;;66
+407;1707522971;3;1;;"den Wert von Zahlentermen berechnen und dabei Rechengesetze berücksichtigen.";;;66
+408;1707522971;3;1;;"einfache Gleichungen lösen.";;;66
+409;1707522971;3;1;;"Diagramme lesen und zeichen.";;;67
+410;1707522971;3;1;;"Wertetabellen lesen und auf Zusammenhänge hin untersuchen.";;;67
+411;1707522971;3;1;;"mit den Daten Berechnungen durchführen.";;;67
+412;1707522971;3;1;;"die Bedeutung von gewichteten Anteilen an einer Gesamtgrösse erkennen.";;;67
+413;1707522971;3;1;;"die Entwicklung eines Indexes verstehen.";;;67
+414;1707522971;3;1;;"ebene Figuren zeichnen und ihren Flächeninhalt durch messen und Berechnen bestimmen.";;;68
+415;1707522971;3;1;;"Formeln für die Berechnung von Flächeninhalt und Umfang bei den einfachen ebenen Figuren angeben und anwenden.";;;68
+416;1707522971;3;1;;"Formeln für die Berechnung von Oberfläche und Volumen bei Quadern und Zylindern angeben und anwenden.";;;68
+417;1707522972;3;1;;"mir Einheitsgrössen für Flächen- und Rauminhalte vorstellen.";;;69
+418;1707522972;3;1;;"Flächen und Rauminhalte von einer Einheit in die benachbarte umrechnen.";;;69
+419;1707522972;3;1;;"von einem Material mit bekannter Dichte und bekannter Masse das Volumen bestimmen und umgekehrt.";;;69
+420;1707522972;3;1;;"Tabellen und Graphen interpretieren und damit Berechnungen anstellen.";;;69
+421;1707522972;3;1;;"Kartenangaben in Tabellen und Profile übersetzen.";;;70
+422;1707522972;3;1;;"Steigungen und wahre Distanzen berechnen.";;;70
+423;1707522972;3;1;;"bei Berechnungen und Darstellungen den Massstab von Karten einbeziehen.";;;70
+424;1707522972;3;1;;"mit ausgewählten Beispielen argumentieren.";;;71
+425;1707522972;3;1;;"Aussagen mit Skizzen illustrieren.";;;71
+426;1707522972;3;1;;"Existenz-Behauptungen mit einem Beispiel widerlegen.";;;71
+427;1707522972;3;1;;"an Beispielen erklären, dass das Volumen einer mit dem Streckfaktor k vergrösserten oder verkleinerten Figur mit dem Faktor k³ vergrössert oder verkleinert wird.";;1;72
+428;1707522972;3;1;;"anhand der Seitenlänge zweier Dreiecke entscheiden, ob sie ähnlich sind oder nicht.";;1;72
+429;1707522972;3;1;;"Längen, Flächen, Winkel und Volumen einer Figur bei bekannten Streckfaktor berechnen.";;1;72
+430;1707522972;3;1;;"erklären, warum die Papierformate A0 bis A6 zueinander ähnlich sind.";;1;72
+431;1707590367;3;1;;"jemandem den Unterschied zwischen kongruenten und ähnlichen Figuren erklären.";;;72
+432;1707522972;3;1;;"eine Figur von einem Punkt aus mit einem Streckfaktor vergrössern oder verkleinern.";;;72
+433;1707522972;3;1;;"durch Messen der Seitenlänge zweier ähnlicher Figuren den Streckfaktor bestimmen.";;;72
+434;1707522972;3;1;;"an Beispielen erklären, dass die Fläche einer mit dem Streckfaktor k vergrösserten oder verkleinerten Figur mit dem Faktor k² vergrössert oder verkleinert wird.";;;72
+435;1707524272;3;1;;"verschiedene Informationen in grafischen Darstellungen kombinieren.";;1;73
+436;1707522972;3;1;;"Berechnungen durchführen, die sich auf mehrere Darstellungen und Grafiken stützen.";;1;73
+437;1707522972;3;1;;"Angaben in Texten, Statistiken und Grafiken auswählen, gewichten und weiterverarbeiten.";;1;73
+438;1707522972;3;1;;"Bevölkerungspyramiden interpretieren und vergleichen.";;;73
+439;1707522972;3;1;;"Statistiken, grafische Darstellungen und Texte zur Demografie lesen und interpretieren.";;;73
+440;1707522972;3;1;;"datengestützte Berechnungen ausführen.";;;73
+441;1707522972;3;1;;"statistische Angaben mit Grafiken darstellen.";;;73
+442;1707522972;3;1;;"die Höhe der Pyramide berechnen.";;1;74
+443;1707522972;3;1;;"unterschiedliche Pyramiden und Prismen, die einen Bruchteil eines Würfels ausmachen, im Würfel einzeichnen.";;1;74
+444;1707524454;3;1;;"das Netz einer quadratischen Pyramide zeichnen, wenn die Grundfläche und die Körperhöhe gegeben sind.";;1;74
+445;1707522972;3;1;;"den Unterschied von Pyramiden Prismen beschreiben.";;;74
+446;1707522972;3;1;;"in Netzen eine mögliche Grundfläche und den entsprechenden Mantel einzeichnen.";;;74
+447;1707522972;3;1;;"anhand von Zahlenwerten oder mithilfe eines Netzes das Volumen eines Prismas berechnen.";;;74
+448;1707522972;3;1;;"das Volumen von Pyramiden berechnen, wenn die Körperhöhe und die Grundfläche gegeben sind.";;;74
+449;1707522972;3;1;;"Funktionsgleichungen aufstellen für die Gesamtkosten oder Stückpreise.";;1;75
+450;1707522972;3;1;;"mithilfe von Funktionsgleichungen passende x bestimmen.";;1;75
+451;1707522973;3;1;;"Funktionsgleichungen veränderten Bedingungen anpassen.";;1;75
+452;1707522973;3;1;;"Situationen einer Wertetabelle, einem Graphen oder einem Term zuordnen und umgekehrt.";;;75
+453;1707522973;3;1;;"Graphen einem Term zuordnen und umgekehrt.";;;75
+454;1707522973;3;1;;"die Gesamtkosten und die Kosten für eine Person oder ein Stück tabellarisch darstellen und berechnen.";;;75
+455;1707522973;3;1;;"einfache Terme finden und abschätzen, wie sich y ändert, wenn x grösser oder kleiner wird.";;;75
+456;1707522973;3;1;;"jemanden das 3-Säulenprinzip der Vorsorge erklären.";;1;76
+457;1707522973;3;1;;"die Daten einer Tabelle grafisch darstellen.";;1;76
+458;1707522973;3;1;;"aus Preisen inkl. Mehrwertsteuern die Steuern berechnen.";;1;76
+459;1707522973;3;1;;"jemandem den Unterschied zwischen Nettolohn und Bruttolohn erklären.";;;76
+460;1707522973;3;1;;"an Beispielen die prozentualen Lohnanteile von Sozialabzügen berechnen.";;;76
+461;1707522973;3;1;;"Zinsen und Endkapital bei gegebenem Anfangskapital und Zinsfuss berechnen.";;;76
+462;1707522973;3;1;;"Daten in einer Tabelle interpretieren.";;;76
+463;1707522973;3;1;;"Tabellenkalkulation als Hilfsmittel für Berechnungen einsetzen.";;1;77
+464;1707522973;3;1;;"Budgetberechnungen verstehen und durchführen.";;1;77
+465;1707522973;3;1;;"Kostenberechnungen bei Kredit- und Leasinggeschäften verstehen und durchführen.";;;77
+466;1707522973;3;1;;"finanzielle Auswirkungen von Kreditgeschäften auf ein gegebenes Budget beurteilen.";;;77
+467;1707522973;3;1;;"die Anzahl Möglichkeiten berechnen, wenn aus einer bestimmten Anzahl Zahlen eine, zwei, drei oder mehr Zahlen gezogen werden und meine Berechnungen begründen.";;1;78
+468;1707522973;3;1;;"statistische Angaben zu Ziehungen erläutern und dazu Berechnungen anstellen.";;1;78
+469;1707522973;3;1;;"Wettgewinne entsprechend der Gewinnwahrscheinlichkeiten einschätzen.";;1;78
+470;1707522973;3;1;;"die Ergebnisse von Simulationen mit Erwartungswerten vergleichen.";;1;78
+471;1707522973;3;1;;"Einfache Wahrscheinlichkeiten beim Roulettespiel berechnen.";;;78
+472;1707522973;3;1;;"Gewinn und Verlust beim Roulette berechnen.";;;78
+473;1707522973;3;1;;"Simulationen zu Zahlenlotto und Roulette durchführen und auswerten.";;;78
+474;1707522973;3;1;;"anhand von mir bekannten Objekten im Plan den Massstab bestimmen.";;1;79
+475;1707522973;3;1;;"vielschrittige Berechnungen durchführen und nachvollziehbar dokumentieren.";;1;79
+476;1707522973;3;1;;"den Zusammenhang erfassen zwischen der Angabe von Steigung in Grad und in Prozent.";;1;79
+477;1707522973;3;1;;"Pläne lesen und mir entsprechende Objekte vorstellen.";;;79
+478;1707522973;3;1;;"anhand Massstabangabe im Plan die reale Grösse bestimmen.";;;79
+479;1707522973;3;1;;"durch Messen im Plan die Steigung in Prozent bestimmen und den Neigungswinkel messen.";;;79
+480;1707522973;3;1;;"Flächen und Volumen berechnen.";;;79
+481;1707522973;3;1;;"Gemeinsamkeiten und Unterschiede von Prisma, Zylinder, Pyramide und Kegel beschrieben.";;1;80
+482;1707522973;3;1;;"die Formel von Kegel- und Kugelvolumen verstehen.";;1;80
+483;1707522973;3;1;;"Umkehrüberlegungen zur Berechnung von Zylinder und Kegel durchführen.";;1;80
+484;1707522973;3;1;;"die Kugeloberfläche experimentell bestimmen und die Erkenntnisse anwenden.";;1;80
+485;1707522973;3;1;;"unterschiedliche Lösungswege und Formeln verstehen.";;1;80
+486;1707522973;3;1;;"Figuren im Koordinatensystem mithilfe der Koordinaten beschreiben.";;1;81
+487;1707522973;3;1;;"Spiegelachsen erkennen und Punkte durch Drehungen zur Deckung bringen.";;1;81
+488;1707522973;3;1;;"Figuren strecken und Streckzentren erkennen.";;1;81
+489;1707522973;3;1;;"Informationen aus Texten und Tabellen entnehmen, interpretieren und verarbeiten.";;1;82
+490;1707522973;3;1;;"Berechnungen zur direkten Proportionalität durchführen.";;1;82
+491;1707522973;3;1;;"mir Grössen vorstellen und mit Grössen in angemessener Genauigkeit rechnen.";;1;82
+492;1707522973;3;1;;"relative und absolute Fehler berechnen.";;1;83
+493;1707522973;3;1;;"Zahlen in einer sinnvollen Genauigkeit angeben.";;1;83
+494;1707522973;3;1;;"Doppelrechnungen durchführen.";;1;83
+495;1707522973;3;1;;"zu Figurenfolgen eine entsprechende Wertetabelle erstellen.";;;84
+496;1707522973;3;1;;"zu einer Wertetabelle verschiedene Figurenfolgen angeben.";;;84
+497;1707522973;3;1;;"eine Figurenfolge mit einem Term oder mehreren Termen beschreiben.";;;84
+498;1707522973;3;1;;"Informationen aus Texten, Tabellen und Grafiken entnehmen, interpretieren verarbeiten.";;;85
+499;1707522973;3;1;;"Berechnungen zur direkten Proportionalität durchführen.";;;85
+500;1707522973;3;1;;"mir Grössen vorstellen und mit Grössen in angemessener Genauigkeit rechnen.";;;85
+501;1707522974;3;1;;"exponentielles Wachstum als explosionsartigen Prozess erkennen.";;;86
+502;1707522974;3;1;;"exponentielles Wachstum mithilfe von Potenzen beschreiben.";;;86
+503;1707522974;3;1;;"Kapital inkl. Zinseszinsen nach n Jahren berechnen.";;;86
+504;1707522974;3;1;;"jemandem an einem Beispiel exponentiellen Zerfall erklären.";;;86
+505;1707522974;3;1;;"Beziehungen zwischen Produkten erkennen und visualisieren.";;;87
+506;1707522974;3;1;;"die Verwandtschaft zwischen Zahlentermen algebraisch darstellen.";;;87
+507;1707522974;3;1;;"Zahlenstrukturen beschreiben und begründen.";;;87
+508;1707522974;3_plus;;1;"Informationen aus Texten, Tabellen und grafischen Darstellungen entnehmen und damit Berechnungen und Vergleiche durchführen.";;;88
+509;1707522974;3_plus;;1;"Graphen interpretieren und die Abhängigkeit zweier Grössen beschreiben.";;;88
+510;1707522974;3_plus;;1;"Graphen zeichnen und anhand dieser Graphen Aussagen beurteilen.";;;88
+511;1707522974;3_plus;;1;"die vier Grundoperationen mit gebrochenen Zahlen und Grössen sicher und geläufig durchführen.";;;89
+512;1707522974;3_plus;;1;"den Wert von Zahlentermen berechnen und dabei Rechengesetze berücksichtigen.";;;89
+513;1707522974;3_plus;;1;"einfache Gleichungen lösen.";;;89
+514;1707522974;3_plus;;1;"einfache Rechnungen mit Potenzen und Wurzeln lösen.";;;89
+515;1707522974;3_plus;;1;"Diagramme lesen und zeichnen.";;;90
+516;1707522974;3_plus;;1;"Wertetabellen lesen und auf Zusammenhänge hin untersuchen.";;;90
+517;1707522974;3_plus;;1;"mit den Daten Berechnungen durchführen.";;;90
+518;1707522974;3_plus;;1;"die Bedeutung von gewichteten Anteilen an einer Gesamtgrösse erkennen.";;;90
+519;1707522974;3_plus;;1;"die Entwicklung eines Indexes verstehen.";;;90
+520;1707522974;3_plus;;1;"ebene Figuren zeichnen und ihren Flächeninhalt und Umfang durch Messen und Berechnungen bestimmen.";;;91
+521;1707522974;3_plus;;1;"Formeln für die Berechnung von Flächeninhalten, Oberflächen und Volumen bei Prismen und Zylindern angeben und anwenden.";;;91
+522;1707522974;3_plus;;1;"Formeln nach gesuchten Grössen umformen.";;;91
+523;1707522974;3_plus;;1;"Punkte im Koordinatensystem benennen.";;;91
+524;1707522974;3_plus;;1;"mit Einheitsgrössen für Flächen- und Rauminhalte vorstellen.";;;92
+525;1707522974;3_plus;;1;"Flächen und Rauminhalte von einer Einheit in die benachbarte umrechnen.";;;92
+526;1707522974;3_plus;;1;"von einem Material mit bekannter Dichte und bekannter Masse das Volumen bestimmen und umgekehrt.";;;92
+527;1707522974;3_plus;;1;"Tabellen und Graphen interpretieren und damit Berechnungen anstellen.";;;92
+528;1707522974;3_plus;;1;"zu Figurenfolgen eine entsprechende Wertetabelle erstellen.";;;93
+529;1707522974;3_plus;;1;"zu einer Wertetabelle verschiedene Figurenfolgen angeben.";;;93
+530;1707522974;3_plus;;1;"eine Figurenfolge mit einem Term oder mehreren Termen beschreiben.";;;93
+531;1707522974;3_plus;;1;"durch Umformungen zeigen, dass zwei Terme gleichwertig sind.";;;93
+532;1707522974;3_plus;;1;"Kartenangaben in Tabellen und Profile übersetzen.";;;94
+533;1707522974;3_plus;;1;"Steigungen und wahre Distanzen berechnen.";;;94
+534;1707522974;3_plus;;1;"bei Berechnungen und Darstellungen den Massstab von Karten einbeziehen..";;;94
+535;1707522974;3_plus;;1;"mit ausgewählten Beispielen argumentieren.";;;95
+536;1707522974;3_plus;;1;"Existenz-Behauptungen mit einem Beispiel beweisen.";;;95
+537;1707522974;3_plus;;1;"All-Behauptungen mit einem Beispiel widerlegen.";;;95
+538;1707522974;3_plus;;1;"eine Figur von einem Punkt aus auch mit einem negativen Streckfaktor vergrössern oder verkleinern.";1;;96
+539;1707522974;3_plus;;1;"anhand der Seitenlänge zweier Dreiecke entscheiden, ob sie ähnlich sind oder nicht.";1;;96
+540;1707522974;3_plus;;1;"Längen, Flächen, Winkel und Volumen einer zu einer gegebenen Figur ähnlichen Figur bei bekanntem Streckfaktor berechnen.";1;;96
+541;1707522974;3_plus;;1;"begründen, warum die Papierformate A0 bis A6 zueinander ähnlich sind.";1;;96
+542;1707522974;3_plus;;1;"jemandem den Unterschied zwischen kongruenten und ähnlichen Figuren erklären.";;;96
+543;1707522974;3_plus;;1;"eine Figur von einem Punkt aus mit einem Streckfaktor vergrössern oder verkleinern.";;;96
+544;1707522974;3_plus;;1;"an Beispielen erklären, dass die Fläche einer mit dem Streckfaktor k vergrösserten oder verkleinerten Figur mit dem Faktor k² vergrössert oder verkleinert wird.";;;96
+545;1707522974;3_plus;;1;"an Beispielen erklären, dass das Volumen einer mit dem Streckfaktor k  vergrösserten oder verkleinerten Figur mit dem Faktor k³ vergrössert oder verkleinert wird.";;;96
+546;1707522974;3_plus;;1;"Verschiedene Informationen in grafischen Darstellungen kombinieren.";1;;97
+547;1707522974;3_plus;;1;"Berechnungen durchführen, die sich auf mehrere Darstellungen und Grafiken stützen.";1;;97
+548;1707522974;3_plus;;1;"Angaben in Texten, Statistiken und Grafiken auswählen, gewichten und weiterverarbeiten.";1;;97
+549;1707522974;3_plus;;1;"Bevölkerungspyramiden interpretieren und vergleichen.";;;97
+550;1707522974;3_plus;;1;"Statistiken, grafische Darstellungen und Texte zur Demografie lesen und interpretieren.";;;97
+551;1707522975;3_plus;;1;"datengestützte Berechnungen ausführen.";;;97
+552;1707522975;3_plus;;1;"statistische Angaben mit Grafiken darstellen.";;;97
+553;1707522975;3_plus;;1;"Bruchgleichungen durch geschicktes Umformen lösen.";1;;98
+554;1707522975;3_plus;;1;"Gleichungen mit Formvariablen lösen.";1;;98
+555;1707522975;3_plus;;1;"Zahlenrätsel in Gleichungen übersetzen und lösen.";1;;98
+556;1707522975;3_plus;;1;"einfache Gleichungen mit Wurzeln und Quadraten lösen.";1;;98
+557;1707522975;3_plus;;1;"Ungleichungen lösen.";1;;98
+558;1707522975;3_plus;;1;"einfache Gleichungen im Kopf lösen.";;;98
+559;1707522975;3_plus;;1;"lineare Gleichungen durch geschicktes Umformen lösen.";;;98
+560;1707522975;3_plus;;1;"Gleichungen mit gebrochenen Termen durch geschicktes Umformen lösen.";;;98
+561;1707522975;3_plus;;1;"allgemeingültige, lösbare und unlösbare Gleichungen erkennen.";;;98
+562;1707522975;3_plus;;1;"Geraden an Achsen spiegeln und Beziehungen der beiden Gleichungen erkennen.";1;;99
+563;1707522975;3_plus;;1;"Geraden parallel verschieben und Beziehungen der beiden Gleichungen erkennen.";1;;99
+564;1707522975;3_plus;;1;"den linearen Zusammenhang zwischen zwei Temperaturskalen durch eine Gleichung beschreiben.";1;;99
+565;1707522975;3_plus;;1;"bei der allgemeinen Form der Geradengleichung y=ax+b die Bedeutung der Variablen erklären.";1;;99
+566;1707522975;3_plus;;1;"in einer realen Situation lineare Zusammenhänge erkennen und sie in Worten beschreiben.";;;99
+567;1707522975;3_plus;;1;"Beziehungen zwischen einer linearen Gleichung, ihrem Graphen und der Wertetabelle erkennen und umgekehrt.";;;99
+568;1707522975;3_plus;;1;"bestimmen, ob ein Punkt auf einer Geraden liegt oder nicht.";;;99
+569;1707522975;3_plus;;1;"die Gleichungen einer Geraden bestimmen, wenn die Koordinaten von zwei Punkten gegeben sind.";;;99
+570;1707522975;3_plus;;1;"Umformungen mit Wurzeltermen allgemein durchführen.";1;;100
+571;1707522975;3_plus;;1;"Eigenschaften der verschiedenen Zahlmengen beschreiben.";1;;100
+572;1707522975;3_plus;;1;"komplexe geometrische Fragestellungen u. a. mithilfe des Satzes des Pythagoras lösen.";1;;100
+573;1707522975;3_plus;;1;"Potenzgesetze herleiten und anwenden.";1;;100
+574;1707522975;3_plus;;1;"die Unterschiede zwischen rationalen und irrationalen Zahlen benennen und zu den Zahlmengen Beispiele angeben.";;;100
+575;1707522975;3_plus;;1;"mit reellen Zahlen operieren mithilfe des Rechners.";;;100
+576;1707522975;3_plus;;1;"einfache Operationen mit Wurzeltermen durchführen sowie Umformungen von Wurzeltermen durch Einsetzen von Zahlbeispielen überprüfen.";;;100
+577;1707522975;3_plus;;1;"Flächen und Strecken u. a. mithilfe des Satzes des Pythagoras berechnen.";;;100
+578;1707522975;3_plus;;1;"Berechnungen an Pyramiden- und Kegelstümpfen durchführen.";1;;101
+579;1707522975;3_plus;;1;"Optimierungsaufgaben an Pyramiden und Kegel bearbeiten und lösen.";1;;101
+580;1707522975;3_plus;;1;"aufgrund weniger Angaben zu einem Kegel oder einer Pyramide die fehlenden Grössen berechnen.";1;;101
+581;1707522975;3_plus;;1;"Körper zerlegen und zusammensetzen sowie Zerlegungen zum Berechnen nutzen.";1;;101
+582;1707522975;3_plus;;1;"verschiedene Pyramiden in Würfel einzeichnen und deren Volumen berechnen.";;;101
+583;1707522975;3_plus;;1;"zeigen, weshalb das Volumen einer rechteckigen Pyramide 1/3 so gross ist wie dasjenige des Quaders mit gleicher Grundfläche und gleicher Höhe.";;;101
+584;1707522975;3_plus;;1;"die Begriffe Mantelfläche, Körperhöhe, Volumen, Grundfläche, Kreissektor und Zentriwinkel richtig verwenden.";;;101
+585;1707522975;3_plus;;1;"aus Kreissektoren Kegel formen und deren Volumen berechnen.";;;101
+586;1707522975;3_plus;;1;"Funktionsgleichungen veränderten Bedingungen anpassen.";1;;102
+587;1707522976;3_plus;;1;"Bedingungen gezielt verändern und die Auswirkungen beschreiben.";1;;102
+588;1707522976;3_plus;;1;"Situationen einer Wertetabelle, einem Graphen oder einem Term zuordnen und umgekehrt.";;;102
+589;1707522976;3_plus;;1;"die Gesamtkosten und die Kosten für eine Person oder ein Stück tabellarisch darstellen und berechnen.";;;102
+590;1707522976;3_plus;;1;"einfache Terme finden und abschätzen, wie sich y ändert, wenn x grösser oder kleiner wird.";;;102
+591;1707522976;3_plus;;1;"für Gesamtkosten oder Stückpreise Funktionsgleichungen aufstellen.";;;102
+592;1707522976;3_plus;;1;"jemandem das 3-Säulenprinzip der Vorsorge erklären.";1;;103
+593;1707522976;3_plus;;1;"aus Preisen inkl. Mehrwertsteuer die Steuer berechnen.";1;;103
+594;1707522976;3_plus;;1;"an Beispielen erste Berechnungen mit Zinseszins durchführen.";1;;103
+595;1707522976;3_plus;;1;"einen einfachen Sparplan erstellen.";1;;103
+596;1707522976;3_plus;;1;"jemandem den Unterschied zwischen Nettolohn und Bruttolohn erklären.";;;103
+597;1707522976;3_plus;;1;"an Beispielen die prozentualen Anteile von Abzügen berechnen.";;;103
+598;1707522976;3_plus;;1;"Zinsen und Endkapital bei gegebenem Anfangskapital und Zinsfuss berechnen.";;;103
+599;1707522976;3_plus;;1;"Daten in einer Tabelle interpretieren und grafisch darstellen.";;;103
+600;1707522976;3_plus;;1;"exponentiellen Zerfall als Spezialfall von exponentiellem Wachstum erkennen und beschreiben.";1;;104
+601;1707522976;3_plus;;1;"Verdoppelungszeit bei exponentiellem Wachstum bestimmen.";1;;104
+602;1707522976;3_plus;;1;"verschiedenen Sachsituationen geeignete Graphen zuordnen.";1;;104
+603;1707522976;3_plus;;1;"lineares Wachstum in Sachsituationen und Grafiken erkennen.";;;104
+604;1707522976;3_plus;;1;"nichtlineares Wachstum in Sachsituationen und Grafiken erkennen.";;;104
+605;1707522976;3_plus;;1;"Eigenschaften von exponentiellem Wachstum beschreiben.";;;104
+606;1707522976;3_plus;;1;"Kapital inkl. Zinseszins für x Anlagejahre berechnen.";;;104
+607;1707522976;3_plus;;1;"Gewinnchancen bzw. Wahrscheinlichkeiten bei Ziehungen «mit Zurücklegen» bestimmen und die Bedingungen und Gedankenschritte dazu darlegen.";1;;105
+608;1707522976;3_plus;;1;"Wettgewinne entsprechend der Gewinnwahrscheinlichkeit einschätzen.";1;;105
+609;1707522976;3_plus;;1;"die Ergebnisse von Simulationen mit Erwartungswerten vergleichen.";1;;105
+610;1707522976;3_plus;;1;"die Anzahl Möglichkeiten berechnen, wenn aus einer bestimmten Anzahl Zahlen eine, zwei, drei oder mehr Zahlen gezogen werden und meine Berechnungen begründen.";;;105
+611;1707522976;3_plus;;1;"statistische Angaben zu Ziehungen erläutern und dazu Berechnungen anstellen.";;;105
+612;1707522976;3_plus;;1;"einfache Wahrscheinlichkeiten beim Roulettespiel berechnen.";;;105
+613;1707522976;3_plus;;1;"Simulationen zu Zahlenlotto und Roulette durchführen und auswerten.";;;105
+614;1707522976;3_plus;;1;"den Schnittpunkt zweier Geraden durch Herauslesen in einem Koordinatensystem und anschliessendem Einsetzen überprüfen.";1;;106
+615;1707522976;3_plus;;1;"die Beziehung zwischen Geradengleichung der Form y = ax + b und linearer Gleichung der Form Ax + By + C = 0 erklären.";1;;106
+616;1707522976;3_plus;;1;"ein lineares 2 × 2-Gleichungssystem nach einem der drei Verfahren lösen.";1;;106
+617;1707522976;3_plus;;1;"Spezialfälle unlösbarer oder allgemeingültiger 2 x 2-Gleichungssysteme geometrisch deuten.";1;;106
+618;1707522976;3_plus;;1;"Verfahren zum Lösen linearer Gleichungssysteme in Sachsituationen anwenden.";1;;106
+619;1707522976;3_plus;;1;"Quadratische Funktionen in einem Koordinatensystem darstellen und quadratische Gleichungen lösen.";1;;107
+620;1707522976;3_plus;;1;"die Bedeutung der Buchstaben a, u und v bei Funktionen vom Typ y = a(x – u)² + v erklären.";1;;107
+621;1707522976;3_plus;;1;"die quadratische Ergänzung bei quadratischen Gleichungen finden.";1;;107
+622;1707522976;3_plus;;1;"quadratische Gleichungen mit Hilfe der quadratischen Ergänzung lösen.";1;;107
+623;1707522976;3_plus;;1;"die Lösungen quadratischer Gleichungen mit Hilfe der Lösungsformel berechnen.";1;;107
+624;1707522976;3_plus;;1;"Grundoperationen mit Brüchen und Bruchtermen durchführen.";1;;108
+625;1707522976;3_plus;;1;"Grenzwerte intuitiv bestimmen.";1;;108
+626;1707522977;3_plus;;1;"Einfache Bruchgleichungen lösen.";1;;108
+627;1707522977;3_plus;;1;"relative und absolute Fehler berechnen.";1;;109
+628;1707522977;3_plus;;1;"Zahlen in einer sinnvollen Genauigkeit angeben.";1;;109
+629;1707522977;3_plus;;1;"Doppelrechnungen durchführen.";1;;109
+630;1707522977;3_plus;;1;"Kostenberechnungen bei Kredit- und Leasinggeschäften verstehen und durchführen.";1;;110
+631;1707522977;3_plus;;1;"Tabellenkalkulation als Hilfsmittel für Berechnungen einsetzen.";1;;110
+632;1707522977;3_plus;;1;"finanzielle Auswirkungen von Kreditgeschäften auf ein gegebenes Budget beurteilen.";1;;110
+633;1707522977;3_plus;;1;"Budgetberechnungen verstehen und durchführen.";1;;110
+634;1707522977;3_plus;;1;"Kongruenzabbildungen erkennen und beschreiben.";1;;111
+635;1707522977;3_plus;;1;"Ähnlichkeiten erkennen und beschreiben.";1;;111
+636;1707522977;3_plus;;1;"eine algebraische Beschreibung von geometrischen Abbildungen verstehen.";1;;111
+637;1707522977;3_plus;;1;"geometrische Abbildungen mithilfe von Koordinaten darstellen.";1;;111
+638;1707522977;3_plus;;1;"Formeln für Kugelvolumen und Kugeloberfläche herleiten.";1;;112
+639;1707522977;3_plus;;1;"Beziehungen zwischen Kreisformel und Kugelformeln erkennen.";1;;112
+640;1707522977;3_plus;;1;"an Kugeln verschiedene Berechnungen durchführen.";1;;112
+641;1707522977;3_plus;;1;"Ähnlichkeitseigenschaften verschieden grosser Kugeln erkennen.";1;;112
+642;1707522977;3_plus;;1;"jemandem relatives Wachstum im Sinne von konstanten Wachstumsraten erklären.";1;;113
+643;1707522977;3_plus;;1;"relatives und lineares Wachstum in einem neuen Modell miteinander verknüpfen.";1;;113
+644;1707522977;3_plus;;1;"rekursive Vorschriften variieren und entsprechende qualitative Veränderungen erkennen.";1;;113
+645;1707522977;3_plus;;1;"Zahlenstrukturen beschreiben und begründen.";1;;114
+646;1707522977;3_plus;;1;"Beziehungen zwischen Produkten erkennen und visualisieren.";1;;114
+647;1707522977;3_plus;;1;"die Verwandtschaft zwischen Zahlentermen algebraisch darstellen.";1;;114
+648;1707522977;3_plus;;1;"verschiedene Sortieralgorithmen vergleichen und ausführen.";1;;115
+649;1707522977;3_plus;;1;"Flussdiagramme lesen und befolgen.";1;;115
+650;1707522977;3_plus;;1;"Aufgaben zur Graphentheorie bearbeiten.";1;;115
+651;1707522977;3_plus;;1;"Fraktale als Algorithmus sehen, Fraktale zeichnen und vergleichen.";1;;115
+652;1707522977;3_plus;;1;"die Bedeutung der Quadratwurzel an Beispielen erklären.";;;115
+653;1707522977;3_plus;;1;"die Quadratwurzel von Zahlen im Kopf oder näherungsweise berechnen.";;;115
+654;1707522977;3_plus;;1;"in einem rechtwinkligen Dreieck die Länge der dritten Seite bei zwei gegebenen Seiten bestimmen.";;;115
+655;1707522977;3_plus;;1;"die Längen der Seiten und Raumdiagonalen in einem Quader bei gegebenen Seitenlängen bestimmen.";;;115
+657;1707554078;2;1;;"im Koordinatensystem Figuren um einen Punkt um 180° drehen.";;;33
+658;1707554121;2;;1;"im Koordinatensystem Figuren um einen Punkt um 90° oder 180° drehen und um eine gerichtete Strecke verschieben.";;;33
+659;1707554138;2;;1;"Figuren mit Zirkel und Lineal an einer Achse oder an einem Punkt spiegeln.";;;33
+660;1707554276;2;;1;"zu Rechtecken Terme für den Flächeninhalt und für den Umfang angeben und umgekehrt zu entsprechenden Termen passende Rechtecke zeichnen.";;;34
+661;1707554299;2;;1;"verschiedene gleichwertige Terme finden.";;;34
+662;1707554315;2;;1;"zwei Klammerausdrücke mit zwei Summanden ausmultiplizieren.";;;34
+663;1707554330;2;;1;"bei geeigneten Termen ein Produkt in eine Summe umwandeln und umgekehrt.";;;34
+664;1707554471;2;;1;"Terme miteinander vergleichen.";;;35
+665;1707554481;2;;1;"zu einer Wertetabelle unterschiedliche Terme finden.";;;35
+666;1707554559;2;;1;"die vier Grundoperationen mit Brüchen an Modellen verstehen, nachvollziehen und ausführen.";;;36
+667;1707554572;2;;1;"Kopfrechnungen zu allen vier Grundoperationen mit gebrochenen Zahlen durchführen.";;;36
+668;1707554624;2;;1;"mir unter den Flächenmassen Are, Hektare, Quadratkilometer geeignete Objekte des Alltags vorstellen.";;;37
+669;1707554635;2;;1;"mir unter den Raummassen Liter und Kubikmeter Objekte des Alltags vorstellen.";;;37
+670;1707554645;2;;1;"mit grossen Raum- und Flächenmassen sowie Gewichten Berechnungen durchführen.";;;37
+671;1707554664;2;;1;"beispielhaft mit einigen fremden und alten Masseinheiten Berechnungen durchführen.";;;37
+673;1707555731;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE]• LU 11 «Dreiecke – Vierecke»[NEWLINE]• LU 17 «Kreis»";;;54
+674;1707555753;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE]• LU 2 «Terme für Umfang und Fläche»[NEWLINE]• LU 10 «Verpackte Zahlen»";;;55
+675;1707555838;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE][NEWLINE]mathbuch 1[NEWLINE]• LU 10 «x-beliebig»[NEWLINE]• LU 19 «Summen und Produkte» [NEWLINE][NEWLINE]mathbuch 2[NEWLINE]• LU 18 «Produkte von Binomen»";;;56
+676;1707555929;2;1;1;"Um das Thema bearbeiten zu können, müssen die Grundansprüche der folgenden Lernumgebung beherrscht werden:[NEWLINE][NEWLINE]mathbuch 1[NEWLINE]• LU 19 «Summen und Produkte»";;;57
+677;1707555987;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE]• LU 5 «Grössen»[NEWLINE]• LU 7 «Graphen»[NEWLINE]• LU 15 «Zusammengesetzte Grössen»";;;58
+678;1707556021;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE]• LU 20 «Geldgeschäfte»";;;59
+679;1707556068;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE][NEWLINE]mathbuch 1[NEWLINE]• LU 16 «Wie viel ist viel?»[NEWLINE][NEWLINE]mathbuch 2[NEWLINE]• LU 6 «Relativ – absolut»[NEWLINE]• LU 16 «Zehn hoch»";;;60
+680;1707556107;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE][NEWLINE]mathbuch 1[NEWLINE]• LU 6 «Koordinaten»";;;61
+681;1707556151;2;1;1;"Für diese Lernumgebung braucht es keine speziellen Voraussetzungen.";;;62
+682;1707556264;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE]• LU 21 «Gewinnen»";;;63
+683;1707556303;2;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE][NEWLINE]mathbuch 1[NEWLINE]• LU 17 «Operieren mit Brüchen»[NEWLINE] [NEWLINE]mathbuch 2[NEWLINE]• LU 18 «Produkte von Binomen»";;;64
+684;1707556965;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 5 «Messen und zeichnen»[NEWLINE] •  LU 20 «Symmetrien und Winkel»[NEWLINE] •  LU 21 «Boccia – Pétanque – Boule»";;;23
+685;1707557006;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 5 «Messen und zeichnen»[NEWLINE] •  LU 20 «Symmetrien und Winkel»[NEWLINE] •  LU 21 «Boccia – Pétanque – Boule»";;;24
+686;1707557039;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 1 «Fünfer und Zehner»[NEWLINE] •  LU 10 «x-beliebig»[NEWLINE] •  LU 15 «Kosten berechnen»";;;25
+687;1707557073;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 10 «x-beliebig»[NEWLINE] •  LU 19 «Summen und Produkte»";;;26
+688;1707557108;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 9 «Flächen und Volumen»[NEWLINE] •  LU 13 «Mit Würfeln Quader bauen»";;;27
+689;1707557140;1;1;1;"Die Grundansprüche der folgenden Lernumgebung werden vorausgesetzt:[NEWLINE] •  LU 4 «So klein! – So gross!»";;;28
+690;1707557189;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 1 «Fünfer und Zehner»[NEWLINE] •  LU 15 «Kosten berechnen»";;;29
+691;1707557221;1;1;1;"Die Grundansprüche der folgenden Lernumgebungen werden vorausgesetzt:[NEWLINE] •  LU 5 «Messen und zeichnen»[NEWLINE] •  LU 12 «Parallelogramme und Dreiecke»[NEWLINE] •  LU 20 «Symmetrien und Winkel»[NEWLINE] •  LU 21 «Boccia – Pétanque – Boule»";;;30
+692;1707557275;1;1;1;"Zur Bearbeitung dieser Lernumgebung sind keine speziellen Voraussetzungen notwendig.";;;31

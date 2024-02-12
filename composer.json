@@ -1,11 +1,10 @@
 {
-    "name": "markocupic/contao-altcha-antispam",
-    "description": "ALTCHA antispam form widget for Contao CMS",
+    "name": "markocupic/mathbuch-learning-objectives",
+    "description": "Kompetenzen als Worddokument herunterladen",
     "keywords": [
-        "contao",
-        "form field widget",
-        "ALTCHA",
-        "antispam"
+        "contao bundle",
+        "backend extension",
+        "mathbuch kompetenzen"
     ],
     "type": "contao-bundle",
     "license": "GPL-3.0-or-later",
@@ -18,19 +17,21 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/markocupic/contao-altcha-antispam/issues",
-        "source": "https://github.com/markocupic/contao-altcha-antispam"
+        "issues": "https://github.com/markocupic/mathbuch-learning-objectives/issues",
+        "source": "https://github.com/markocupic/mathbuch-learning-objectives"
     },
     "require": {
-        "php": "^8.1",
-        "contao/core-bundle": "^4.13 || ^5.0"
+        "php": "^8.2",
+        "contao/core-bundle": "^5.0",
+        "markocupic/phpoffice-bundle": "^1.5",
+        "codefog/contao-haste": "^5.1"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.12"
     },
     "autoload": {
         "psr-4": {
-            "Markocupic\\ContaoAltchaAntispam\\": "src/"
+            "Markocupic\\MathbuchLearningObjectives\\": "src/"
         }
     },
     "config": {
@@ -41,7 +42,7 @@
         }
     },
     "extra": {
-        "contao-manager-plugin": "Markocupic\\ContaoAltchaAntispam\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Markocupic\\MathbuchLearningObjectives\\ContaoManager\\Plugin"
     },
     "scripts": {
         "cs-fixer": "@php tools/ecs/vendor/bin/ecs check config/ contao/ src/ templates/ tests/ --config tools/ecs/config.php --fix --ansi",
