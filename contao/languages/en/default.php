@@ -24,4 +24,4 @@ $GLOBALS['TL_LANG']['FFL']['altcha_hidden'] = [
  * Errors
  */
 $GLOBALS['TL_LANG']['ERR']['altcha_verification_failed'] = 'Altcha antispam verification failed. Are you a human or a robot?';
-$GLOBALS['TL_LANG']['ERR']['altcha_hmac_key_not_found'] = 'Set your ALTCHA hmac key in config/config.yaml. <a href="https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage" target="_blank">More</a>';
+$GLOBALS['TL_LANG']['ERR']['altcha_hmac_key_not_found'] = 'The ALTCHA hmac key is still empty, it should be set in config/config.yaml. <a href="https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage" target="_blank">More</a>';
