@@ -3,32 +3,25 @@
 declare(strict_types=1);
 
 /*
- * This file is part of mathbuch-learning-objectives.
+ * This file is part of Contao Altcha Antispam.
  *
  * (c) Marko Cupic 2024 <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
- * @link https://github.com/markocupic/mathbuch-learning-objectives
+ * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
 /*
- * Miscellaneous
+ * Form fields
  */
-$GLOBALS['TL_LANG']['MSC']['download_objectives'] = 'Kompetenzen herunterladen';
-$GLOBALS['TL_LANG']['MSC']['select_ah_level'] = ['AH Niveau auswählen', 'Wählen Sie zwischen AH und AH+ aus.'];
+$GLOBALS['TL_LANG']['FFL']['altcha_hidden'] = [
+    'ALTCHA antispam (CAPTCHA)',
+    'Provides an <a href="https://altcha.org/" title="altcha.org">ALTCHA</a> antispam form field to verify that the form is being submitted by a human (CAPTCHA).',
+];
 
 /*
- * References
+ * Errors
  */
-$GLOBALS['TL_LANG']['MSC']['ah_level']['ah_basic'] = 'AH';
-$GLOBALS['TL_LANG']['MSC']['ah_level']['ah_plus'] = 'AH+';
-$GLOBALS['TL_LANG']['MSC']['mathbuch_volumes']['1'] = '1';
-$GLOBALS['TL_LANG']['MSC']['mathbuch_volumes']['2'] = '2';
-$GLOBALS['TL_LANG']['MSC']['mathbuch_volumes']['3'] = '3';
-$GLOBALS['TL_LANG']['MSC']['mathbuch_volumes']['3_plus'] = '3+';
-
-/*
- * Messages
- */
-$GLOBALS['TL_LANG']['MSG']['no_objectives_found_for_your_selection'] = 'Leider wurden für deine Auswahl keine Kompetenzen gefunden.';
+$GLOBALS['TL_LANG']['ERR']['altcha_verification_failed'] = 'Altcha antispam verification failed. Are you a human or a robot?';
+$GLOBALS['TL_LANG']['ERR']['altcha_hmac_key_not_found'] = 'Set your ALTCHA hmac key in config/config.yaml. <a href="https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage" target="_blank">More</a>';

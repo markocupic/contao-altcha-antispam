@@ -12,6 +12,8 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-use Markocupic\ContaoAltchaAntispam\Widget\Frontend\AltchaHidden;
-
-$GLOBALS['TL_FFL']['altcha_hidden'] = AltchaHidden::class;
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['altcha_hidden'] = '
+{type_legend},type,label;
+{template_legend:hide},customTpl;
+{invisible_legend:hide},invisible
+';

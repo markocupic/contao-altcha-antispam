@@ -1,13 +1,19 @@
-# config/services.yaml
 services:
     _defaults:
         autowire: true
         autoconfigure: true
         public: false
         bind:
-            $projectDir: '%kernel.project_dir%'
+            $altchaHmacKey: '%markocupic_contao_altcha_antispam.hmac_key%'
+            $altchaAlgorithm: '%markocupic_contao_altcha_antispam.algorithm%'
+            $altchaRangeMin: '%markocupic_contao_altcha_antispam.range_min%'
+            $altchaRangeMax: '%markocupic_contao_altcha_antispam.range_max%'
 
-    Markocupic\MathbuchLearningObjectives\:
+    Markocupic\ContaoAltchaAntispam\:
         resource: ../src/
-        exclude: ../src/{DependencyInjection,Model,Config}
+        exclude: ../src/{DependencyInjection,Config,Widget}
 
+    Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator:
+        public: true
+        arguments:
+            - '@Markocupic\ContaoAltchaAntispam\Altcha'

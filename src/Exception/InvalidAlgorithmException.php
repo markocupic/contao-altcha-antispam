@@ -12,6 +12,8 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-use Markocupic\ContaoAltchaAntispam\Widget\Frontend\AltchaHidden;
+namespace Markocupic\ContaoAltchaAntispam\Exception;
 
-$GLOBALS['TL_FFL']['altcha_hidden'] = AltchaHidden::class;
+class InvalidAlgorithmException extends \Exception
+{
+}

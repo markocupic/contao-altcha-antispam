@@ -12,6 +12,19 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-use Markocupic\ContaoAltchaAntispam\Widget\Frontend\AltchaHidden;
+namespace Markocupic\ContaoAltchaAntispam\Validator;
 
-$GLOBALS['TL_FFL']['altcha_hidden'] = AltchaHidden::class;
+use Markocupic\ContaoAltchaAntispam\Altcha;
+
+class AltchaValidator
+{
+    public function __construct(
+        private readonly Altcha $altcha,
+    ) {
+    }
+
+    public function validator(string $payload): bool
+    {
+        return $this->altcha->validPayload($payload);
+    }
+}
