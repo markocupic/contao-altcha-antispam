@@ -24,14 +24,16 @@ markocupic_contao_altcha_antispam:
     algorithm: 'SHA-256' # optional allowed: 'SHA-256', 'SHA-512' or 'SHA-384'
     range_min: 1000 # optional Adjust complexity here
     range_max: 100000 # optional
+    challenge_expiry: 3600 # optional
 ```
 
-| key         | default value | info                                                                                                  | Required |
-|-------------|:--------------|-------------------------------------------------------------------------------------------------------|:---------|
-| `hmac_key`  | `''`          | a kind of a secret key                                                                                | **yes**  |
-| `algorithm` | `SHA-256`     | Choose between `SHA-256`, `SHA-512` or `SHA-384`                                                      | no       |
-| `range_min` | `1000`        | Choose a higher value to increase the complexity/duration. [More](https://altcha.org/docs/complexity) | no       |
-| `range_max` | `100000`      | Choose a higher value to increase the complexity/duration. [More](https://altcha.org/docs/complexity) | no       |
+| key                | default value | info                                                                                                  | Required |
+|--------------------|:--------------|-------------------------------------------------------------------------------------------------------|:---------|
+| `hmac_key`         | `''`          | a kind of a secret key                                                                                | **yes**  |
+| `algorithm`        | `SHA-256`     | Choose between `SHA-256`, `SHA-512` or `SHA-384`                                                      | no       |
+| `range_min`        | `1000`        | Choose a higher value to increase the complexity/duration. [More](https://altcha.org/docs/complexity) | no       |
+| `range_max`        | `100000`      | Choose a higher value to increase the complexity/duration. [More](https://altcha.org/docs/complexity) | no       |
+| `challenge_expiry` | `3600`        | Choose an expiration time, so that there is not an infinite amount of time to solve the challenge.    | no       |
 
 ## Endpoint (route)
 

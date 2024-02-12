@@ -8,6 +8,7 @@ services:
             $altchaAlgorithm: '%markocupic_contao_altcha_antispam.algorithm%'
             $altchaRangeMin: '%markocupic_contao_altcha_antispam.range_min%'
             $altchaRangeMax: '%markocupic_contao_altcha_antispam.range_max%'
+            $altchaChallengeExpiry: '%markocupic_contao_altcha_antispam.challenge_expiry%'
 
     Markocupic\ContaoAltchaAntispam\:
         resource: ../src/

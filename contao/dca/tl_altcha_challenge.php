@@ -44,11 +44,29 @@ $GLOBALS['TL_DCA']['tl_altcha_challenge'] = [
             ],
         ],
         'challenge' => [
-            'sql'  => [
+            'sql' => [
                 'type'    => Types::STRING,
                 'length'  => 1024,
                 'notnull' => true,
                 'default' => '',
+            ],
+        ],
+        'solved'    => [
+            'sql' => [
+                'type'    => Types::STRING,
+                'length'  => 1,
+                'fixed'   => true,
+                'notnull' => true,
+                'default' => '',
+            ],
+        ],
+        'expires'   => [
+            'sql' => [
+                'type'     => Types::INTEGER,
+                'length'   => 10,
+                'unsigned' => true,
+                'notnull'  => true,
+                'default'  => 0,
             ],
         ],
     ],

@@ -28,6 +28,7 @@ class Altcha
         private readonly string $altchaAlgorithm,
         private readonly int $altchaRangeMin,
         private readonly int $altchaRangeMax,
+        private readonly int $altchaChallengeExpiry,
     ) {
     }
 
@@ -52,6 +53,16 @@ class Altcha
         $challenge = hash($algorithm, $salt.$number);
         $signature = hash_hmac($algorithm, $challenge, $this->altchaHmacKey);
 
+        // The challenge expires in 1 hour (default).
+        // Save it to the database to make replay attacks more difficult
+        $set = [
+            'tstamp' => time(),
+            'challenge' => $challenge,
+            'expires' => time() + $this->altchaChallengeExpiry,
+        ];
+
+        $this->connection->insert('tl_altcha_challenge', $set);
+
         return [
             'algorithm' => $this->altchaAlgorithm,
             'challenge' => $challenge,
@@ -72,12 +83,22 @@ class Altcha
             return false;
         }
 
-        $set = [
-            'tstamp' => time(),
-            'challenge' => $json['challenge'],
-        ];
+        $rowsAffected = $this->connection->executeStatement(
+            'UPDATE tl_altcha_challenge SET solved = "1" WHERE challenge = :solution AND expires > :now AND solved = ""',
+            [
+                'solution' => $json['challenge'],
+                'now' => time(),
+            ],
+            [
+                'solution' => Types::STRING,
+                'now' => Types::INTEGER,
+            ]
+        );
 
-        $this->connection->insert('tl_altcha_challenge', $set);
+        // Return false, if challenge has expired or has already been solved
+        if (1 !== $rowsAffected) {
+            return false;
+        }
 
         $check = $this->createChallenge($json['salt'], $json['number']);
 
@@ -88,15 +109,17 @@ class Altcha
 
     private function isReplay(array $json): bool
     {
-        $challenge = $json['challenge'] ?? '';
+        $solution = $json['challenge'] ?? '';
 
         return false !== $this->connection->fetchOne(
-            'SELECT id FROM tl_altcha_challenge WHERE challenge = :challenge',
+            'SELECT id FROM tl_altcha_challenge WHERE challenge = :solution AND solved = :solved',
             [
-                'challenge' => $challenge,
+                'solution' => $solution,
+                'solved' => '1',
             ],
             [
-                'challenge' => Types::STRING,
+                'solution' => Types::STRING,
+                'solved' => Types::STRING,
             ],
         );
     }

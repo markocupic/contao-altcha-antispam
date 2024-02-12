@@ -42,6 +42,9 @@ class Configuration implements ConfigurationInterface
                 ->integerNode('range_max')
                     ->defaultValue(100000)
                 ->end()
+                ->integerNode('challenge_expiry')
+                    ->defaultValue(3600)
+                ->end()
             ->end()
         ;
 

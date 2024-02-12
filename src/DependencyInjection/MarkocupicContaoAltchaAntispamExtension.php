@@ -51,5 +51,6 @@ class MarkocupicContaoAltchaAntispamExtension extends Extension
         $container->setParameter($rootKey.'.algorithm', $config['algorithm']);
         $container->setParameter($rootKey.'.range_min', $config['range_min']);
         $container->setParameter($rootKey.'.range_max', $config['range_max']);
+        $container->setParameter($rootKey.'.challenge_expiry', $config['challenge_expiry']);
     }
 }
