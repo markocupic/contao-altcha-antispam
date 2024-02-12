@@ -1,11 +1,14 @@
 {% extends '@Contao/form_row' %}
 
 {% block label %}
-    {{ generateLabel.invoke()|default('')|raw }}
+    {% if strLabel|default %}
+        <label for="ctrl_{{ strId }}" {% if class|default %} class="{{ class }}" {% endif %}>
+            {{ strLabel }}
+        </label>
+    {% endif %}
 {% endblock %}
 
 {% block field %}
-
     {% if altchaSource == 'cdn' %}
         {% do addHtmlToHead('<script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js" type="module"></script>') %}
     {% else %}
@@ -20,6 +23,4 @@
     {# {% set strAltchaAttributes = attrs(strAltchaAttributes|default).set('foo', 'bar') %} #}
 
     <altcha-widget {{ strAltchaAttributes|raw }}></altcha-widget>
-
 {% endblock %}
-
