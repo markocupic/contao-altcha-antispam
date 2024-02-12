@@ -51,7 +51,7 @@ class FormField
             ->fetchOne()
         ;
 
-        if ('altcha_hidden' === $type && '' === $this->altchaHmacKey) {
+        if ('altcha_hidden' === $type && empty($this->altchaHmacKey)) {
             $message = $this->framework->getAdapter(Message::class);
             $err = $this->translator->trans('ERR.altcha_hmac_key_not_found', [], 'contao_default');
             $message->addError($err);

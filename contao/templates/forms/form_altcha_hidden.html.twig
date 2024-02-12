@@ -1,0 +1,25 @@
+{% extends '@Contao/form_row' %}
+
+{% block label %}
+    {{ generateLabel.invoke()|default('')|raw }}
+{% endblock %}
+
+{% block field %}
+
+    {% if altchaSource == 'cdn' %}
+        {% do addHtmlToHead('<script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js" type="module"></script>') %}
+    {% else %}
+        {% do addHtmlToHead('<script async defer src="bundles/markocupiccontaoaltchaantispam/altcha/js/altcha.js" type="module"></script>') %}
+    {% endif %}
+
+    {% if hasErrors.invoke()|default(false) %}
+        <p class="error">{{ getErrorAsString.invoke()|default('')|raw }}</p>
+    {% endif %}
+
+    {# Overriding existing or adding additional attributes can be made here: #}
+    {# {% set strAltchaAttributes = attrs(strAltchaAttributes|default).set('foo', 'bar') %} #}
+
+    <altcha-widget {{ strAltchaAttributes|raw }}></altcha-widget>
+
+{% endblock %}
+
