@@ -25,6 +25,6 @@ class AltchaValidator
 
     public function validator(string $payload): bool
     {
-        return $this->altcha->validPayload($payload);
+        return $this->altcha->isValidPayload($payload);
     }
 }

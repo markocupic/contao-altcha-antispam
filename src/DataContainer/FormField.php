@@ -19,6 +19,7 @@ use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\DataContainer;
 use Contao\Message;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Types\Types;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -46,15 +47,24 @@ class FormField
 
         $type = $qb->select('t.type')
             ->from('tl_form_field', 't')
-            ->where('id = ? AND type = ?')
-            ->setParameters([$dc->id, 'altcha_hidden'])
+            ->where('id = :id AND type = :type')
+            ->setParameters(
+                [
+                    'id' => $dc->id,
+                    'type' => 'altcha_hidden',
+                ],
+                [
+                    'id' => Types::INTEGER,
+                    'type' => Types::STRING,
+                ],
+            )
             ->fetchOne()
         ;
 
         if ('altcha_hidden' === $type && empty($this->altchaHmacKey)) {
             $message = $this->framework->getAdapter(Message::class);
-            $err = $this->translator->trans('ERR.altcha_hmac_key_not_found', [], 'contao_default');
-            $message->addError($err);
+            $errMsg = $this->translator->trans('ERR.altcha_hmac_key_not_found', [], 'contao_default');
+            $message->addError($errMsg);
         }
     }
 }
