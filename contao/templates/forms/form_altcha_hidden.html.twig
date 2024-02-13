@@ -1,26 +1,26 @@
-{% extends '@Contao/form_row' %}
-
-{% block label %}
-    {% if strLabel|default %}
-        <label for="ctrl_{{ strId }}" {% if class|default %} class="{{ class }}" {% endif %}>
-            {{ strLabel }}
-        </label>
-    {% endif %}
-{% endblock %}
-
-{% block field %}
+{% block altcha_script %}
     {% if altchaSource == 'cdn' %}
         {% do addHtmlToHead('<script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js" type="module"></script>') %}
     {% else %}
         {% do addHtmlToHead('<script async defer src="bundles/markocupiccontaoaltchaantispam/altcha/js/altcha.js" type="module"></script>') %}
     {% endif %}
-
-    {% if hasErrors.invoke()|default(false) %}
-        <p class="error">{{ getErrorAsString.invoke()|default('')|raw }}</p>
-    {% endif %}
-
-    {# Overriding existing or adding additional attributes can be made here: #}
-    {# {% set strAltchaAttributes = attrs(strAltchaAttributes|default).set('foo', 'bar') %} #}
-
-    <altcha-widget {{ strAltchaAttributes|raw }}></altcha-widget>
 {% endblock %}
+<div class="{{ prefix }}{% if strClass|default %} {{ strClass }}{% endif %}">
+    {% block label %}
+        {% if strLabel|default %}
+            <label for="ctrl_{{ strId }}" {% if strClass|default %} class="{{ strClass }}" {% endif %}>
+                {{ strLabel }}
+            </label>
+        {% endif %}
+    {% endblock %}
+    {% block field %}
+        {% if hasErrors.invoke()|default(false) %}
+            <p class="error">{{ getErrorAsString.invoke()|default('')|raw }}</p>
+        {% endif %}
+        {# Overriding existing or adding additional attributes can be made here: #}
+        {# {% set strAltchaAttributes = attrs(strAltchaAttributes|default).set('foo', 'bar') %} #}
+        {% block altcha_tag %}
+            <altcha-widget {{ strAltchaAttributes|raw }}></altcha-widget>
+        {% endblock %}
+    {% endblock %}
+</div>
