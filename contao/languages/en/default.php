@@ -28,6 +28,6 @@ $GLOBALS['TL_LANG']['ERR']['altcha_hmac_key_not_found'] = 'The ALTCHA hmac key i
 $GLOBALS['TL_LANG']['ERR']['altcha_widget_error'] = 'Verification failed. Try again later.';
 $GLOBALS['TL_LANG']['ERR']['altcha_widget_footer'] = 'Protected by <a href="https://altcha.org/" target="_blank">ALTCHA</a>';
 $GLOBALS['TL_LANG']['ERR']['altcha_widget_label'] = 'I\'m not a robot';
-$GLOBALS['TL_LANG']['ERR']['altcha_widget_verified'] = 'Verified';
+$GLOBALS['TL_LANG']['ERR']['altcha_widget_verified'] = 'I\'m human';
 $GLOBALS['TL_LANG']['ERR']['altcha_widget_verifying'] = 'Verifying...';
 $GLOBALS['TL_LANG']['ERR']['altcha_widget_waitAlert'] = 'Verifying... please wait.';
