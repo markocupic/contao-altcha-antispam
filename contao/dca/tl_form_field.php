@@ -17,6 +17,7 @@ use Doctrine\DBAL\Types\Types;
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['altcha_hidden'] = '
 {type_legend},type,label;
 {altcha_legend},altchaHideLogo,altchaHideFooter,altchaAuto,altchaMaxNumber,altchaSource;
+{expert_legend:hide},class;
 {template_legend:hide},customTpl;
 {invisible_legend:hide},invisible
 ';
