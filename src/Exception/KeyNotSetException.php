@@ -14,6 +14,6 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Exception;
 
-class HmacKeyNotSetException extends \Exception
+class KeyNotSetException extends \Exception
 {
 }

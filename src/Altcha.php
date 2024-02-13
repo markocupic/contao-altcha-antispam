@@ -17,8 +17,8 @@ namespace Markocupic\ContaoAltchaAntispam;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
 use Markocupic\ContaoAltchaAntispam\Config\AltchaConfiguration;
-use Markocupic\ContaoAltchaAntispam\Exception\HmacKeyNotSetException;
 use Markocupic\ContaoAltchaAntispam\Exception\InvalidAlgorithmException;
+use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 
 class Altcha
 {
@@ -38,7 +38,7 @@ class Altcha
     public function createChallenge(string $salt = null, int $number = null): array
     {
         if ('' === $this->altchaHmacKey) {
-            throw new HmacKeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
+            throw new KeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
         }
 
         $salt = $salt ?? bin2hex(random_bytes(12));
@@ -54,7 +54,7 @@ class Altcha
         $signature = hash_hmac($algorithm, $challenge, $this->altchaHmacKey);
 
         // The challenge expires in 1 hour (default).
-        // Save it to the database to make replay attacks more difficult
+        // We save it to the database to prevent replay attacks.
         $set = [
             'tstamp' => time(),
             'challenge' => $challenge,
@@ -84,14 +84,18 @@ class Altcha
         }
 
         $rowsAffected = $this->connection->executeStatement(
-            'UPDATE tl_altcha_challenge SET solved = "1" WHERE challenge = :solution AND expires > :now AND solved = ""',
+            'UPDATE tl_altcha_challenge SET solved = :solved WHERE challenge = :solution AND expires > :now AND solved = :unsolved',
             [
+                'solved' => '1',
                 'solution' => $json['challenge'],
                 'now' => time(),
+                'unsolved' => '',
             ],
             [
+                'solved' => Types::STRING,
                 'solution' => Types::STRING,
                 'now' => Types::INTEGER,
+                'unsolved' => Types::STRING,
             ]
         );
 
@@ -103,8 +107,8 @@ class Altcha
         $check = $this->createChallenge($json['salt'], $json['number']);
 
         return $json['algorithm'] === $check['algorithm']
-                && $json['challenge'] === $check['challenge']
-                && $json['signature'] === $check['signature'];
+            && $json['challenge'] === $check['challenge']
+            && $json['signature'] === $check['signature'];
     }
 
     private function isReplay(array $json): bool
