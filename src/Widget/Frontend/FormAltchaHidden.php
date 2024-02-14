@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Markocupic\ContaoAltchaAntispam\Widget\Frontend;
 
 use Contao\BackendTemplate;
-use Contao\Input;
 use Contao\StringUtil;
 use Contao\System;
 use Contao\Widget;
@@ -26,6 +25,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 class FormAltchaHidden extends Widget
 {
+    protected $useRawRequestData = true;
     protected $blnSubmitInput = false;
     protected $blnForAttribute = true;
     protected $strTemplate = 'form_altcha_hidden';
@@ -80,7 +80,7 @@ class FormAltchaHidden extends Widget
      *
      * @return string The widget markup
      */
-    public function generate()
+    public function generate(): string
     {
         return sprintf(
             '<altcha-widget %s></altcha-widget>',
@@ -95,7 +95,7 @@ class FormAltchaHidden extends Widget
      *
      * @return string The template markup
      */
-    public function parse($arrAttributes = null)
+    public function parse($arrAttributes = null): string
     {
         $request = $this->getContainer()->get('request_stack')->getCurrentRequest();
 
@@ -126,12 +126,12 @@ class FormAltchaHidden extends Widget
         /** @var RouterInterface $router */
         $router = $this->getContainer()->get('router');
 
-        $endpoint = sprintf('challengeurl="%s"', $router->generate(AltchaController::class, []));
+        $endpoint = sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
 
         $attributes = [];
         $attributes[] = $endpoint;
 
-        $attributes[] = 'name="altcha"';
+        $attributes[] = sprintf('name="%s"', $this->name);
 
         if (!empty($this->altchaAuto) && \in_array($this->altchaAuto, ['onload', 'onsubmit'], true)) {
             $attributes[] = sprintf('auto="%s"', StringUtil::specialchars($this->altchaAuto));
@@ -163,18 +163,18 @@ class FormAltchaHidden extends Widget
      *
      * @return mixed
      */
-    protected function validator($varInput)
+    protected function validator($varInput): mixed
     {
         /** @var MpFormsManager $mpFormsManager */
         $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
 
         if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
             if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
-                return true;
+                return $varInput;
             }
         }
 
-        $payload = Input::postRaw('altcha', '');
+        $payload = $varInput;
 
         /** @var AltchaValidator $altcha */
         $altcha = $this->getContainer()->get(AltchaValidator::class);
