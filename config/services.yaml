@@ -18,3 +18,7 @@ services:
         public: true
         arguments:
             - '@Markocupic\ContaoAltchaAntispam\Altcha'
+
+    Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager:
+        public: true
+

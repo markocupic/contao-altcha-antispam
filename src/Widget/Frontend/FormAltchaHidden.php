@@ -17,8 +17,10 @@ namespace Markocupic\ContaoAltchaAntispam\Widget\Frontend;
 use Contao\BackendTemplate;
 use Contao\Input;
 use Contao\StringUtil;
+use Contao\System;
 use Contao\Widget;
 use Markocupic\ContaoAltchaAntispam\Controller\AltchaController;
+use Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager;
 use Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -104,6 +106,16 @@ class FormAltchaHidden extends Widget
             return $objTemplate->parse();
         }
 
+        /** @var MpFormsManager $mpFormsManager */
+        $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
+
+        // Do not show the ALTCHA widget again, if it has already been successfully submitted in a terminal42/contao-mp_forms
+        if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
+            if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
+                return '';
+            }
+        }
+
         $this->strAltchaAttributes = $this->getAltchaAttributesAsString();
 
         return parent::parse($arrAttributes);
@@ -133,9 +145,7 @@ class FormAltchaHidden extends Widget
             $attributes[] = 'hidefooter';
         }
 
-        if (\is_int($this->altchaMaxNumber)) {
-            $attributes[] = sprintf('maxnumber="%d"', $this->altchaMaxNumber);
-        }
+        $attributes[] = sprintf('maxnumber="%d"', $this->altchaMaxNumber);
 
         $localization = StringUtil::specialchars(json_encode($this->getLocalization()));
         $attributes[] = sprintf('strings="%s"', $localization);
@@ -155,13 +165,27 @@ class FormAltchaHidden extends Widget
      */
     protected function validator($varInput)
     {
+        /** @var MpFormsManager $mpFormsManager */
+        $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
+
+        if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
+            if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
+                return true;
+            }
+        }
+
         $payload = Input::postRaw('altcha', '');
 
         /** @var AltchaValidator $altcha */
         $altcha = $this->getContainer()->get(AltchaValidator::class);
 
-        if (!$altcha->validator($payload)) {
+        if (!$payload || !$altcha->validator($payload)) {
             $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
+        } else {
+            // Do only check once if ALTCHA form is part of a multipage form
+            if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
+                $mpFormsManager->markAltchaAsVerified((int) $this->id);
+            }
         }
 
         return $varInput;
