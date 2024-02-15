@@ -4,7 +4,7 @@
 
 This is a Contao implementation of [Altcha](https://altcha.org/). The extension provides a front end form field for the Contao form generator.
 
-<img src="docs/frontend.png" alt="logo" width="400"/>
+<img src="docs/frontend.png" alt="frontend" width="400"/>
 
 ## Installation
 
