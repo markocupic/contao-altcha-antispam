@@ -92,36 +92,27 @@ class FormField
         }
     }
 
-    #[AsCallback(table: 'tl_form_field', target: 'config.onsubmit', priority: 100)]
-    public function setAttributeName(DataContainer $dc): void
+    #[AsCallback(table: 'tl_form_field', target: 'fields.name.load', priority: 100)]
+    public function setDefaultValue(mixed $varValue, DataContainer $dc): mixed
     {
-        $rows = $this->connection->fetchFirstColumn(
-            'SELECT id FROM tl_form_field WHERE type = :type AND name = :name',
+        $name = $this->connection->fetchOne(
+            'SELECT name FROM tl_form_field WHERE id = :id AND type = :type AND name = :name',
             [
+                'id' => $dc->id,
                 'type' => 'altcha_hidden',
                 'name' => '',
             ],
             [
-                'type' => Types::STRING,
+                'id' => Types::INTEGER,
+                'id' => Types::STRING,
                 'name' => Types::STRING,
             ],
         );
 
-        foreach ($rows as $id) {
-            $set = [
-                'name' => 'altcha_'.$dc->id,
-            ];
-
-            $this->connection->update(
-                'tl_form_field',
-                $set,
-                [
-                    'id' => $id,
-                ],
-                [
-                    'id' => Types::INTEGER,
-                ],
-            );
+        if ('' === $name) {
+            $varValue = 'altcha_'.$dc->id;
         }
+
+        return $varValue;
     }
 }

@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Config;
 
-class AltchaConfiguration
+class AltchaAlgorithmConfig
 {
     public const ALGORITHM_SHA_256 = 'SHA-256';
     public const ALGORITHM_SHA_384 = 'SHA-384';

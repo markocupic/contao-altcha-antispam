@@ -126,10 +126,10 @@ class FormAltchaHidden extends Widget
         /** @var RouterInterface $router */
         $router = $this->getContainer()->get('router');
 
-        $endpoint = sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
+        $challengeUrl = sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
 
         $attributes = [];
-        $attributes[] = $endpoint;
+        $attributes[] = $challengeUrl;
 
         $attributes[] = sprintf('name="%s"', $this->name);
 
@@ -150,7 +150,7 @@ class FormAltchaHidden extends Widget
         $localization = StringUtil::specialchars(json_encode($this->getLocalization()));
         $attributes[] = sprintf('strings="%s"', $localization);
 
-        return array_filter(array_unique($attributes));
+        return $attributes;
     }
 
     protected function getAltchaAttributesAsString(): string
@@ -160,8 +160,6 @@ class FormAltchaHidden extends Widget
 
     /**
      * @param mixed $varInput
-     *
-     * @return mixed
      */
     protected function validator($varInput): mixed
     {
@@ -179,10 +177,10 @@ class FormAltchaHidden extends Widget
         /** @var AltchaValidator $altcha */
         $altcha = $this->getContainer()->get(AltchaValidator::class);
 
-        if (!$payload || !$altcha->validator($payload)) {
+        if (!$payload || !$altcha->validate($payload)) {
             $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
         } else {
-            // Do only check once if ALTCHA form is part of a multipage form
+            // Do only verify the challenge once if the ALTCHA form field is part of a terminal42/contao-mp_forms form.
             if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
                 $mpFormsManager->markAltchaAsVerified((int) $this->id);
             }

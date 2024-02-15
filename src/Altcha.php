@@ -16,7 +16,7 @@ namespace Markocupic\ContaoAltchaAntispam;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
-use Markocupic\ContaoAltchaAntispam\Config\AltchaConfiguration;
+use Markocupic\ContaoAltchaAntispam\Config\AltchaAlgorithmConfig;
 use Markocupic\ContaoAltchaAntispam\Exception\InvalidAlgorithmException;
 use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 
@@ -44,8 +44,8 @@ class Altcha
         $salt = $salt ?? bin2hex(random_bytes(12));
         $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
 
-        if (!\in_array($this->altchaAlgorithm, AltchaConfiguration::ALGORITHM_ALL, true)) {
-            throw new InvalidAlgorithmException(sprintf('Algorithm must be set to %s.', implode(', ', AltchaConfiguration::ALGORITHM_ALL)));
+        if (!\in_array($this->altchaAlgorithm, AltchaAlgorithmConfig::ALGORITHM_ALL, true)) {
+            throw new InvalidAlgorithmException(sprintf('Algorithm must be set to %s.', implode(', ', AltchaAlgorithmConfig::ALGORITHM_ALL)));
         }
 
         $algorithm = str_replace('-', '', strtolower($this->altchaAlgorithm));

@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\DependencyInjection;
 
-use Markocupic\ContaoAltchaAntispam\Config\AltchaConfiguration;
+use Markocupic\ContaoAltchaAntispam\Config\AltchaAlgorithmConfig;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -33,8 +33,8 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('')
                 ->end()
                 ->enumNode('algorithm')
-                    ->values([...AltchaConfiguration::ALGORITHM_ALL])
-                    ->defaultValue(AltchaConfiguration::ALGORITHM_SHA_256)
+                    ->values([...AltchaAlgorithmConfig::ALGORITHM_ALL])
+                    ->defaultValue(AltchaAlgorithmConfig::ALGORITHM_SHA_256)
                 ->end()
                 ->integerNode('range_min')
                     ->defaultValue(1000)

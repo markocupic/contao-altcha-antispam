@@ -22,7 +22,7 @@ use Terminal42\MultipageFormsBundle\FormManagerFactory;
 
 class MpFormsManager
 {
-    public const SESSION_STORAGE_PREFIX = 'contao.altcha_antispam.mp_forms';
+    public const SESSION_STORAGE_KEY = 'contao.altcha_antispam.mp_forms';
 
     public function __construct(
         private readonly RequestStack $requestStack,
@@ -59,7 +59,7 @@ class MpFormsManager
 
         $session = $this->requestStack->getCurrentRequest()->getSession();
 
-        $data = $session->get(self::SESSION_STORAGE_PREFIX, []);
+        $data = $session->get(self::SESSION_STORAGE_KEY, []);
 
         if (empty($data[$mpFormsManager->getSessionReference()]['form_field_'.$formFieldId])) {
             return false;
@@ -92,9 +92,9 @@ class MpFormsManager
 
         $session = $this->requestStack->getCurrentRequest()->getSession();
 
-        $data = $session->get(self::SESSION_STORAGE_PREFIX, []);
+        $data = $session->get(self::SESSION_STORAGE_KEY, []);
         $data[$mpFormsManager->getSessionReference()]['form_field_'.$formFieldId] = 'verified';
-        $session->set(self::SESSION_STORAGE_PREFIX, $data);
+        $session->set(self::SESSION_STORAGE_KEY, $data);
     }
 
     private function getFormManagerFromFormFieldId(int $formFieldId): FormManager|null

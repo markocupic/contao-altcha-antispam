@@ -23,7 +23,7 @@ class AltchaValidator
     ) {
     }
 
-    public function validator(string $payload): bool
+    public function validate(string $payload): bool
     {
         return $this->altcha->isValidPayload($payload);
     }

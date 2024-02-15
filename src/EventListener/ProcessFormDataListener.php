@@ -55,10 +55,10 @@ class ProcessFormDataListener
             return;
         }
 
-        $data = $session->get(MpFormsManager::SESSION_STORAGE_PREFIX, []);
+        $data = $session->get(MpFormsManager::SESSION_STORAGE_KEY, []);
 
         unset($data[$sessRef]);
 
-        $session->set(MpFormsManager::SESSION_STORAGE_PREFIX, $data);
+        $session->set(MpFormsManager::SESSION_STORAGE_KEY, $data);
     }
 }
