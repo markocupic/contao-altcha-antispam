@@ -66,32 +66,6 @@ class FormField
         }
     }
 
-    #[AsCallback(table: 'tl_form_field', target: 'config.onload', priority: 100)]
-    public function setReadonly(DataContainer $dc): void
-    {
-        $qb = $this->connection->createQueryBuilder();
-
-        $id = $qb->select('t.id')
-            ->from('tl_form_field', 't')
-            ->where('id = :id AND type = :type')
-            ->setParameters(
-                [
-                    'id' => $dc->id,
-                    'type' => 'altcha_hidden',
-                ],
-                [
-                    'id' => Types::INTEGER,
-                    'type' => Types::STRING,
-                ],
-            )
-            ->fetchOne()
-        ;
-
-        if (false !== $id) {
-            $GLOBALS['TL_DCA']['tl_form_field']['fields']['name']['eval']['readonly'] = true;
-        }
-    }
-
     #[AsCallback(table: 'tl_form_field', target: 'fields.name.load', priority: 100)]
     public function setDefaultValue(mixed $varValue, DataContainer $dc): mixed
     {
@@ -115,4 +89,5 @@ class FormField
 
         return $varValue;
     }
+
 }
