@@ -65,29 +65,4 @@ class FormField
             $message->addError($errMsg);
         }
     }
-
-    #[AsCallback(table: 'tl_form_field', target: 'fields.name.load', priority: 100)]
-    public function setDefaultValue(mixed $varValue, DataContainer $dc): mixed
-    {
-        $name = $this->connection->fetchOne(
-            'SELECT name FROM tl_form_field WHERE id = :id AND type = :type AND name = :name',
-            [
-                'id' => $dc->id,
-                'type' => 'altcha_hidden',
-                'name' => '',
-            ],
-            [
-                'id' => Types::INTEGER,
-                'id' => Types::STRING,
-                'name' => Types::STRING,
-            ],
-        );
-
-        if ('' === $name) {
-            $varValue = 'altcha_'.$dc->id;
-        }
-
-        return $varValue;
-    }
-
 }
