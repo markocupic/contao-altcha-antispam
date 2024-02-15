@@ -45,7 +45,7 @@ class MpFormsManager
             return false;
         }
 
-        $formModel = $this->getFormModelFormFieldId($formFieldId);
+        $formModel = $this->getFormModelFromFormFieldId($formFieldId);
 
         if (null === $formModel) {
             return false;
@@ -78,7 +78,7 @@ class MpFormsManager
             return;
         }
 
-        $formModel = $this->getFormModelFormFieldId($formFieldId);
+        $formModel = $this->getFormModelFromFormFieldId($formFieldId);
 
         if (null === $formModel) {
             return;
@@ -103,7 +103,7 @@ class MpFormsManager
             return null;
         }
 
-        $formModel = $this->getFormModelFormFieldId($formFieldId);
+        $formModel = $this->getFormModelFromFormFieldId($formFieldId);
 
         if (null === $formModel) {
             return null;
@@ -112,7 +112,7 @@ class MpFormsManager
         return $this->formManagerFactory->forFormId($formModel->id);
     }
 
-    private function getFormModelFormFieldId(int $formFieldId): FormModel|null
+    private function getFormModelFromFormFieldId(int $formFieldId): FormModel|null
     {
         $ffModel = FormFieldModel::findOneById($formFieldId);
 
