@@ -33,7 +33,7 @@ php vendor/bin/contao-console contao:migrate
 markocupic_contao_altcha_antispam:
     hmac_key: 'sdfsadZUI#!@sfdssf321231' # required
     algorithm: 'SHA-256' # optional
-    range_min: 1000 # optional
+    range_min: 10000 # optional
     range_max: 100000 # optional
     challenge_expiry: 3600 # optional
 ```
