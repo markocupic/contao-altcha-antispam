@@ -37,7 +37,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue(AltchaAlgorithmConfig::ALGORITHM_SHA_256)
                 ->end()
                 ->integerNode('range_min')
-                    ->defaultValue(1000)
+                    ->defaultValue(10000)
                 ->end()
                 ->integerNode('range_max')
                     ->defaultValue(100000)
