@@ -20,7 +20,7 @@ use Contao\DataContainer;
 use Contao\Message;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class FormField
@@ -28,7 +28,7 @@ class FormField
     public function __construct(
         private readonly Connection $connection,
         private readonly ContaoFramework $framework,
-        private readonly Security $security,
+        private readonly AuthorizationCheckerInterface $authorizationChecker,
         private readonly TranslatorInterface $translator,
         private readonly string $altchaHmacKey,
     ) {
@@ -37,7 +37,7 @@ class FormField
     #[AsCallback(table: 'tl_form_field', target: 'config.onload', priority: 100)]
     public function displayMessage(DataContainer $dc): void
     {
-        if (!$this->security->isGranted('ROLE_ADMIN')) {
+        if (!$this->authorizationChecker->isGranted('ROLE_ADMIN')) {
             return;
         }
 
