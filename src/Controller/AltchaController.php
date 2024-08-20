@@ -16,12 +16,11 @@ namespace Markocupic\ContaoAltchaAntispam\Controller;
 
 use Markocupic\ContaoAltchaAntispam\Altcha;
 use Markocupic\ContaoAltchaAntispam\Exception\InvalidAlgorithmException;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route(path: '/_contao_altcha_challenge', name: self::class)]
-class AltchaController extends AbstractController
+class AltchaController
 {
     public function __construct(
         private readonly Altcha $altcha,
@@ -33,6 +32,6 @@ class AltchaController extends AbstractController
      */
     public function __invoke(): JsonResponse
     {
-        return $this->json($this->altcha->createChallenge());
+        return new JsonResponse($this->altcha->createChallenge());
     }
 }
