@@ -14,6 +14,9 @@ services:
         resource: ../src/
         exclude: ../src/{DependencyInjection,Config,Widget}
 
+    Markocupic\ContaoAltchaAntispam\Controller\AltchaController:
+        public: true
+
     Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator:
         public: true
         arguments:
