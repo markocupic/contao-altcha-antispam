@@ -1,0 +1,9 @@
+# Go to the project directory first
+cd vendor/markocupic/contao-altcha-antispam
+
+rd /s /q public
+# Update project files (builds the node_modules directory)
+#npm update
+
+# Build assets
+#npm run build

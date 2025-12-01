@@ -29,13 +29,15 @@ php vendor/bin/contao-console contao:migrate
 
 **Important!** When installed, you have to set the `hmac_key` in your `config/config.yaml`.
 
+Run composer install in your terminal to clear cache and install the dependencies if you made changes to the `config.yml` file.
+
 ```yaml
 markocupic_contao_altcha_antispam:
-    hmac_key: 'sdfsadZUI#!@sfdssf321231' # required
-    algorithm: 'SHA-256' # optional
-    range_min: 10000 # optional
-    range_max: 100000 # optional
-    challenge_expiry: 3600 # optional
+  hmac_key: 'sdfsadZUI#!@sfdssf321231' # required
+  algorithm: 'SHA-256' # optional
+  range_min: 10000 # optional
+  range_max: 100000 # optional
+  challenge_expiry: 3600 # optional
 ```
 
 | key                | default value | info                                                                                                                                                                                                                      | Required |
