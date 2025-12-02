@@ -16,8 +16,6 @@ namespace Markocupic\ContaoAltchaAntispam;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
-use Markocupic\ContaoAltchaAntispam\Config\AltchaAlgorithmConfig;
-use Markocupic\ContaoAltchaAntispam\Exception\InvalidAlgorithmException;
 use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 
 class Altcha
@@ -25,17 +23,14 @@ class Altcha
     public function __construct(
         private readonly Connection $connection,
         private readonly string $altchaHmacKey,
-        private readonly string $altchaAlgorithm,
+        private readonly Algorithm $altchaAlgorithm,
         private readonly int $altchaRangeMin,
         private readonly int $altchaRangeMax,
         private readonly int $altchaChallengeExpiry,
     ) {
     }
 
-    /**
-     * @throws InvalidAlgorithmException
-     */
-    public function createChallenge(string $salt = null, int $number = null): array
+    public function createChallenge(string|null $salt = null, int|null $number = null): Challenge
     {
         if ('' === $this->altchaHmacKey) {
             throw new KeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
@@ -43,32 +38,23 @@ class Altcha
 
         $salt = $salt ?? bin2hex(random_bytes(12));
         $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
+        $expiry = time() + $this->altchaChallengeExpiry;
 
-        if (!\in_array($this->altchaAlgorithm, AltchaAlgorithmConfig::ALGORITHM_ALL, true)) {
-            throw new InvalidAlgorithmException(sprintf('Algorithm must be set to %s.', implode(', ', AltchaAlgorithmConfig::ALGORITHM_ALL)));
-        }
+        // Create the challenge
+        return new Challenge($salt, $number, $this->altchaHmacKey, $expiry, $this->altchaAlgorithm);
+    }
 
-        $algorithm = str_replace('-', '', strtolower($this->altchaAlgorithm));
-
-        $challenge = hash($algorithm, $salt.$number);
-        $signature = hash_hmac($algorithm, $challenge, $this->altchaHmacKey);
-
+    public function persistChallenge(Challenge $challenge): void
+    {
         // The challenge expires in 1 hour (default).
         // We save it to the database to prevent replay attacks.
         $set = [
             'tstamp' => time(),
-            'challenge' => $challenge,
-            'expires' => time() + $this->altchaChallengeExpiry,
+            'challenge' => $challenge->getChallenge(),
+            'expires' => $challenge->getExpiry(),
         ];
 
         $this->connection->insert('tl_altcha_challenge', $set);
-
-        return [
-            'algorithm' => $this->altchaAlgorithm,
-            'challenge' => $challenge,
-            'salt' => $salt,
-            'signature' => $signature,
-        ];
     }
 
     public function isValidPayload(string $payload): bool
@@ -96,19 +82,44 @@ class Altcha
                 'solution' => Types::STRING,
                 'now' => Types::INTEGER,
                 'unsolved' => Types::STRING,
-            ]
+            ],
         );
 
-        // Return false, if challenge has expired or has already been solved
+        // Return false if the challenge has expired or has already been solved.
         if (1 !== $rowsAffected) {
             return false;
         }
 
         $check = $this->createChallenge($json['salt'], $json['number']);
 
-        return $json['algorithm'] === $check['algorithm']
-            && $json['challenge'] === $check['challenge']
-            && $json['signature'] === $check['signature'];
+        if (!$this->hasValidAlgorithm($json, $check)) {
+            return false;
+        }
+
+        if (!$this->hasValidChallenge($json, $check)) {
+            return false;
+        }
+
+        if (!$this->hasValidSignature($json, $check)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function hasValidAlgorithm(array $json, Challenge $challenge): bool
+    {
+        return $json['algorithm'] === $challenge->getAlgorithm()->value;
+    }
+
+    private function hasValidChallenge(array $json, Challenge $challenge): bool
+    {
+        return $json['challenge'] === $challenge->getChallenge();
+    }
+
+    private function hasValidSignature(array $json, Challenge $challenge): bool
+    {
+        return $json['signature'] === $challenge->getSignature();
     }
 
     private function isReplay(array $json): bool

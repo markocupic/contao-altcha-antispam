@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Contao Altcha Antispam.
  *
- * (c) Marko Cupic 2024 <m.cupic@gmx.ch>
+ * (c) Marko Cupic 2025 <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\DependencyInjection;
 
-use Markocupic\ContaoAltchaAntispam\Config\AltchaAlgorithmConfig;
+use Markocupic\ContaoAltchaAntispam\Algorithm;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -33,8 +33,8 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('')
                 ->end()
                 ->enumNode('algorithm')
-                    ->values([...AltchaAlgorithmConfig::ALGORITHM_ALL])
-                    ->defaultValue(AltchaAlgorithmConfig::ALGORITHM_SHA_256)
+                    ->values(array_map(static fn ($case) => $case->value, Algorithm::cases()))
+                    ->defaultValue(Algorithm::ALGORITHM_SHA_256->value)
                 ->end()
                 ->integerNode('range_min')
                     ->defaultValue(10000)
