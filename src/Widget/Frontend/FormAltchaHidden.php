@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Contao Altcha Antispam.
  *
- * (c) Marko Cupic 2024 <m.cupic@gmx.ch>
+ * (c) Marko Cupic 2025 <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
@@ -26,15 +26,25 @@ use Symfony\Component\Routing\RouterInterface;
 class FormAltchaHidden extends Widget
 {
     protected $useRawRequestData = true;
+
     protected $blnSubmitInput = false;
+
     protected $blnForAttribute = true;
+
     protected $strTemplate = 'form_altcha_hidden';
+
     protected $prefix = 'widget widget-altcha';
+
     protected string $strAltchaAttributes = '';
+
     protected string $altchaAuto = '';
+
     protected bool $altchaHideLogo;
+
     protected bool $altchaHideFooter;
+
     protected int $altchaMaxNumber = 10000000;
+
     protected string $altchaSource = 'local';
 
     /**
@@ -82,7 +92,7 @@ class FormAltchaHidden extends Widget
      */
     public function generate(): string
     {
-        return sprintf(
+        return \sprintf(
             '<altcha-widget %s></altcha-widget>',
             $this->getAltchaAttributesAsString(),
         );
@@ -126,15 +136,15 @@ class FormAltchaHidden extends Widget
         /** @var RouterInterface $router */
         $router = $this->getContainer()->get('router');
 
-        $challengeUrl = sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
+        $challengeUrl = \sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
 
         $attributes = [];
         $attributes[] = $challengeUrl;
 
-        $attributes[] = sprintf('name="%s"', $this->name);
+        $attributes[] = \sprintf('name="%s"', $this->name);
 
         if (!empty($this->altchaAuto) && \in_array($this->altchaAuto, ['onload', 'onsubmit'], true)) {
-            $attributes[] = sprintf('auto="%s"', StringUtil::specialchars($this->altchaAuto));
+            $attributes[] = \sprintf('auto="%s"', StringUtil::specialchars($this->altchaAuto));
         }
 
         if ($this->altchaHideLogo) {
@@ -145,10 +155,14 @@ class FormAltchaHidden extends Widget
             $attributes[] = 'hidefooter';
         }
 
-        $attributes[] = sprintf('maxnumber="%d"', $this->altchaMaxNumber);
+        if (System::getContainer()->getParameter('kernel.debug')) {
+            $attributes[] = 'debug';
+        }
+
+        $attributes[] = \sprintf('maxnumber="%d"', $this->altchaMaxNumber);
 
         $localization = StringUtil::specialchars(json_encode($this->getLocalization()));
-        $attributes[] = sprintf('strings="%s"', $localization);
+        $attributes[] = \sprintf('strings="%s"', $localization);
 
         return $attributes;
     }
@@ -158,9 +172,6 @@ class FormAltchaHidden extends Widget
         return implode(' ', $this->getAltchaAttributesAsArray());
     }
 
-    /**
-     * @param mixed $varInput
-     */
     protected function validator($varInput): mixed
     {
         /** @var MpFormsManager $mpFormsManager */
