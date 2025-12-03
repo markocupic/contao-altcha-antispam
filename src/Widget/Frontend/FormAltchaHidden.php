@@ -15,13 +15,13 @@ declare(strict_types=1);
 namespace Markocupic\ContaoAltchaAntispam\Widget\Frontend;
 
 use Contao\BackendTemplate;
+use Contao\Controller;
 use Contao\StringUtil;
 use Contao\System;
 use Contao\Widget;
+use Markocupic\ContaoAltchaAntispam\Altcha\AltchaValidator;
 use Markocupic\ContaoAltchaAntispam\Controller\AltchaController;
 use Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager;
-use Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator;
-use Symfony\Component\Routing\RouterInterface;
 
 class FormAltchaHidden extends Widget
 {
@@ -86,7 +86,7 @@ class FormAltchaHidden extends Widget
     }
 
     /**
-     * Generate the widget and return it as string.
+     * Generate the widget and return it as a string.
      *
      * @return string The widget markup
      */
@@ -119,7 +119,7 @@ class FormAltchaHidden extends Widget
         /** @var MpFormsManager $mpFormsManager */
         $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
 
-        // Do not show the ALTCHA widget again, if it has already been successfully submitted in a terminal42/contao-mp_forms
+        // Do not show the ALTCHA widget again if it has already been successfully submitted in a terminal42/contao-mp_forms
         if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
             if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
                 return '';
@@ -131,45 +131,62 @@ class FormAltchaHidden extends Widget
         return parent::parse($arrAttributes);
     }
 
+    public function getAltchaAttributesAsString(): string
+    {
+        $attributes = $this->getAltchaAttributesAsArray();
+        $html = [];
+
+        foreach ($attributes as $key => $value) {
+            // Skip null values
+            if (null === $value) {
+                continue;
+            }
+
+            // Handle boolean attributes (e.g., disabled, required)
+            if (\is_bool($value)) {
+                if ($value) {
+                    $html[] = htmlspecialchars($key, ENT_QUOTES);
+                }
+
+                continue;
+            }
+
+            // Normal key="value" attributes
+            $html[] = \sprintf(
+                '%s="%s"',
+                htmlspecialchars($key, ENT_QUOTES),
+                htmlspecialchars((string) $value, ENT_QUOTES),
+            );
+        }
+
+        return implode(' ', $html);
+    }
+
     protected function getAltchaAttributesAsArray(): array
     {
-        /** @var RouterInterface $router */
-        $router = $this->getContainer()->get('router');
-
-        $challengeUrl = \sprintf('challengeurl="%s"', $router->generate(AltchaController::class));
-
         $attributes = [];
-        $attributes[] = $challengeUrl;
-
-        $attributes[] = \sprintf('name="%s"', $this->name);
+        $attributes['name'] = $this->name;
+        $attributes['challengeurl'] = $this->getContainer()->get('router')->generate(AltchaController::class);
+        $attributes['maxnumber'] = $this->altchaMaxNumber;
+        $attributes['strings'] = json_encode($this->getLocalization());
 
         if (!empty($this->altchaAuto) && \in_array($this->altchaAuto, ['onload', 'onsubmit'], true)) {
-            $attributes[] = \sprintf('auto="%s"', StringUtil::specialchars($this->altchaAuto));
+            $attributes['auto'] = StringUtil::specialchars($this->altchaAuto);
         }
 
         if ($this->altchaHideLogo) {
-            $attributes[] = 'hidelogo';
+            $attributes['hidelogo'] = true;
         }
 
         if ($this->altchaHideFooter) {
-            $attributes[] = 'hidefooter';
+            $attributes['hidefooter'] = true;
         }
 
         if (System::getContainer()->getParameter('kernel.debug')) {
-            $attributes[] = 'debug';
+            $attributes['debug'] = true;
         }
 
-        $attributes[] = \sprintf('maxnumber="%d"', $this->altchaMaxNumber);
-
-        $localization = StringUtil::specialchars(json_encode($this->getLocalization()));
-        $attributes[] = \sprintf('strings="%s"', $localization);
-
         return $attributes;
-    }
-
-    protected function getAltchaAttributesAsString(): string
-    {
-        return implode(' ', $this->getAltchaAttributesAsArray());
     }
 
     protected function validator($varInput): mixed
@@ -202,13 +219,8 @@ class FormAltchaHidden extends Widget
 
     protected function getLocalization(): array
     {
-        return [
-            'error' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_error'],
-            'footer' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_footer'],
-            'label' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_label'],
-            'verified' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_verified'],
-            'verifying' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_verifying'],
-            'waitAlert' => $GLOBALS['TL_LANG']['ERR']['altcha_widget_waitAlert'],
-        ];
+        Controller::loadLanguageFile('default');
+
+        return $GLOBALS['TL_LANG']['ALTCHA'];
     }
 }
