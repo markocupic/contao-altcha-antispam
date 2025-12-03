@@ -5,12 +5,10 @@ Encore
     .setPublicPath('/bundles/markocupiccontaoaltchaantispam')
     .setManifestKeyPrefix('')
 
-
     .copyFiles({
         from: './node_modules/altcha/dist',
-        to: 'altcha/js/[path][name].[hash:8].[ext]',
-        pattern: /(altcha\.js)$/,
-
+        to: 'altcha/dist/[path][name].[hash:8].[ext]',
+        pattern: /(altcha\.js|altcha\.i18n\.js)$/,
     })
 
     .disableSingleRuntimeChunk()
@@ -23,12 +21,6 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
-
-    //.enablePostCssLoader()
-    // Preprocessing SCSS to CSS
-    //.enableSassLoader()
-    //.enablePostCssLoader()
-    //.addStyleEntry('css/be_stylesheet', './assets/styles/backend/scss/backend_main.scss')
 ;
 
 module.exports = Encore.getWebpackConfig();

@@ -2,7 +2,7 @@
     {% if altchaSource == 'cdn' %}
         {% do addHtmlToHead('<script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js" type="module"></script>') %}
     {% else %}
-        {% do addHtmlToHead('<script async defer src="'~asset('altcha/js/altcha.js', 'markocupic_contao_altcha_antispam')~'" type="module"></script>') %}
+        {% do addHtmlToHead('<script async defer src="'~asset('altcha/dist/altcha.js', 'markocupic_contao_altcha_antispam')~'" type="module"></script>') %}
     {% endif %}
 {% endblock %}
 <div class="{{ prefix }}{% if strClass|default %} {{ strClass }}{% endif %}">
