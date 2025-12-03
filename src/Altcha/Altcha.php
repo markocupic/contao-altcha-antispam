@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-namespace Markocupic\ContaoAltchaAntispam;
+namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
@@ -21,12 +21,12 @@ use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 class Altcha
 {
     public function __construct(
-        private readonly Connection $connection,
-        private readonly string $altchaHmacKey,
         private readonly Algorithm $altchaAlgorithm,
-        private readonly int $altchaRangeMin,
-        private readonly int $altchaRangeMax,
+        private readonly Connection $connection,
         private readonly int $altchaChallengeExpiry,
+        private readonly int $altchaRangeMax,
+        private readonly int $altchaRangeMin,
+        private readonly string $altchaHmacKey,
     ) {
     }
 
@@ -90,17 +90,18 @@ class Altcha
             return false;
         }
 
-        $check = $this->createChallenge($json['salt'], $json['number']);
+        // Regenerate the challenge with salt and number from payload.
+        $expectedChallenge = $this->createChallenge($json['salt'], $json['number']);
 
-        if (!$this->hasValidAlgorithm($json, $check)) {
+        if (!$this->hasValidAlgorithm($json, $expectedChallenge)) {
             return false;
         }
 
-        if (!$this->hasValidChallenge($json, $check)) {
+        if (!$this->hasValidChallenge($json, $expectedChallenge)) {
             return false;
         }
 
-        if (!$this->hasValidSignature($json, $check)) {
+        if (!$this->hasValidSignature($json, $expectedChallenge)) {
             return false;
         }
 

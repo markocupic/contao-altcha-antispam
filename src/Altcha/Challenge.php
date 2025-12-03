@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-namespace Markocupic\ContaoAltchaAntispam;
+namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
 class Challenge
 {

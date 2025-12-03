@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\DependencyInjection;
 
-use Markocupic\ContaoAltchaAntispam\Algorithm;
+use Markocupic\ContaoAltchaAntispam\Altcha\Algorithm;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;

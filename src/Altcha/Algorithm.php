@@ -12,19 +12,11 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-altcha-antispam
  */
 
-namespace Markocupic\ContaoAltchaAntispam\Validator;
+namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
-use Markocupic\ContaoAltchaAntispam\Altcha;
-
-class AltchaValidator
+enum Algorithm: string
 {
-    public function __construct(
-        private readonly Altcha $altcha,
-    ) {
-    }
-
-    public function validate(string $payload): bool
-    {
-        return $this->altcha->isValidPayload($payload);
-    }
+    case ALGORITHM_SHA_256 = 'SHA-256';
+    case ALGORITHM_SHA_384 = 'SHA-384';
+    case ALGORITHM_SHA_512 = 'SHA-512';
 }

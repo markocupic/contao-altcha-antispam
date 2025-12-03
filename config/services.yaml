@@ -17,10 +17,10 @@ services:
     Markocupic\ContaoAltchaAntispam\Controller\AltchaController:
         public: true
 
-    Markocupic\ContaoAltchaAntispam\Validator\AltchaValidator:
+    Markocupic\ContaoAltchaAntispam\Altcha\AltchaValidator:
         public: true
         arguments:
-            - '@Markocupic\ContaoAltchaAntispam\Altcha'
+            - '@Markocupic\ContaoAltchaAntispam\Altcha\Altcha'
 
     Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager:
         public: true

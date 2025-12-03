@@ -14,7 +14,8 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\DependencyInjection;
 
-use Markocupic\ContaoAltchaAntispam\Algorithm;
+use Markocupic\ContaoAltchaAntispam\Altcha\Algorithm;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -25,8 +26,8 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder(self::ROOT_KEY);
-
-        $treeBuilder->getRootNode()
+        $rootNode = $treeBuilder->getRootNode();
+        $rootNode
             ->children()
                 ->scalarNode('hmac_key')
                     ->cannotBeEmpty()
@@ -48,6 +49,26 @@ class Configuration implements ConfigurationInterface
             ->end()
         ;
 
+        $this->addRangeSection($rootNode);
+
         return $treeBuilder;
+    }
+
+    private function addRangeSection(ArrayNodeDefinition $node): void
+    {
+        $node
+            ->children()
+                ->integerNode('range_min')
+                    ->defaultValue(10000)
+                ->end()
+                ->integerNode('range_max')
+                    ->defaultValue(100000)
+                ->end()
+            ->end()
+            ->validate()
+            ->ifTrue(static fn ($config) => isset($config['range_min'], $config['range_max']) && $config['range_max'] <= $config['range_min'])
+            ->thenInvalid('The "range_max" value must be greater than "range_min" value.')
+            ->end()
+        ;
     }
 }

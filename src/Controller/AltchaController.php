@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Controller;
 
-use Markocupic\ContaoAltchaAntispam\Altcha;
+use Markocupic\ContaoAltchaAntispam\Altcha\Altcha;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
