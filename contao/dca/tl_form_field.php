@@ -73,13 +73,13 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaMaxNumber'] = [
     'search'    => true,
     'sorting'   => true,
     'inputType' => 'text',
-    'eval'      => ['mandatory' => true, 'rgxp' => 'integer', 'maxlength' => 10, 'tl_class' => 'w50'],
+    'eval'      => ['mandatory' => true, 'rgxp' => 'altcha_max_iteration', 'maxlength' => 10, 'tl_class' => 'w50'],
     'sql'       => [
         'type'     => Types::INTEGER,
         'length'   => '10',
         'unsigned' => true,
         'notnull'  => true,
-        'default'  => 10000000,
+        'default'  => 1000000,
     ],
 ];
 
