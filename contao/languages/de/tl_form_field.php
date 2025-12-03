@@ -23,5 +23,5 @@ $GLOBALS['TL_LANG']['tl_form_field']['altcha_legend'] = 'ALTCHA Widget Einstellu
 $GLOBALS['TL_LANG']['tl_form_field']['altchaHideFooter'] = ['Footer ausblenden', 'Blenden Sie Footer (ALTCHA Link) aus.'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaHideLogo'] = ['Logo ausblenden', 'Blenden Sie das ALTCHA Logo aus.'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaAuto'] = ['Überprüfung starten', 'Wählen Sie aus, wie die Überprüfung gestartet werden soll (mögliche Optionen: onload, onsubmit).'];
-$GLOBALS['TL_LANG']['tl_form_field']['altchaMaxNumber'] = ['Maximale Iterationen', 'Wählen Sie die maximale Anzahl an Iterationen aus (Standardwert: 10,000,000).'];
+$GLOBALS['TL_LANG']['tl_form_field']['altchaMaxNumber'] = ['Maximale Iterationen', 'Wählen Sie die maximale Anzahl an Iterationen aus (Standardwert: 1,000,000).'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaSource'] = ['altcha.js Quelle', 'Wählen Sie aus, woher das altcha.js Skript geladen werden soll.'];
