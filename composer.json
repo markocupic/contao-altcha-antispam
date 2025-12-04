@@ -50,7 +50,8 @@
             "contao-components/installer": false,
             "contao/manager-plugin": false,
             "contao-community-alliance/composer-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "contao-components/installer": true
         }
     },
     "extra": {
