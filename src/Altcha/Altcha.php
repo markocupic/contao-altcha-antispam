@@ -32,111 +32,45 @@ class Altcha
 
     public function createChallenge(string|null $salt = null, int|null $number = null): Challenge
     {
-        if ('' === $this->altchaHmacKey) {
-            throw new KeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
-        }
+        $this->validateConfiguration();
 
-        $salt = $salt ?? bin2hex(random_bytes(12));
-        $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
         $expiry = time() + $this->altchaChallengeExpiry;
+        $salt = $salt ?? $this->generateSalt($expiry);
+        $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
 
         // Create the challenge
-        return new Challenge($salt, $number, $this->altchaHmacKey, $expiry, $this->altchaAlgorithm);
+        return new Challenge($number, $this->altchaRangeMax, $expiry, $this->altchaHmacKey, $salt, $this->altchaAlgorithm);
     }
 
     public function persistChallenge(Challenge $challenge): void
     {
         // The challenge expires in 1 hour (default).
         // We save it to the database to prevent replay attacks.
-        $set = [
+        $insertParameters = [
             'tstamp' => time(),
             'challenge' => $challenge->getChallenge(),
             'expires' => $challenge->getExpiry(),
         ];
 
-        $this->connection->insert('tl_altcha_challenge', $set);
+        $insertTypes = [
+            'tstamp' => Types::INTEGER,
+            'challenge' => Types::STRING,
+            'expires' => Types::INTEGER,
+        ];
+
+        $this->connection->insert('tl_altcha_challenge', $insertParameters, $insertTypes);
     }
 
-    public function isValidPayload(string $payload): bool
+    private function validateConfiguration(): void
     {
-        $json = json_decode(base64_decode($payload, true), true);
-
-        if (null === $json) {
-            return false;
+        if ('' === $this->altchaHmacKey) {
+            throw new KeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
         }
-
-        if ($this->isReplay($json)) {
-            return false;
-        }
-
-        $rowsAffected = $this->connection->executeStatement(
-            'UPDATE tl_altcha_challenge SET solved = :solved WHERE challenge = :solution AND expires > :now AND solved = :unsolved',
-            [
-                'solved' => '1',
-                'solution' => $json['challenge'],
-                'now' => time(),
-                'unsolved' => '',
-            ],
-            [
-                'solved' => Types::STRING,
-                'solution' => Types::STRING,
-                'now' => Types::INTEGER,
-                'unsolved' => Types::STRING,
-            ],
-        );
-
-        // Return false if the challenge has expired or has already been solved.
-        if (1 !== $rowsAffected) {
-            return false;
-        }
-
-        // Regenerate the challenge with salt and number from payload.
-        $expectedChallenge = $this->createChallenge($json['salt'], $json['number']);
-
-        if (!$this->hasValidAlgorithm($json, $expectedChallenge)) {
-            return false;
-        }
-
-        if (!$this->hasValidChallenge($json, $expectedChallenge)) {
-            return false;
-        }
-
-        if (!$this->hasValidSignature($json, $expectedChallenge)) {
-            return false;
-        }
-
-        return true;
     }
 
-    private function hasValidAlgorithm(array $json, Challenge $challenge): bool
+    private function generateSalt(int $expiry): string
     {
-        return $json['algorithm'] === $challenge->getAlgorithm()->value;
-    }
-
-    private function hasValidChallenge(array $json, Challenge $challenge): bool
-    {
-        return $json['challenge'] === $challenge->getChallenge();
-    }
-
-    private function hasValidSignature(array $json, Challenge $challenge): bool
-    {
-        return $json['signature'] === $challenge->getSignature();
-    }
-
-    private function isReplay(array $json): bool
-    {
-        $solution = $json['challenge'] ?? '';
-
-        return false !== $this->connection->fetchOne(
-            'SELECT id FROM tl_altcha_challenge WHERE challenge = :solution AND solved = :solved',
-            [
-                'solution' => $solution,
-                'solved' => '1',
-            ],
-            [
-                'solution' => Types::STRING,
-                'solved' => Types::STRING,
-            ],
-        );
+        // Append expiry to salt, which will be part of the signature and verifiable on the server.
+        return \sprintf('%s?expires=%s', bin2hex(random_bytes(12)), urlencode((string) $expiry));
     }
 }

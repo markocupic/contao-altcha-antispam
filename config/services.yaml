@@ -21,6 +21,7 @@ services:
         public: true
         arguments:
             - '@Markocupic\ContaoAltchaAntispam\Altcha\Altcha'
+            - '@database_connection'
 
     Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager:
         public: true
