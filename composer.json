@@ -38,7 +38,8 @@
         "contao/manager-plugin": "^2.12",
         "terminal42/contao-mp_forms": "^5.0",
         "contao/easy-coding-standard": "^6.0",
-        "phpunit/phpunit": "^9.0 || ^10.0 || ^11.0 || ^12.0"
+        "phpunit/phpunit": "^9.5",
+        "contao/test-case": "^4.13"
     },
     "autoload": {
         "psr-4": {
