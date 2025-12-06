@@ -17,10 +17,13 @@
         {% if hasErrors.invoke()|default(false) %}
             <p class="error">{{ getErrorAsString.invoke()|default('')|raw }}</p>
         {% endif %}
-        {# Overriding existing or adding additional attributes can be made here: #}
-        {# {% set strAltchaAttributes = attrs(strAltchaAttributes|default).set('foo', 'bar') %} #}
         {% block altcha_tag %}
-            <altcha-widget {{ strAltchaAttributes|raw }}></altcha-widget>
+            {# The ALTCHA widget can be customized:
+            {% set altchaAttributes = altchaAttributes
+                .unset('bar')
+                .add('foo', 'bar') %}
+            #}
+            <altcha-widget{{ altchaAttributes|raw }}></altcha-widget>
         {% endblock %}
     {% endblock %}
 </div>

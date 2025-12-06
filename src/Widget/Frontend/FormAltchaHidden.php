@@ -20,6 +20,7 @@ use Contao\StringUtil;
 use Contao\System;
 use Contao\Widget;
 use Markocupic\ContaoAltchaAntispam\Altcha\AltchaValidator;
+use Markocupic\ContaoAltchaAntispam\Altcha\AltchaWidgetAttributes;
 use Markocupic\ContaoAltchaAntispam\Controller\AltchaController;
 use Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager;
 
@@ -37,6 +38,8 @@ class FormAltchaHidden extends Widget
 
     protected string $strAltchaAttributes = '';
 
+    protected AltchaWidgetAttributes|null $altchaAttributes;
+
     protected string $altchaAuto = '';
 
     protected bool $altchaHideLogo;
@@ -44,6 +47,8 @@ class FormAltchaHidden extends Widget
     protected bool $altchaHideFooter;
 
     protected int $altchaMaxNumber = 10000000;
+
+    protected int $altchaDelay = 500;
 
     protected string $altchaSource = 'local';
 
@@ -79,7 +84,7 @@ class FormAltchaHidden extends Widget
     public function __get($strKey)
     {
         if ('altchaAttributes' === $strKey) {
-            return $this->getAltchaAttributesAsString();
+            return $this->getAltchaAttributes();
         }
 
         return parent::__get($strKey);
@@ -94,7 +99,7 @@ class FormAltchaHidden extends Widget
     {
         return \sprintf(
             '<altcha-widget %s></altcha-widget>',
-            $this->getAltchaAttributesAsString(),
+            $this->getAltchaAttributes()->toString(),
         );
     }
 
@@ -126,64 +131,38 @@ class FormAltchaHidden extends Widget
             }
         }
 
-        $this->strAltchaAttributes = $this->getAltchaAttributesAsString();
+        $this->altchaAttributes = $this->getAltchaAttributes();
 
         return parent::parse($arrAttributes);
     }
 
-    public function getAltchaAttributesAsString(): string
+    protected function getAltchaAttributes(): AltchaWidgetAttributes
     {
-        $attributes = $this->getAltchaAttributesAsArray();
-        $html = [];
-
-        foreach ($attributes as $key => $value) {
-            // Skip null values
-            if (null === $value) {
-                continue;
-            }
-
-            // Handle boolean attributes (e.g., disabled, required)
-            if (\is_bool($value)) {
-                if ($value) {
-                    $html[] = htmlspecialchars($key, ENT_QUOTES);
-                }
-
-                continue;
-            }
-
-            // Normal key="value" attributes
-            $html[] = \sprintf(
-                '%s="%s"',
-                htmlspecialchars($key, ENT_QUOTES),
-                htmlspecialchars((string) $value, ENT_QUOTES),
-            );
-        }
-
-        return implode(' ', $html);
-    }
-
-    protected function getAltchaAttributesAsArray(): array
-    {
-        $attributes = [];
-        $attributes['name'] = $this->name;
-        $attributes['challengeurl'] = $this->getContainer()->get('router')->generate(AltchaController::class);
-        $attributes['maxnumber'] = $this->altchaMaxNumber;
-        $attributes['strings'] = json_encode($this->getLocalization());
+        $attributes = (new AltchaWidgetAttributes())
+            ->add('name', $this->name)
+            ->add('challengeurl', $this->getContainer()->get('router')->generate(AltchaController::class))
+            ->add('maxnumber', $this->altchaMaxNumber)
+            ->add('strings', json_encode($this->getLocalization()))
+        ;
 
         if (!empty($this->altchaAuto) && \in_array($this->altchaAuto, ['onload', 'onsubmit'], true)) {
-            $attributes['auto'] = StringUtil::specialchars($this->altchaAuto);
+            $attributes = $attributes->add('auto', StringUtil::specialchars($this->altchaAuto));
+        }
+
+        if (!empty($this->altchaDelay)) {
+            $attributes = $attributes->add('delay', abs($this->altchaDelay));
         }
 
         if ($this->altchaHideLogo) {
-            $attributes['hidelogo'] = true;
+            $attributes = $attributes->add('hidelogo', true);
         }
 
         if ($this->altchaHideFooter) {
-            $attributes['hidefooter'] = true;
+            $attributes = $attributes->add('hidefooter', true);
         }
 
         if (System::getContainer()->getParameter('kernel.debug')) {
-            $attributes['debug'] = true;
+            $attributes = $attributes->add('debug', true);
         }
 
         return $attributes;

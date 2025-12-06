@@ -26,3 +26,4 @@ $GLOBALS['TL_LANG']['tl_form_field']['altchaHideLogo'] = ['hide logo', 'Hide the
 $GLOBALS['TL_LANG']['tl_form_field']['altchaAuto'] = ['verification', 'Automatically start verification without user interaction (possible values: onload, onsubmit).'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaMaxNumber'] = ['max number', 'The max. number to iterate to (defaults to 1,000,000).'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaSource'] = ['altcha.js source', 'Please select where altcha.js should be loaded from.'];
+$GLOBALS['TL_LANG']['tl_form_field']['altchaDelay'] = ['delay in ms', 'Since most modern devices perform the verification Proof of Work (PoW) swiftly, it is recommended to set an artificial delay before the verification. Otherwise, the widget may only briefly flash on the user’s screen. Configure the delay in milliseconds.'];
