@@ -76,7 +76,7 @@ class Challenge
         return [
             'algorithm' => $this->algorithm->value,
             'challenge' => $this->challenge,
-            'maxnumber' => $this->maxNumber,
+            //'maxnumber' => $this->maxNumber, // If we return the max number, the form field setting `tl_form_field.altchaMaxNumber` would have no effect!.
             'salt' => $this->salt,
             'signature' => $this->signature,
         ];
