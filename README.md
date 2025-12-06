@@ -26,8 +26,8 @@ php vendor/bin/contao-console contao:migrate
 ```
 
 ## Configuration and usage
-The extensiion runs out of the box an no further configuration is required. Nevertheless, some parameters can be configured.
-Run composer install in your terminal to clear cache and install the dependencies if you made changes to the `config.yaml` file.
+The extension runs out of the box and no further configuration is required. Nevertheless, some parameters can be configured.
+Run composer install in your terminal to clear and rebuild cache if you made changes to the `config.yaml` file.
 
 ```yaml
 # config/config.yaml
