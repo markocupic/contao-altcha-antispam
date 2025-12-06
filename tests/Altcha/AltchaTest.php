@@ -18,7 +18,6 @@ use Doctrine\DBAL\Connection;
 use Markocupic\ContaoAltchaAntispam\Altcha\Algorithm;
 use Markocupic\ContaoAltchaAntispam\Altcha\Altcha;
 use Markocupic\ContaoAltchaAntispam\Altcha\Challenge;
-use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 use PHPUnit\Framework\TestCase;
 
 class AltchaTest extends TestCase
@@ -66,20 +65,6 @@ class AltchaTest extends TestCase
         $this->assertSame('secure-hmac-key', $challenge->getHmacKey());
         $this->assertSame(100, $challenge->getMaxNumber());
         $this->assertSame($this->algorithm, $challenge->getAlgorithm());
-    }
-
-    public function testCreateChallengeThrowsExceptionWhenHmacKeyNotSet(): void
-    {
-        $this->expectException(KeyNotSetException::class);
-        $altcha = new Altcha(
-            $this->algorithm,
-            $this->connectionMock,
-            3600,
-            100,
-            1,
-            '', // Missing HMAC key
-        );
-        $altcha->createChallenge();
     }
 
     /**

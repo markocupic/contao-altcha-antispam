@@ -16,7 +16,6 @@ namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Types;
-use Markocupic\ContaoAltchaAntispam\Exception\KeyNotSetException;
 
 class Altcha
 {
@@ -32,8 +31,6 @@ class Altcha
 
     public function createChallenge(string|null $salt = null, int|null $number = null): Challenge
     {
-        $this->validateConfiguration();
-
         $expiry = time() + $this->altchaChallengeExpiry;
         $salt = $salt ?? $this->generateSalt($expiry);
         $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
@@ -59,13 +56,6 @@ class Altcha
         ];
 
         $this->connection->insert('tl_altcha_challenge', $insertParameters, $insertTypes);
-    }
-
-    private function validateConfiguration(): void
-    {
-        if ('' === $this->altchaHmacKey) {
-            throw new KeyNotSetException('ALTCHA hmac key ist empty and should be set in config/config.yaml. Please visit https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage to learn more.');
-        }
     }
 
     private function generateSalt(int $expiry): string

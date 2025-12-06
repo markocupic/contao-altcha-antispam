@@ -4,7 +4,7 @@ services:
         autoconfigure: true
         public: false
         bind:
-            $altchaHmacKey: '%markocupic_contao_altcha_antispam.hmac_key%'
+            $altchaHmacKey: '%kernel.secret%'
             $altchaAlgorithm: '%markocupic_contao_altcha_antispam.algorithm%'
             $altchaRangeMin: '%markocupic_contao_altcha_antispam.range_min%'
             $altchaRangeMax: '%markocupic_contao_altcha_antispam.range_max%'

@@ -26,23 +26,20 @@ php vendor/bin/contao-console contao:migrate
 ```
 
 ## Configuration and usage
-
-**Important!** When installed, you have to set the `hmac_key` in your `config/config.yaml`.
-
-Run composer install in your terminal to clear cache and install the dependencies if you made changes to the `config.yml` file.
+The extensiion runs out of the box an no further configuration is required. Nevertheless, some parameters can be configured.
+Run composer install in your terminal to clear cache and install the dependencies if you made changes to the `config.yaml` file.
 
 ```yaml
+# config/config.yaml
 markocupic_contao_altcha_antispam:
-  hmac_key: 'sdfsadZUI#!@sfdssf321231' # required
-  algorithm: 'SHA-256' # optional
-  range_min: 10000 # optional
-  range_max: 100000 # optional
-  challenge_expiry: 3600 # optional
+  algorithm: 'SHA-256' # optional, default is SHA-256
+  range_min: 10000 # optional, default is 10000
+  range_max: 100000 # optional, default is 100000
+  challenge_expiry: 3600 # optional, default is 3600
 ```
 
 | key                | default value | info                                                                                                                                                                                                                      | Required |
 |--------------------|:--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
-| `hmac_key`         | `''`          | Set a kind of a secret key/salt, e.g. `sdfsadZUI#!@sfdssf321231`                                                                                                                                                          | **yes**  |
 | `algorithm`        | `SHA-256`     | Choose between `SHA-256`, `SHA-512` or `SHA-384`                                                                                                                                                                          | no       |
 | `range_min`        | `10000`       | Choose a higher value to increase the complexity/duration. A minimum value of the random number of at least several thousand as a "minimum required complexity" is recomended. [More](https://altcha.org/docs/complexity) | no       |
 | `range_max`        | `100000`      | Choose a higher value to increase the complexity/duration. The maximum value of 100,000 is a good start for most systems. [More](https://altcha.org/docs/complexity)                                                      | no       |

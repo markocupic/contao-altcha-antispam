@@ -45,7 +45,6 @@ class MarkocupicContaoAltchaAntispamExtension extends Extension
 
         $rootKey = $this->getAlias();
 
-        $container->setParameter($rootKey.'.hmac_key', $config['hmac_key']);
         $container->setParameter($rootKey.'.algorithm', Algorithm::from($config['algorithm']));
         $container->setParameter($rootKey.'.range_min', $config['range_min']);
         $container->setParameter($rootKey.'.range_max', $config['range_max']);

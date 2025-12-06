@@ -25,7 +25,6 @@ $GLOBALS['TL_LANG']['FFL']['altcha_hidden'] = [
  */
 $GLOBALS['TL_LANG']['ERR']['altcha_max_iteration_range'] = 'For the widget to run without errors, you must enter a value greater than %d! See bundle configuration <code>markocupic_contao_altcha_antispam.range_max</code>.';
 $GLOBALS['TL_LANG']['ERR']['altcha_verification_failed'] = 'Altcha antispam verification failed. Are you a human or a robot?';
-$GLOBALS['TL_LANG']['ERR']['altcha_hmac_key_not_found'] = 'The ALTCHA hmac key is still empty, it should be set in config/config.yaml. <a href="https://github.com/markocupic/contao-altcha-antispam?tab=readme-ov-file#configuration-and-usage" target="_blank">More</a>';
 
 // Widget translations: see https://github.com/altcha-org/altcha/blob/main/dist_i18n/en.js
 $GLOBALS['TL_LANG']['ALTCHA']['ariaLinkLabel'] = 'Visit Altcha.org';
