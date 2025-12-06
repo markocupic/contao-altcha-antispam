@@ -24,6 +24,6 @@ $GLOBALS['TL_LANG']['tl_form_field']['altcha_legend'] = 'ALTCHA widget settings'
 $GLOBALS['TL_LANG']['tl_form_field']['altchaHideFooter'] = ['hide footer', 'Hide the footer (ALTCHA link).'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaHideLogo'] = ['hide logo', 'Hide the ALTCHA logo.'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaAuto'] = ['verification', 'Automatically start verification without user interaction (possible values: onload, onsubmit).'];
-$GLOBALS['TL_LANG']['tl_form_field']['altchaMaxNumber'] = ['max number', 'The max. number to iterate to (defaults to 1,000,000).'];
+$GLOBALS['TL_LANG']['tl_form_field']['altchaMaxNumber'] = ['max number', 'The max. number to iterate to (defaults to 1,000,000). This value does not correspond to the complexity of the challenge. The complexity must be set in the bundle configuration under <code>markocupic_contao_altcha_antispam.range_min</code> and <code>markocupic_contao_altcha_antispam.range_max</code>.'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaSource'] = ['altcha.js source', 'Please select where altcha.js should be loaded from.'];
 $GLOBALS['TL_LANG']['tl_form_field']['altchaDelay'] = ['delay in ms', 'Since most modern devices perform the verification Proof of Work (PoW) swiftly, it is recommended to set an artificial delay before the verification. Otherwise, the widget may only briefly flash on the user’s screen. Configure the delay in milliseconds.'];
