@@ -27,23 +27,27 @@ php vendor/bin/contao-console contao:migrate
 
 ## Configuration and usage
 The extension runs out of the box and no further configuration is required. Nevertheless, some parameters can be configured.
+
+The **[Complexity](https://altcha.org/docs/v2/complexity/)** can be adjusted by modifying the minimum and maximum values of the randomly generated secret number on the server side (`markocupic_contao_altcha_antispam.range_min` and `markocupic_contao_altcha_antispam.range_max`).
+A lower maximum value creates a less complex challenge, requiring fewer computational iterations for the client to find a matching solution. Conversely, a higher maximum value increases the complexity, demanding more computational resources and time from the client.
+
 Run composer install in your terminal to clear and rebuild cache if you made changes to the `config.yaml` file.
 
 ```yaml
 # config/config.yaml
 markocupic_contao_altcha_antispam:
   algorithm: 'SHA-256' # optional, default is SHA-256
-  range_min: 10000 # optional, default is 10000
-  range_max: 100000 # optional, default is 100000
+  range_min: 290000 # Lower limit for the complexity (optional), default is 10000
+  range_max: 300000 # Upper limit for the complexity (optional), default is 100000
   challenge_expiry: 3600 # optional, default is 3600
 ```
 
-| key                | default value | info                                                                                                                                                                                                                      | Required |
-|--------------------|:--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
-| `algorithm`        | `SHA-256`     | Choose between `SHA-256`, `SHA-512` or `SHA-384`                                                                                                                                                                          | no       |
-| `range_min`        | `10000`       | Choose a higher value to increase the complexity/duration. A minimum value of the random number of at least several thousand as a "minimum required complexity" is recomended. [More](https://altcha.org/docs/complexity) | no       |
-| `range_max`        | `100000`      | Choose a higher value to increase the complexity/duration. The maximum value of 100,000 is a good start for most systems. [More](https://altcha.org/docs/complexity)                                                      | no       |
-| `challenge_expiry` | `3600`        | Choose an expiration time, so that there is not an infinite amount of time to solve the challenge.                                                                                                                        | no       |
+| key                | default value | info                                                                                                                                                                                                                                          | Required |
+|--------------------|:--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| `algorithm`        | `SHA-256`     | Choose between `SHA-256`, `SHA-512` or `SHA-384`                                                                                                                                                                                              | no       |
+| `range_min`        | `10000`       | **Complexity:** Choose a higher value to increase the complexity/duration. A minimum value of the random number of at least several thousand as a "minimum required complexity" is recomended. [More](https://altcha.org/docs/v2/complexity/) | no       |
+| `range_max`        | `100000`      | **Complexity:** Choose a higher value to increase the complexity/duration. The maximum value of 100,000 is a good start for most systems. [More](https://altcha.org/docs/v2/complexity/)                                                      | no       |
+| `challenge_expiry` | `3600`        | Choose an expiration time, so that there is not an infinite amount of time to solve the challenge.                                                                                                                                            | no       |
 
 ## Endpoint (route)
 
