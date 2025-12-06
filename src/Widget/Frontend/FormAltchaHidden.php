@@ -36,8 +36,6 @@ class FormAltchaHidden extends Widget
 
     protected $prefix = 'widget widget-altcha';
 
-    protected string $strAltchaAttributes = '';
-
     protected AltchaWidgetAttributes|null $altchaAttributes;
 
     protected string $altchaAuto = '';
@@ -84,7 +82,7 @@ class FormAltchaHidden extends Widget
     public function __get($strKey)
     {
         if ('altchaAttributes' === $strKey) {
-            return $this->getAltchaAttributes();
+            return $this->altchaAttributes ?? new AltchaWidgetAttributes();
         }
 
         return parent::__get($strKey);
@@ -97,9 +95,11 @@ class FormAltchaHidden extends Widget
      */
     public function generate(): string
     {
+        $this->setAltchaAttributes();
+
         return \sprintf(
             '<altcha-widget %s></altcha-widget>',
-            $this->getAltchaAttributes()->toString(),
+            $this->altchaAttributes->toString(false),
         );
     }
 
@@ -131,12 +131,12 @@ class FormAltchaHidden extends Widget
             }
         }
 
-        $this->altchaAttributes = $this->getAltchaAttributes();
+        $this->setAltchaAttributes();
 
         return parent::parse($arrAttributes);
     }
 
-    protected function getAltchaAttributes(): AltchaWidgetAttributes
+    protected function setAltchaAttributes(): void
     {
         $attributes = (new AltchaWidgetAttributes())
             ->add('name', $this->name)
@@ -165,7 +165,7 @@ class FormAltchaHidden extends Widget
             $attributes = $attributes->add('debug', true);
         }
 
-        return $attributes;
+        $this->altchaAttributes = $attributes;
     }
 
     protected function validator($varInput): mixed
