@@ -1,0 +1,19 @@
+<div class="widget {{ class }}">
+    {# The hidden field contains the hashed value of the honeypot input’s name attribute. #}
+    <input type="hidden" name="{{ verify_input_name }}" value="{{ hashed_honeypot_input_name }}">
+    {# The honeypot input is invisible and should be empty when submitted. #}
+    <input type="text" name="{{ honeypot_input_name }}" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+</div>
+{% set style %}
+    <style>
+        .{{ class }} {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+    </style>
+{% endset %}
+{{ add_content_to_head(style) }}

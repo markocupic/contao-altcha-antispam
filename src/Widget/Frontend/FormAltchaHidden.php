@@ -23,6 +23,9 @@ use Markocupic\ContaoAltchaAntispam\Altcha\AltchaValidator;
 use Markocupic\ContaoAltchaAntispam\Altcha\AltchaWidgetAttributes;
 use Markocupic\ContaoAltchaAntispam\Controller\AltchaController;
 use Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Twig\Environment;
 
 class FormAltchaHidden extends Widget
 {
@@ -37,6 +40,8 @@ class FormAltchaHidden extends Widget
     protected $prefix = 'widget widget-altcha';
 
     protected AltchaWidgetAttributes|null $altchaAttributes;
+
+    protected string $honeypot = '';
 
     protected string $altchaAuto = '';
 
@@ -81,10 +86,6 @@ class FormAltchaHidden extends Widget
      */
     public function __get($strKey)
     {
-        if ('altchaAttributes' === $strKey) {
-            return $this->altchaAttributes ?? new AltchaWidgetAttributes();
-        }
-
         return parent::__get($strKey);
     }
 
@@ -132,8 +133,71 @@ class FormAltchaHidden extends Widget
         }
 
         $this->setAltchaAttributes();
+        $this->renderHoneypot();
 
         return parent::parse($arrAttributes);
+    }
+
+    public function generateHoneypotInputName(): string
+    {
+        $pool = System::getContainer()->getParameter('markocupic_contao_altcha_antispam.honeypot_fieldname_pool');
+
+        if (empty($pool)) {
+            $base = 'hp';
+        } else {
+            $base = $pool[array_rand($pool)];
+        }
+
+        $suffix = bin2hex(random_bytes(3)); // random 6‑char suffix
+
+        return $base.'_'.$suffix;
+    }
+
+    public function generateHoneypotVerifyInputName(): string
+    {
+        return hash('sha256', $this->name.$this->id.System::getContainer()->getParameter('kernel.secret'));
+    }
+
+    protected function validator($varInput): mixed
+    {
+        /** @var Request $request */
+        $request = $this->getContainer()->get('request_stack')->getCurrentRequest();
+
+        /** @var LoggerInterface $logger */
+        $logger = System::getContainer()->get('monolog.logger.contao.error');
+
+        if (!$this->validateHoneypot($request)) {
+            $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
+            $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+
+            return $varInput;
+        }
+
+        /** @var MpFormsManager $mpFormsManager */
+        $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
+
+        if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
+            if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
+                return $varInput;
+            }
+        }
+
+        $payload = $varInput;
+
+        /** @var AltchaValidator $altcha */
+        $altcha = $this->getContainer()->get(AltchaValidator::class);
+
+        if (!$payload || !$altcha->validate($payload)) {
+            $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
+            $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+        } else {
+            // Do only verify the challenge once if the ALTCHA form field is part of a terminal42/contao-mp_forms form.
+            if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
+                $mpFormsManager->markAltchaAsVerified((int) $this->id);
+            }
+        }
+
+        return $varInput;
     }
 
     protected function setAltchaAttributes(): void
@@ -142,6 +206,7 @@ class FormAltchaHidden extends Widget
             ->add('name', $this->name)
             ->add('challengeurl', $this->getContainer()->get('router')->generate(AltchaController::class))
             ->add('maxnumber', $this->altchaMaxNumber)
+            ->add('data-form-field-id', $this->id)
             ->add('strings', json_encode($this->getLocalization()))
         ;
 
@@ -168,32 +233,51 @@ class FormAltchaHidden extends Widget
         $this->altchaAttributes = $attributes;
     }
 
-    protected function validator($varInput): mixed
+    protected function renderHoneypot(): void
     {
-        /** @var MpFormsManager $mpFormsManager */
-        $mpFormsManager = System::getContainer()->get(MpFormsManager::class);
+        $honeypotInputName = $this->generateHoneypotInputName();
+        $hashedHoneypotInputName = hash('sha256', $honeypotInputName.System::getContainer()->getParameter('kernel.secret'));
 
-        if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
-            if ($mpFormsManager->isAltchaAlreadyVerified((int) $this->id)) {
-                return $varInput;
-            }
+        /** @var Environment $twig */
+        $twig = System::getContainer()->get('twig');
+
+        $this->honeypot = $twig->render('@MarkocupicContaoAltchaAntispam/honeypot.html.twig', [
+            'verify_input_name' => $this->generateHoneypotVerifyInputName(),
+            'hashed_honeypot_input_name' => $hashedHoneypotInputName,
+            'honeypot_input_name' => $honeypotInputName,
+            'class' => str_replace('_', '-', 'widget-'.$honeypotInputName),
+            'id' => $this->id,
+        ]);
+    }
+
+    protected function validateHoneypot(Request $request): bool
+    {
+        $honeypotVerifyInputName = $this->generateHoneypotVerifyInputName();
+
+        $post = $request->request->all();
+
+        $honeypotVerifyHash = $post[$honeypotVerifyInputName] ?? '';
+
+        if ('' === $honeypotVerifyHash) {
+            return false;
         }
 
-        $payload = $varInput;
+        foreach ($post as $key => $value) {
+            $expectedHash = hash('sha256', $key.System::getContainer()->getParameter('kernel.secret'));
 
-        /** @var AltchaValidator $altcha */
-        $altcha = $this->getContainer()->get(AltchaValidator::class);
-
-        if (!$payload || !$altcha->validate($payload)) {
-            $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
-        } else {
-            // Do only verify the challenge once if the ALTCHA form field is part of a terminal42/contao-mp_forms form.
-            if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
-                $mpFormsManager->markAltchaAsVerified((int) $this->id);
+            // Test if the value is from the honeypot field
+            if (!hash_equals($honeypotVerifyHash, $expectedHash)) {
+                continue;
             }
+
+            if ('' === $value) {
+                return true;
+            }
+
+            break;
         }
 
-        return $varInput;
+        return false;
     }
 
     protected function getLocalization(): array

@@ -5,6 +5,7 @@
         {% do addHtmlToHead('<script async defer src="'~asset('altcha/dist/altcha.js', 'markocupic_contao_altcha_antispam')~'" type="module"></script>') %}
     {% endif %}
 {% endblock %}
+{{ honeypot|raw }}
 <div class="{{ prefix }}{% if strClass|default %} {{ strClass }}{% endif %}">
     {% block label %}
         {% if strLabel|default %}

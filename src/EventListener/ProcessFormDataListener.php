@@ -16,7 +16,9 @@ namespace Markocupic\ContaoAltchaAntispam\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
+use Contao\System;
 use Markocupic\ContaoAltchaAntispam\Storage\MpFormsManager;
+use Symfony\Component\Filesystem\Path;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Terminal42\MultipageFormsBundle\FormManagerFactory;
 
@@ -34,6 +36,10 @@ class ProcessFormDataListener
      */
     public function __invoke(array $submittedData, array $formData, array|null $files, array $labels, Form $form): void
     {
+        $projectDir = System::getContainer()->getParameter('kernel.project_dir');
+
+        file_put_contents(Path::join($projectDir, 'test.txt'), print_r($submittedData, true));
+
         $request = $this->requestStack->getCurrentRequest();
         $session = $request->getSession();
 

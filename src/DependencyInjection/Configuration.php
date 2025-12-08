@@ -38,8 +38,8 @@ class Configuration implements ConfigurationInterface
                 ->end()
             ->end()
         ;
-
         $this->addRangeSection($rootNode);
+        $this->addHoneypotFieldNamePoolSection($rootNode);
 
         return $treeBuilder;
     }
@@ -61,6 +61,43 @@ class Configuration implements ConfigurationInterface
             ->validate()
             ->ifTrue(static fn ($config) => isset($config['range_min'], $config['range_max']) && $config['range_max'] <= $config['range_min'])
             ->thenInvalid('The "range_max" value must be greater than "range_min" value.')
+            ->end()
+        ;
+    }
+
+    private function addHoneypotFieldNamePoolSection(ArrayNodeDefinition $node): void
+    {
+        $node
+            ->children()
+                ->arrayNode('honeypot_fieldname_pool')
+                    ->prototype('scalar')->end()
+                    ->defaultValue([
+                        'email_confirm',
+                        'secondary_email',
+                        'user_email_alt',
+                        'contact_email',
+                        'newsletter_email',
+                        'phone_number',
+                        'mobile',
+                        'fax',
+                        'contact_phone',
+                        'office_phone',
+                        'website',
+                        'homepage',
+                        'linkedin',
+                        'twitter_handle',
+                        'facebook_profile',
+                        'street2',
+                        'address_line2',
+                        'postal_extension',
+                        'apartment_number',
+                        'building_unit',
+                        'middle_name',
+                        'nickname',
+                        'maiden_name',
+                        'company_department',
+                    ])
+                ->end()
             ->end()
         ;
     }
