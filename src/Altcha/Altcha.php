@@ -60,7 +60,9 @@ class Altcha
 
     private function generateSalt(int $expiry): string
     {
-        // Append expiry to salt, which will be part of the signature and verifiable on the server.
-        return \sprintf('%s?expires=%s', bin2hex(random_bytes(12)), urlencode((string) $expiry));
+        // Append the expiry parameter to salt, which will be part of the signature and verifiable on the server.
+        // Be aware: Each parameter must be terminated with the & delimiter to prevent Challenge Splicing and Replay.
+        // https://altcha.org/security-advisory/
+        return \sprintf('%s?expires=%s&', bin2hex(random_bytes(12)), urlencode((string) $expiry));
     }
 }
