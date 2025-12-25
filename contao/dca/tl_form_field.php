@@ -16,7 +16,7 @@ use Doctrine\DBAL\Types\Types;
 
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['altcha_hidden'] = '
 {type_legend},type,name,label;
-{altcha_legend},altchaHideLogo,altchaHideFooter,altchaAuto,altchaMaxNumber,altchaDelay,altchaSource;
+{altcha_legend},altchaHideLogo,altchaHideFooter,altchaAuto,altchaMaxNumber,altchaDelay,altchaSource,altchaNoErrorLog;
 {expert_legend:hide},class;
 {template_legend:hide},customTpl;
 {invisible_legend:hide},invisible
@@ -110,5 +110,20 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaSource'] = [
         'length'  => '5',
         'notnull' => true,
         'default' => 'local',
+    ],
+];
+
+$GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaNoErrorLog'] = [
+    'exclude'   => true,
+    'search'    => true,
+    'sorting'   => true,
+    'inputType' => 'checkbox',
+    'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
+    'sql'       => [
+        'type'    => Types::STRING,
+        'length'  => '1',
+        'fixed'   => true,
+        'notnull' => true,
+        'default' => '',
     ],
 ];
