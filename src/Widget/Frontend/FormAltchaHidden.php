@@ -55,6 +55,8 @@ class FormAltchaHidden extends Widget
 
     protected string $altchaSource = 'local';
 
+    protected bool $altchaNoErrorLog = false;
+
     /**
      * Add specific attributes.
      *
@@ -168,7 +170,9 @@ class FormAltchaHidden extends Widget
 
         if (!$this->validateHoneypot($request)) {
             $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
-            $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+            if (!$this->altchaNoErrorLog) {
+                $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+            }
 
             return $varInput;
         }
@@ -189,7 +193,9 @@ class FormAltchaHidden extends Widget
 
         if (!$payload || !$altcha->validate($payload)) {
             $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
-            $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+            if (!$this->altchaNoErrorLog) {
+                $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
+            }
         } else {
             // Do only verify the challenge once if the ALTCHA form field is part of a terminal42/contao-mp_forms form.
             if ($mpFormsManager->isPartOfMpForms((int) $this->id)) {
