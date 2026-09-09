@@ -31,7 +31,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideLogo'] = [
     'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
     'sql'       => [
         'type'    => Types::STRING,
-        'length'  => '1',
+        'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
         'default' => '',
@@ -46,7 +46,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideFooter'] = [
     'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
     'sql'       => [
         'type'    => Types::STRING,
-        'length'  => '1',
+        'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
         'default' => '',
@@ -62,7 +62,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaAuto'] = [
     'eval'      => ['mandatory' => false, 'includeBlankOption' => true, 'tl_class' => 'w50'],
     'sql'       => [
         'type'    => Types::STRING,
-        'length'  => '16',
+        'length'  => 16,
         'notnull' => true,
         'default' => '',
     ],
@@ -76,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaMaxNumber'] = [
     'eval'      => ['mandatory' => true, 'rgxp' => 'altcha_max_iteration', 'maxlength' => 10, 'tl_class' => 'w50'],
     'sql'       => [
         'type'     => Types::INTEGER,
-        'length'   => '10',
+        'length'   => 10,
         'unsigned' => true,
         'notnull'  => true,
         'default'  => 1000000,
@@ -91,7 +91,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaDelay'] = [
     'eval'      => ['mandatory' => true, 'rgxp' => 'natural', 'maxlength' => 10, 'tl_class' => 'w50'],
     'sql'       => [
         'type'     => Types::INTEGER,
-        'length'   => '10',
+        'length'   => 10,
         'unsigned' => true,
         'notnull'  => true,
         'default'  => 500,
@@ -107,7 +107,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaSource'] = [
     'eval'      => ['mandatory' => true, 'tl_class' => 'w50'],
     'sql'       => [
         'type'    => Types::STRING,
-        'length'  => '5',
+        'length'  => 5,
         'notnull' => true,
         'default' => 'local',
     ],
@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaNoErrorLog'] = [
     'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
     'sql'       => [
         'type'    => Types::STRING,
-        'length'  => '1',
+        'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
         'default' => '',
