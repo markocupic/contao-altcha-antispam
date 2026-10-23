@@ -16,7 +16,7 @@ namespace Markocupic\ContaoAltchaAntispam\Controller;
 
 use Markocupic\ContaoAltchaAntispam\Altcha\Altcha;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(path: '/_contao_altcha_challenge', name: self::class)]
 class AltchaController
