@@ -34,7 +34,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideLogo'] = [
         'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
-        'default' => '',
+        'default' => 0,
     ],
 ];
 
@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideFooter'] = [
         'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
-        'default' => '',
+        'default' => 0,
     ],
 ];
 
@@ -64,7 +64,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaAuto'] = [
         'type'    => Types::STRING,
         'length'  => 16,
         'notnull' => true,
-        'default' => '',
+        'default' => 0,
     ],
 ];
 
@@ -124,6 +124,6 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaNoErrorLog'] = [
         'length'  => 1,
         'fixed'   => true,
         'notnull' => true,
-        'default' => '',
+        'default' => 0,
     ],
 ];
