@@ -28,13 +28,10 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideLogo'] = [
     'search'    => true,
     'sorting'   => true,
     'inputType' => 'checkbox',
-    'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
+    'eval'      => ['tl_class' => 'w50'],
     'sql'       => [
-        'type'    => Types::STRING,
-        'length'  => 1,
-        'fixed'   => true,
-        'notnull' => true,
-        'default' => '',
+        'type'    => Types::BOOLEAN,
+        'default' => false,
     ],
 ];
 
@@ -43,13 +40,10 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaHideFooter'] = [
     'search'    => true,
     'sorting'   => true,
     'inputType' => 'checkbox',
-    'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
+    'eval'      => ['tl_class' => 'w50'],
     'sql'       => [
-        'type'    => Types::STRING,
-        'length'  => 1,
-        'fixed'   => true,
-        'notnull' => true,
-        'default' => '',
+        'type'    => Types::BOOLEAN,
+        'default' => false,
     ],
 ];
 
@@ -118,12 +112,9 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['altchaNoErrorLog'] = [
     'search'    => true,
     'sorting'   => true,
     'inputType' => 'checkbox',
-    'eval'      => ['isBoolean' => true, 'tl_class' => 'w50'],
+    'eval'      => ['tl_class' => 'w50'],
     'sql'       => [
-        'type'    => Types::STRING,
-        'length'  => 1,
-        'fixed'   => true,
-        'notnull' => true,
-        'default' => '',
+        'type'    => Types::BOOLEAN,
+        'default' => false,
     ],
 ];
