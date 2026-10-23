@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
+use Contao\StringUtil;
+
 class AltchaWidgetAttributes implements \Stringable
 {
     public function __construct(
@@ -83,7 +85,7 @@ class AltchaWidgetAttributes implements \Stringable
             // Handle boolean attributes (e.g., disabled, required)
             if (\is_bool($value)) {
                 if ($value) {
-                    $attributes[] = htmlspecialchars($key, ENT_QUOTES);
+                    $attributes[] = $this->encode($key);
                 }
 
                 continue;
@@ -92,13 +94,22 @@ class AltchaWidgetAttributes implements \Stringable
             // Normal key="value" attributes
             $attributes[] = \sprintf(
                 '%s="%s"',
-                htmlspecialchars($key, ENT_QUOTES),
-                htmlspecialchars((string) $value, ENT_QUOTES),
+                $this->encode($key),
+                $this->encode((string) $value),
             );
         }
 
         $string = implode(' ', $attributes);
 
         return $leadingSpace && $string ? " $string" : $string;
+    }
+
+    /**
+     * Always double encode, so the attribute value is decoded to exactly the given
+     * string (the default of $blnDoubleEncode differs between Contao 5.3 and 6).
+     */
+    private function encode(string $value): string
+    {
+        return StringUtil::specialcharsAttribute($value, false, true);
     }
 }
