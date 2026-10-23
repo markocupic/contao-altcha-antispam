@@ -1,15 +1,16 @@
 {
     "require": {
-        "contao/core-bundle": "^5.3",
-        "phpunit/phpunit": "^9.6",
-        "contao/test-case": "^5.3"
+        "contao/core-bundle": "^4.13",
+        "phpunit/phpunit": "^9.5",
+        "contao/test-case": "^4.13"
     },
     "config": {
         "allow-plugins": {
-            "contao-components/installer": true,
+            "contao-components/installer": false,
             "contao/manager-plugin": false,
             "contao-community-alliance/composer-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "contao-components/installer": true
         }
     }
 }
