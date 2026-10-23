@@ -20,7 +20,9 @@ $GLOBALS['TL_DCA']['tl_altcha_challenge'] = [
         'dataContainer' => DC_Table::class,
         'sql'           => [
             'keys' => [
-                'id' => 'primary',
+                'id'        => 'primary',
+                'challenge' => 'unique',
+                'expires'   => 'index',
             ],
         ],
     ],
@@ -46,7 +48,7 @@ $GLOBALS['TL_DCA']['tl_altcha_challenge'] = [
         'challenge' => [
             'sql' => [
                 'type'    => Types::STRING,
-                'length'  => 1024,
+                'length'  => 128,
                 'notnull' => true,
                 'default' => '',
             ],

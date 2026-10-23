@@ -28,9 +28,8 @@ class AltchaController
 
     public function __invoke(): JsonResponse
     {
-        $challenge = $this->altcha->createChallenge();
-        $this->altcha->persistChallenge($challenge);
-
-        return new JsonResponse($challenge->toArray());
+        // The challenge is not stored in the database. Only solved challenges are
+        // stored to prevent replay attacks (see AltchaValidator).
+        return new JsonResponse($this->altcha->createChallenge()->toArray());
     }
 }

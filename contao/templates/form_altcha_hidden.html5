@@ -1,6 +1,6 @@
 <?php $this->block('altcha_script'); ?>
 <?php if ('cdn' === $this->altchaSource): ?>
-    <?php $GLOBALS['TL_HEAD'][] = '<script async defer src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js" type="module"></script>'; ?>
+    <?php $GLOBALS['TL_HEAD'][] = '<script async defer src="https://cdn.jsdelivr.net/npm/altcha@2.2.4/dist/altcha.js" type="module"></script>'; ?>
 <?php else: ?>
     <?php $GLOBALS['TL_HEAD'][] = '<script async defer src="' . \Contao\System::getContainer()->get('assets.packages')->getUrl('altcha/dist/altcha.js', 'markocupic_contao_altcha_antispam') . '" type="module"></script>'; ?>
 <?php endif; ?>

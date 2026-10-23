@@ -14,14 +14,10 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Altcha;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Types\Types;
-
 class Altcha
 {
     public function __construct(
         private readonly Algorithm $altchaAlgorithm,
-        private readonly Connection $connection,
         private readonly int $altchaChallengeExpiry,
         private readonly int $altchaRangeMax,
         private readonly int $altchaRangeMin,
@@ -29,33 +25,36 @@ class Altcha
     ) {
     }
 
+    /**
+     * Challenges are stateless: The expiry is part of the salt and thus part of
+     * the signed challenge. Only solved challenges are stored (see AltchaValidator).
+     */
     public function createChallenge(string|null $salt = null, int|null $number = null): Challenge
     {
         $expiry = time() + $this->altchaChallengeExpiry;
-        $salt = $salt ?? $this->generateSalt($expiry);
-        $number = $number ?? random_int($this->altchaRangeMin, $this->altchaRangeMax);
+        $salt ??= $this->generateSalt($expiry);
+        $number ??= random_int($this->altchaRangeMin, $this->altchaRangeMax);
 
-        // Create the challenge
         return new Challenge($number, $this->altchaRangeMax, $expiry, $this->altchaHmacKey, $salt, $this->altchaAlgorithm);
     }
 
-    public function persistChallenge(Challenge $challenge): void
+    /**
+     * Return the expiry timestamp that has been appended to the salt or null if the
+     * salt does not contain a valid expiry parameter.
+     */
+    public function getExpiryFromSalt(string $salt): int|null
     {
-        // The challenge expires in 1 hour (default).
-        // We save it to the database to prevent replay attacks.
-        $insertParameters = [
-            'tstamp' => time(),
-            'challenge' => $challenge->getChallenge(),
-            'expires' => $challenge->getExpiry(),
-        ];
+        $query = explode('?', $salt, 2)[1] ?? '';
 
-        $insertTypes = [
-            'tstamp' => Types::INTEGER,
-            'challenge' => Types::STRING,
-            'expires' => Types::INTEGER,
-        ];
+        parse_str($query, $params);
 
-        $this->connection->insert('tl_altcha_challenge', $insertParameters, $insertTypes);
+        $expires = $params['expires'] ?? null;
+
+        if (!\is_string($expires) || !ctype_digit($expires)) {
+            return null;
+        }
+
+        return (int) $expires;
     }
 
     private function generateSalt(int $expiry): string

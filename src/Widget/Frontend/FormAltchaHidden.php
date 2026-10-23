@@ -157,7 +157,7 @@ class FormAltchaHidden extends Widget
 
     public function generateHoneypotVerifyInputName(): string
     {
-        return hash('sha256', $this->name.$this->id.System::getContainer()->getParameter('kernel.secret'));
+        return $this->hmac('honeypot_verify_input_name|'.$this->name.'|'.$this->id);
     }
 
     protected function validator($varInput): mixed
@@ -186,12 +186,13 @@ class FormAltchaHidden extends Widget
             }
         }
 
-        $payload = $varInput;
+        // Reject arrays and other unexpected input types (e.g. "altcha[]=foo")
+        $payload = \is_string($varInput) ? $varInput : '';
 
         /** @var AltchaValidator $altcha */
         $altcha = $this->getContainer()->get(AltchaValidator::class);
 
-        if (!$payload || !$altcha->validate($payload)) {
+        if ('' === $payload || !$altcha->validate($payload)) {
             $this->addError($GLOBALS['TL_LANG']['ERR']['altcha_verification_failed']);
             if (!$this->altchaNoErrorLog) {
                 $logger->error('Could not process form '.$this->name.'. Spambot validation failed.');
@@ -242,7 +243,7 @@ class FormAltchaHidden extends Widget
     protected function renderHoneypot(): void
     {
         $honeypotInputName = $this->generateHoneypotInputName();
-        $hashedHoneypotInputName = hash('sha256', $honeypotInputName.System::getContainer()->getParameter('kernel.secret'));
+        $hashedHoneypotInputName = $this->hmac('honeypot_input_name|'.$honeypotInputName);
 
         /** @var Environment $twig */
         $twig = System::getContainer()->get('twig');
@@ -264,26 +265,28 @@ class FormAltchaHidden extends Widget
 
         $honeypotVerifyHash = $post[$honeypotVerifyInputName] ?? '';
 
-        if ('' === $honeypotVerifyHash) {
+        if (!\is_string($honeypotVerifyHash) || '' === $honeypotVerifyHash) {
             return false;
         }
 
         foreach ($post as $key => $value) {
-            $expectedHash = hash('sha256', $key.System::getContainer()->getParameter('kernel.secret'));
+            $expectedHash = $this->hmac('honeypot_input_name|'.$key);
 
             // Test if the value is from the honeypot field
-            if (!hash_equals($honeypotVerifyHash, $expectedHash)) {
+            if (!hash_equals($expectedHash, $honeypotVerifyHash)) {
                 continue;
             }
 
-            if ('' === $value) {
-                return true;
-            }
-
-            break;
+            // The honeypot field must be submitted empty
+            return '' === $value;
         }
 
         return false;
+    }
+
+    protected function hmac(string $data): string
+    {
+        return hash_hmac('sha256', $data, (string) System::getContainer()->getParameter('kernel.secret'));
     }
 
     protected function getLocalization(): array

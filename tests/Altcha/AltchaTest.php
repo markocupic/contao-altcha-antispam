@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoAltchaAntispam\Tests\Altcha;
 
-use Doctrine\DBAL\Connection;
 use Markocupic\ContaoAltchaAntispam\Altcha\Algorithm;
 use Markocupic\ContaoAltchaAntispam\Altcha\Altcha;
 use Markocupic\ContaoAltchaAntispam\Altcha\Challenge;
@@ -24,17 +23,13 @@ class AltchaTest extends TestCase
 {
     private Algorithm $algorithm;
 
-    private Connection $connectionMock;
-
     private Altcha $altcha;
 
     protected function setUp(): void
     {
         $this->algorithm = Algorithm::ALGORITHM_SHA_256; // or any other algorithm
-        $this->connectionMock = $this->createMock(Connection::class);
         $this->altcha = new Altcha(
             $this->algorithm,
-            $this->connectionMock,
             3600, // altchaChallengeExpiry
             100, // altchaRangeMax
             1, // altchaRangeMin
@@ -74,7 +69,6 @@ class AltchaTest extends TestCase
     {
         $altcha = new Altcha(
             $algorithm,
-            $this->connectionMock,
             3600,
             100,
             1,
@@ -93,5 +87,31 @@ class AltchaTest extends TestCase
             'SHA384' => [Algorithm::ALGORITHM_SHA_384],
             'SHA512' => [Algorithm::ALGORITHM_SHA_512],
         ];
+    }
+
+    public function testCreateChallengeAppendsExpiryToSalt(): void
+    {
+        $challenge = $this->altcha->createChallenge();
+
+        $this->assertSame($challenge->getExpiry(), $this->altcha->getExpiryFromSalt($challenge->getSalt()));
+        $this->assertStringEndsWith('&', $challenge->getSalt());
+    }
+
+    /**
+     * @dataProvider saltProvider
+     */
+    public function testGetExpiryFromSalt(string $salt, int|null $expected): void
+    {
+        $this->assertSame($expected, $this->altcha->getExpiryFromSalt($salt));
+    }
+
+    public static function saltProvider(): iterable
+    {
+        yield 'valid' => ['abc?expires=1700000000&', 1700000000];
+        yield 'no query' => ['abc', null];
+        yield 'no expires parameter' => ['abc?foo=1&', null];
+        yield 'non-numeric expires' => ['abc?expires=foo&', null];
+        yield 'negative expires' => ['abc?expires=-1&', null];
+        yield 'array expires' => ['abc?expires[]=1&', null];
     }
 }

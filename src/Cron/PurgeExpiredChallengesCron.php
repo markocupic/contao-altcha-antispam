@@ -28,13 +28,12 @@ class PurgeExpiredChallengesCron
 
     public function __invoke(): void
     {
-        // 1 week
-        $limit = time() - 60 * 60 * 24 * 7;
-
+        // Expired challenges are rejected by the validator anyway, so there is no need
+        // to keep them for replay protection.
         $this->connection->executeStatement(
-            'DELETE FROM tl_altcha_challenge WHERE tstamp < :limit',
-            ['limit' => $limit],
-            ['limit' => Types::INTEGER],
+            'DELETE FROM tl_altcha_challenge WHERE expires < :now',
+            ['now' => time()],
+            ['now' => Types::INTEGER],
         );
     }
 }

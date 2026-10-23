@@ -27,7 +27,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  *
  * This test ensures that the method:
  * - Generates a challenge using the Altcha service
- * - Persists the generated challenge
+ * - Does not persist the challenge (challenges are stateless)
  * - Returns a JSON response containing the challenge data
  */
 class AltchaControllerTest extends TestCase
@@ -45,13 +45,6 @@ class AltchaControllerTest extends TestCase
             ->expects($this->once())
             ->method('createChallenge')
             ->willReturn($challengeMock)
-        ;
-
-        // Ensure `persistChallenge` is called with the mock challenge
-        $altchaMock
-            ->expects($this->once())
-            ->method('persistChallenge')
-            ->with($challengeMock)
         ;
 
         // Mock the `toArray` method of the Challenge to return sample challenge data
