@@ -122,7 +122,10 @@ class AltchaValidatorTest extends TestCase
             'signature' => $challenge->getSignature(),
         ];
 
-        $this->connection->expects($this->never())->method('insert');
+        $this->connection
+            ->expects($this->never())
+            ->method('insert')
+        ;
 
         $this->assertFalse($this->validator->validate($this->encode($data)));
     }
@@ -139,7 +142,10 @@ class AltchaValidatorTest extends TestCase
             'signature' => $challenge->getSignature(),
         ];
 
-        $this->connection->expects($this->never())->method('insert');
+        $this->connection
+            ->expects($this->never())
+            ->method('insert')
+        ;
 
         $this->assertFalse($this->validator->validate($this->encode($data)));
     }
@@ -152,7 +158,10 @@ class AltchaValidatorTest extends TestCase
         $data = $this->createSolvedPayloadData();
         $data[$key] = \is_callable($value) ? $value($data) : $value;
 
-        $this->connection->expects($this->never())->method('insert');
+        $this->connection
+            ->expects($this->never())
+            ->method('insert')
+        ;
 
         $this->assertFalse($this->validator->validate($this->encode($data)));
     }

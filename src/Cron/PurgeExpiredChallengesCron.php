@@ -21,9 +21,8 @@ use Doctrine\DBAL\Types\Types;
 #[AsCronJob('hourly')]
 class PurgeExpiredChallengesCron
 {
-    public function __construct(
-        private readonly Connection $connection,
-    ) {
+    public function __construct(private readonly Connection $connection)
+    {
     }
 
     public function __invoke(): void

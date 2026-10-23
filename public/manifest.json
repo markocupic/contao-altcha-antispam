@@ -1,4 +1,5 @@
 {
-  "altcha/dist/altcha.i18n.js": "/bundles/markocupiccontaoaltchaantispam/altcha/dist/altcha.i18n.da291af8.js",
-  "altcha/dist/altcha.js": "/bundles/markocupiccontaoaltchaantispam/altcha/dist/altcha.081ca2d9.js"
+  "altcha/dist_external/altcha.js": "/bundles/markocupiccontaoaltchaantispam/altcha/dist_external/altcha.8c1cce18.js",
+  "altcha/dist_external/altcha.css": "/bundles/markocupiccontaoaltchaantispam/altcha/dist_external/altcha.307fb1d7.css",
+  "altcha/dist_external/worker.js": "/bundles/markocupiccontaoaltchaantispam/altcha/dist_external/worker.65accd1b.js"
 }

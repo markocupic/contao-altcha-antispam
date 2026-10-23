@@ -1,14 +1,10 @@
 {
     "require": {
-        "contao/core-bundle": "^5.3",
-        "contao/easy-coding-standard": "^6.13"
+        "php": "^8.1",
+        "markocupic/easy-coding-standard": "^13.0"
     },
     "config": {
         "allow-plugins": {
-            "contao-components/installer": false,
-            "contao/manager-plugin": false,
-            "contao-community-alliance/composer-plugin": true,
-            "php-http/discovery": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }

@@ -21,9 +21,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route(path: '/_contao_altcha_challenge', name: self::class)]
 class AltchaController
 {
-    public function __construct(
-        private readonly Altcha $altcha,
-    ) {
+    public function __construct(private readonly Altcha $altcha)
+    {
     }
 
     public function __invoke(): JsonResponse

@@ -16,7 +16,6 @@ namespace Markocupic\ContaoAltchaAntispam\Widget\Frontend;
 
 use Contao\BackendTemplate;
 use Contao\Controller;
-use Contao\StringUtil;
 use Contao\System;
 use Contao\Widget;
 use Markocupic\ContaoAltchaAntispam\Altcha\AltchaValidator;
@@ -29,6 +28,10 @@ use Twig\Environment;
 
 class FormAltchaHidden extends Widget
 {
+    public const ASSET_PACKAGE = 'markocupic_contao_altcha_antispam';
+
+    public const ASSET_WORKER = 'altcha/dist_external/worker.js';
+
     protected $useRawRequestData = true;
 
     protected $blnSubmitInput = false;
@@ -217,8 +220,15 @@ class FormAltchaHidden extends Widget
             ->add('strings', json_encode($this->getLocalization()))
         ;
 
+        // The "external" build of ALTCHA, which is used when loading the script from
+        // the bundle, requires the URL of its web worker (the file name is versioned).
+        if ('cdn' !== $this->altchaSource) {
+            $workerUrl = $this->getContainer()->get('assets.packages')->getUrl(self::ASSET_WORKER, self::ASSET_PACKAGE);
+            $attributes = $attributes->add('workerurl', $workerUrl);
+        }
+
         if (!empty($this->altchaAuto) && \in_array($this->altchaAuto, ['onload', 'onsubmit'], true)) {
-            $attributes = $attributes->add('auto', StringUtil::specialchars($this->altchaAuto));
+            $attributes = $attributes->add('auto', $this->altchaAuto);
         }
 
         if (!empty($this->altchaDelay)) {

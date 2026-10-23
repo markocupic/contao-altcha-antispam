@@ -4,8 +4,8 @@
     {# The honeypot input is invisible and should be empty when submitted. #}
     <input type="text" name="{{ honeypot_input_name }}" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
 </div>
-{% set style %}
-    <style>
+{% add to head %}
+    <style{{ attrs().setIfExists('nonce', csp_nonce('style-src')) }}>
         .{{ class }} {
             position: absolute;
             left: -9999px;
@@ -15,5 +15,4 @@
             overflow: hidden;
         }
     </style>
-{% endset %}
-{{ add_content_to_head(style) }}
+{% endadd %}

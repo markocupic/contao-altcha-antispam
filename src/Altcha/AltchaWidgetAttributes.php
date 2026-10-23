@@ -18,9 +18,8 @@ use Contao\StringUtil;
 
 class AltchaWidgetAttributes implements \Stringable
 {
-    public function __construct(
-        private array $attributes = [],
-    ) {
+    public function __construct(private array $attributes = [])
+    {
     }
 
     public function __toString(): string

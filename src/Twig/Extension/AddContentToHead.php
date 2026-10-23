@@ -17,6 +17,10 @@ namespace Markocupic\ContaoAltchaAntispam\Twig\Extension;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
+/**
+ * @deprecated Deprecated since version 0.8, to be removed in version 1.0;
+ *             use the {% add to head %} tag of Contao instead.
+ */
 class AddContentToHead extends AbstractExtension
 {
     public function getFunctions(): array
@@ -28,6 +32,8 @@ class AddContentToHead extends AbstractExtension
 
     public function addContentToHead(string $content): void
     {
+        trigger_deprecation('markocupic/contao-altcha-antispam', '0.8', 'Using the "add_content_to_head()" Twig function is deprecated and will no longer work in version 1.0. Use the "{% add to head %}" tag instead.');
+
         if (!isset($GLOBALS['TL_HEAD'])) {
             $GLOBALS['TL_HEAD'] = [];
         }

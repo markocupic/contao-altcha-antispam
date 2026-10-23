@@ -17,15 +17,16 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: 8.4
+                    coverage: none
 
             -   name: Checkout
                 uses: actions/checkout@v4
 
             -   name: Install ecs
-                run: cd tools/ecs && composer update --no-interaction
+                run: composer update --working-dir=tools/ecs --no-interaction --no-progress
 
-            -   name: Run the CS fixer
-                run: composer cs-fixer
+            -   name: Check the coding style
+                run: composer cs-check
 
     tests:
         name: PHP ${{ matrix.php }}
