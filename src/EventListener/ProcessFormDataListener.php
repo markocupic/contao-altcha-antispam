@@ -49,7 +49,7 @@ class ProcessFormDataListener
 
         // Get session reference from request
         $sessRefParam = $formManager->getGetParamForSessionReference();
-        $sessRef = $request->get($sessRefParam, '');
+        $sessRef = $request->query->get($sessRefParam, '');
 
         if (!$sessRef) {
             return;
