@@ -3,7 +3,7 @@
         {# Allow the CDN if the Contao Content Security Policy is enabled #}
         {% do csp_source('script-src', 'https://cdn.jsdelivr.net') %}
         {% add 'markocupic_contao_altcha_antispam_script' to head %}
-            <script async defer src="https://cdn.jsdelivr.net/npm/altcha@2.2.4/dist/altcha.js" type="module"></script>
+            <script async src="https://cdn.jsdelivr.net/npm/altcha@2.2.4/dist/altcha.js" type="module"></script>
         {% endadd %}
     {% else %}
         {# The "external" build does not inject inline styles and does not use blob: workers (CSP compatible) #}
@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="{{ asset('altcha/dist_external/altcha.css', 'markocupic_contao_altcha_antispam') }}">
         {% endadd %}
         {% add 'markocupic_contao_altcha_antispam_script' to head %}
-            <script async defer src="{{ asset('altcha/dist_external/altcha.js', 'markocupic_contao_altcha_antispam') }}" type="module"></script>
+            <script async src="{{ asset('altcha/dist_external/altcha.js', 'markocupic_contao_altcha_antispam') }}" type="module"></script>
         {% endadd %}
     {% endif %}
 {% endblock %}
